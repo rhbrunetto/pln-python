@@ -12,6 +12,7 @@
 
 import os
 import re
+import plymodule.lexer
 from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
 from pdfminer.pdfpage import PDFPage
 from pdfminer.converter import TextConverter
