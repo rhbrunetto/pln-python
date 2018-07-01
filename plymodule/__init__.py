@@ -1,46 +1,45 @@
+# coding=utf-8
 from lexer import lexer
 from parser import parser
+
+# For testing only
+import sys
 
 # Build the lexer
 # lexer = lexer.lex.lex()
 
 # # Test it out
-data = '''
-2194
-
-IEEE TRANSACTIONS ON CONTROL SYSTEMS TECHNOLOGY, VOL. 25, NO. 6,
-
-NOVEMBER 2017
-
-Feedback Controllers as Financial Advisors for Low-Income Individuals
-
-Hugo Gonzalez Villasanti and Kevin M. Passino, Fellow, IEEE
-
-Abstract ashusahuashuashasuhasudhasudhasuda
-
-Index
-'''
+# data = '''
+# '''
 # Give the lexer some input
 
 
 # Build the parser
 # parser = parser.yacc.yacc()
 
-# with open('../test', 'r') as myfile:
-#     data=myfile.read()
-
-# # Tokenize
-# lexer.input(data)
-# while True:
-#     tok = lexer.token()
-#     if not tok: 
-#         break      # No more input
-#     print(tok)
-
+with open('../test', 'r') as myfile:
+    data=myfile.read()
 # print(data)
 
-result = parser.parse(data)
-print(result)
+def tokenize():
+    # Tokenize
+    lexer.input(data)
+    while True:
+        tok = lexer.token()
+        if not tok: 
+            break      # No more input
+        print(tok)
+
+def parsing():
+    result = parser.parse(data)
+    print(result)
+
+if len(sys.argv) == 1: tokenize()
+
+if sys.argv[1] == '-l':
+    tokenize()
+elif sys.argv[1] == '-p':
+    parsing()
 
 # parse
 # while True:
