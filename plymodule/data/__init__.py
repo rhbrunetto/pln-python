@@ -1,1 +1,1 @@
-__all__ = ['article', 'reference']
+__all__ = ['article', 'reference', 'header', 'content', 'chapter']
