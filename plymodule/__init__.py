@@ -1,8 +1,8 @@
-from lexer import lex
-from parser import yacc
+from lexer import lexer
+from parser import parser
 
 # Build the lexer
-lexer = lex.lex()
+# lexer = lexer.lex.lex()
 
 # # Test it out
 # data = '''
@@ -20,14 +20,20 @@ lexer = lex.lex()
 #     print(tok)
 
 # Build the parser
-parser = yacc.yacc()
+# parser = parser.yacc.yacc()
+
+with open('../test', 'r') as myfile:
+    data=myfile.read()
+# print(data)
+result = parser.parse(data)
+print(result)
 
 # parse
-while True:
-  try:
-      s = raw_input('calc > ')
-  except EOFError:
-      break
-  if not s: continue
-  result = parser.parse(s)
-  print(result)
+# while True:
+#   try:
+#       s = raw_input('calc > ')
+#   except EOFError:
+#       break
+#   if not s: continue
+#   result = parser.parse(s)
+#   print(result)
