@@ -5,26 +5,40 @@ from parser import parser
 # lexer = lexer.lex.lex()
 
 # # Test it out
-# data = '''
-# 3 + 4 * 10
-#   + -20 *2
-# '''
+data = '''
+2194
+
+IEEE TRANSACTIONS ON CONTROL SYSTEMS TECHNOLOGY, VOL. 25, NO. 6,
+
+NOVEMBER 2017
+
+Feedback Controllers as Financial Advisors for Low-Income Individuals
+
+Hugo Gonzalez Villasanti and Kevin M. Passino, Fellow, IEEE
+
+Abstract ashusahuashuashasuhasudhasudhasuda
+
+Index
+'''
 # Give the lexer some input
-# lexer.input(data)
+
+
+# Build the parser
+# parser = parser.yacc.yacc()
+
+# with open('../test', 'r') as myfile:
+#     data=myfile.read()
 
 # # Tokenize
+# lexer.input(data)
 # while True:
 #     tok = lexer.token()
 #     if not tok: 
 #         break      # No more input
 #     print(tok)
 
-# Build the parser
-# parser = parser.yacc.yacc()
-
-with open('../test', 'r') as myfile:
-    data=myfile.read()
 # print(data)
+
 result = parser.parse(data)
 print(result)
 
