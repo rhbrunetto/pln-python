@@ -2,6 +2,7 @@ Created by PLY version 3.11 (http://www.dabeaz.com/ply)
 
 Unused terminals:
 
+    NUMBER
     REFERENCES
     CAPSTEXT
 
@@ -9,28 +10,28 @@ Grammar
 
 Rule 0     S' -> article
 Rule 1     article -> header
-Rule 2     header -> code publication titleandauthor abstract keywords
-Rule 3     header -> publication code titleandauthor abstract keywords
-Rule 4     code -> NUMBER
-Rule 5     publication -> IEEE text VIRGULA MONTH YEAR
+Rule 2     header -> code publication titleandauthor abstract
+Rule 3     header -> publication code titleandauthor abstract
+Rule 4     code -> YEAR
+Rule 5     publication -> IEEE text MONTH YEAR
 Rule 6     abstract -> ABSTRACT text INDEX
 Rule 7     keywords -> INDEX text INTRO
 Rule 8     titleandauthor -> text
-Rule 9     text -> GENERAL
+Rule 9     text -> GENERAL text
+Rule 10    text -> GENERAL
 
 Terminals, with rules where they appear
 
 ABSTRACT             : 6
 CAPSTEXT             : 
-GENERAL              : 9
+GENERAL              : 9 10
 IEEE                 : 5
 INDEX                : 6 7
 INTRO                : 7
 MONTH                : 5
-NUMBER               : 4
+NUMBER               : 
 REFERENCES           : 
-VIRGULA              : 5
-YEAR                 : 5
+YEAR                 : 4 5
 error                : 
 
 Nonterminals, with rules where they appear
@@ -39,9 +40,9 @@ abstract             : 2 3
 article              : 0
 code                 : 2 3
 header               : 1
-keywords             : 2 3
+keywords             : 
 publication          : 2 3
-text                 : 5 6 7 8
+text                 : 5 6 7 8 9
 titleandauthor       : 2 3
 
 Parsing method: LALR
@@ -50,23 +51,23 @@ state 0
 
     (0) S' -> . article
     (1) article -> . header
-    (2) header -> . code publication titleandauthor abstract keywords
-    (3) header -> . publication code titleandauthor abstract keywords
-    (4) code -> . NUMBER
-    (5) publication -> . IEEE text VIRGULA MONTH YEAR
+    (2) header -> . code publication titleandauthor abstract
+    (3) header -> . publication code titleandauthor abstract
+    (4) code -> . YEAR
+    (5) publication -> . IEEE text MONTH YEAR
 
-    NUMBER          shift and go to state 3
+    YEAR            shift and go to state 4
     IEEE            shift and go to state 6
 
     code                           shift and go to state 1
     publication                    shift and go to state 2
-    header                         shift and go to state 4
+    header                         shift and go to state 3
     article                        shift and go to state 5
 
 state 1
 
-    (2) header -> code . publication titleandauthor abstract keywords
-    (5) publication -> . IEEE text VIRGULA MONTH YEAR
+    (2) header -> code . publication titleandauthor abstract
+    (5) publication -> . IEEE text MONTH YEAR
 
     IEEE            shift and go to state 6
 
@@ -74,26 +75,26 @@ state 1
 
 state 2
 
-    (3) header -> publication . code titleandauthor abstract keywords
-    (4) code -> . NUMBER
+    (3) header -> publication . code titleandauthor abstract
+    (4) code -> . YEAR
 
-    NUMBER          shift and go to state 3
+    YEAR            shift and go to state 4
 
     code                           shift and go to state 8
 
 state 3
 
-    (4) code -> NUMBER .
+    (1) article -> header .
 
-    GENERAL         reduce using rule 4 (code -> NUMBER .)
-    IEEE            reduce using rule 4 (code -> NUMBER .)
+    $end            reduce using rule 1 (article -> header .)
 
 
 state 4
 
-    (1) article -> header .
+    (4) code -> YEAR .
 
-    $end            reduce using rule 1 (article -> header .)
+    GENERAL         reduce using rule 4 (code -> YEAR .)
+    IEEE            reduce using rule 4 (code -> YEAR .)
 
 
 state 5
@@ -104,8 +105,9 @@ state 5
 
 state 6
 
-    (5) publication -> IEEE . text VIRGULA MONTH YEAR
-    (9) text -> . GENERAL
+    (5) publication -> IEEE . text MONTH YEAR
+    (9) text -> . GENERAL text
+    (10) text -> . GENERAL
 
     GENERAL         shift and go to state 10
 
@@ -113,9 +115,10 @@ state 6
 
 state 7
 
-    (2) header -> code publication . titleandauthor abstract keywords
+    (2) header -> code publication . titleandauthor abstract
     (8) titleandauthor -> . text
-    (9) text -> . GENERAL
+    (9) text -> . GENERAL text
+    (10) text -> . GENERAL
 
     GENERAL         shift and go to state 10
 
@@ -124,9 +127,10 @@ state 7
 
 state 8
 
-    (3) header -> publication code . titleandauthor abstract keywords
+    (3) header -> publication code . titleandauthor abstract
     (8) titleandauthor -> . text
-    (9) text -> . GENERAL
+    (9) text -> . GENERAL text
+    (10) text -> . GENERAL
 
     GENERAL         shift and go to state 10
 
@@ -135,20 +139,24 @@ state 8
 
 state 9
 
-    (5) publication -> IEEE text . VIRGULA MONTH YEAR
+    (5) publication -> IEEE text . MONTH YEAR
 
-    VIRGULA         shift and go to state 14
+    MONTH           shift and go to state 14
 
 
 state 10
 
-    (9) text -> GENERAL .
+    (9) text -> GENERAL . text
+    (10) text -> GENERAL .
+    (9) text -> . GENERAL text
+    (10) text -> . GENERAL
 
-    VIRGULA         reduce using rule 9 (text -> GENERAL .)
-    ABSTRACT        reduce using rule 9 (text -> GENERAL .)
-    INDEX           reduce using rule 9 (text -> GENERAL .)
-    INTRO           reduce using rule 9 (text -> GENERAL .)
+    MONTH           reduce using rule 10 (text -> GENERAL .)
+    ABSTRACT        reduce using rule 10 (text -> GENERAL .)
+    INDEX           reduce using rule 10 (text -> GENERAL .)
+    GENERAL         shift and go to state 10
 
+    text                           shift and go to state 15
 
 state 11
 
@@ -159,118 +167,80 @@ state 11
 
 state 12
 
-    (2) header -> code publication titleandauthor . abstract keywords
+    (2) header -> code publication titleandauthor . abstract
     (6) abstract -> . ABSTRACT text INDEX
 
-    ABSTRACT        shift and go to state 15
-
-    abstract                       shift and go to state 16
-
-state 13
-
-    (3) header -> publication code titleandauthor . abstract keywords
-    (6) abstract -> . ABSTRACT text INDEX
-
-    ABSTRACT        shift and go to state 15
+    ABSTRACT        shift and go to state 16
 
     abstract                       shift and go to state 17
 
+state 13
+
+    (3) header -> publication code titleandauthor . abstract
+    (6) abstract -> . ABSTRACT text INDEX
+
+    ABSTRACT        shift and go to state 16
+
+    abstract                       shift and go to state 18
+
 state 14
 
-    (5) publication -> IEEE text VIRGULA . MONTH YEAR
+    (5) publication -> IEEE text MONTH . YEAR
 
-    MONTH           shift and go to state 18
+    YEAR            shift and go to state 19
 
 
 state 15
 
-    (6) abstract -> ABSTRACT . text INDEX
-    (9) text -> . GENERAL
+    (9) text -> GENERAL text .
 
-    GENERAL         shift and go to state 10
+    MONTH           reduce using rule 9 (text -> GENERAL text .)
+    ABSTRACT        reduce using rule 9 (text -> GENERAL text .)
+    INDEX           reduce using rule 9 (text -> GENERAL text .)
 
-    text                           shift and go to state 19
 
 state 16
 
-    (2) header -> code publication titleandauthor abstract . keywords
-    (7) keywords -> . INDEX text INTRO
+    (6) abstract -> ABSTRACT . text INDEX
+    (9) text -> . GENERAL text
+    (10) text -> . GENERAL
 
-    INDEX           shift and go to state 20
+    GENERAL         shift and go to state 10
 
-    keywords                       shift and go to state 21
+    text                           shift and go to state 20
 
 state 17
 
-    (3) header -> publication code titleandauthor abstract . keywords
-    (7) keywords -> . INDEX text INTRO
+    (2) header -> code publication titleandauthor abstract .
 
-    INDEX           shift and go to state 20
+    $end            reduce using rule 2 (header -> code publication titleandauthor abstract .)
 
-    keywords                       shift and go to state 22
 
 state 18
 
-    (5) publication -> IEEE text VIRGULA MONTH . YEAR
+    (3) header -> publication code titleandauthor abstract .
 
-    YEAR            shift and go to state 23
+    $end            reduce using rule 3 (header -> publication code titleandauthor abstract .)
 
 
 state 19
 
-    (6) abstract -> ABSTRACT text . INDEX
+    (5) publication -> IEEE text MONTH YEAR .
 
-    INDEX           shift and go to state 24
+    GENERAL         reduce using rule 5 (publication -> IEEE text MONTH YEAR .)
+    YEAR            reduce using rule 5 (publication -> IEEE text MONTH YEAR .)
 
 
 state 20
 
-    (7) keywords -> INDEX . text INTRO
-    (9) text -> . GENERAL
+    (6) abstract -> ABSTRACT text . INDEX
 
-    GENERAL         shift and go to state 10
+    INDEX           shift and go to state 21
 
-    text                           shift and go to state 25
 
 state 21
 
-    (2) header -> code publication titleandauthor abstract keywords .
-
-    $end            reduce using rule 2 (header -> code publication titleandauthor abstract keywords .)
-
-
-state 22
-
-    (3) header -> publication code titleandauthor abstract keywords .
-
-    $end            reduce using rule 3 (header -> publication code titleandauthor abstract keywords .)
-
-
-state 23
-
-    (5) publication -> IEEE text VIRGULA MONTH YEAR .
-
-    GENERAL         reduce using rule 5 (publication -> IEEE text VIRGULA MONTH YEAR .)
-    NUMBER          reduce using rule 5 (publication -> IEEE text VIRGULA MONTH YEAR .)
-
-
-state 24
-
     (6) abstract -> ABSTRACT text INDEX .
 
-    INDEX           reduce using rule 6 (abstract -> ABSTRACT text INDEX .)
-
-
-state 25
-
-    (7) keywords -> INDEX text . INTRO
-
-    INTRO           shift and go to state 26
-
-
-state 26
-
-    (7) keywords -> INDEX text INTRO .
-
-    $end            reduce using rule 7 (keywords -> INDEX text INTRO .)
+    $end            reduce using rule 6 (abstract -> ABSTRACT text INDEX .)
 

@@ -7,7 +7,7 @@ tokens = (
    'ABSTRACT',
    'INDEX',
    'CAPSTEXT',
-   'VIRGULA',
+#    'VIRGULA',
    'YEAR',
    'MONTH',
    'INTRO',
@@ -16,13 +16,30 @@ tokens = (
 )
 
 # Regular expression rules for simple tokens
-t_IEEE          = 'IEEE'
-t_ABSTRACT      = 'Abstract'
-t_INDEX         = 'Index'
-t_INTRO         = 'I. Introduction'
+def t_IEEE(t):
+    r'IEEE'
+    return t
+
+# def t_VIRGULA(t):
+#     r','
+#     return t
+
+def t_INDEX(t):
+    r'Index'
+    return t
+
+def t_ABSTRACT(t):
+    r'Abstract'
+    return t
+
+def t_INTRO(t):
+    r'I. INTRODUCTION'
+    return t
+
 t_REFERENCES    = 'References'
-t_VIRGULA       = ','
-t_CAPSTEXT      = r'[A-Z]+|\\s+'
+# t_VIRGULA       = r','
+# t_CAPSTEXT      = r'[A-Z]+|\\s+'
+# t_GENERAL = r'.+\S?(?=\,)'
 
 def t_YEAR(t):
     r'\d{4}'
@@ -44,16 +61,17 @@ def t_newline(t):
     r'\n+'
     t.lexer.lineno += len(t.value)
 
-t_GENERAL = r'.*\S.*'
-
 # A string containing ignored characters (spaces and tabs)
 t_ignore  = ' \t'
+
+# t_GENERAL = r'.+\S?(?=\,)'
+# t_GENERAL = r'(.+?),|(.+?)    \S'
+t_GENERAL = r'.*\S.*'
 
 # Error handling rule
 def t_error(t):
     print("Illegal character '%s'" % t.value[0])
     t.lexer.skip(1)
-
 
 # # Build the lexer
 lexer = lex.lex()

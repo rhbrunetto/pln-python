@@ -8,23 +8,23 @@ from data.article import Article
 
 def p_article(p):
     'article : header'
-    p[0] = Article(p[1], p[2], p[3])
+    # p[0] = Article(p[1], p[2], p[3])
     print "Article rule"
 
 def p_header_code(p):
-    'header : code publication titleandauthor abstract keywords'
+    'header : code publication titleandauthor abstract'
     print "Header_code rule"
 
 def p_header_pub(p):
-    'header : publication code titleandauthor abstract keywords'
+    'header : publication code titleandauthor abstract'
     print "Header_pub rule"
 
 def p_code(p):
-    'code : NUMBER'
+    'code : YEAR'
     print "Code rule"
 
 def p_publication(p):
-    'publication : IEEE text VIRGULA MONTH YEAR'
+    'publication : IEEE text MONTH YEAR'
     print "Publication rule"
 
 def p_abstract(p):
@@ -46,6 +46,10 @@ def p_keywords(p):
 def p_titleandauthor(p):
     'titleandauthor : text'
     print "Title and author rule"
+
+def p_text_general(p):
+    'text : GENERAL text'
+    print "Text general rule"
 
 def p_text(p):
     'text : GENERAL'
