@@ -9,7 +9,7 @@
 # |                                           |
 # |                 Jun/2018                  |
 # +-------------------------------------------+
-
+from __future__ import print_function
 import os
 import re
 import fileinput
@@ -64,12 +64,12 @@ def cont_words(file):
     word_cont = {}
     with open(file) as f:
         for line in f:
-            for word in line.replace(',' or '.', ' ').split():
+            for word in line.replace(',' or '.' or '(' or ')' , ' ').split():
                 word_lower = word.lower()
                 if word_lower in word_cont.keys():
                     word_cont[word_lower] += 1
                 else:
-                    if ((word_lower not in stop_words) and (not word_lower.isdigit()) and (len(word_lower) > 1)):
+                    if ((word_lower not in stop_words) and (not word_lower.isdigit()) and (len(word_lower) > 2) and (not word_lower.endswith('.'))):
                         word_cont[word_lower] = 1
     sorted_by_value = sorted(word_cont.items(), key=operator.itemgetter(1), reverse=True)
     return sorted_by_value 
@@ -79,43 +79,43 @@ def split_header(file):
     for lines in f:
 
         if 'APRIL' in lines:
-            print(lines.replace('APRIL', '\nAPRIL'))
+            print(lines.replace('APRIL', '\nAPRIL'), end="")
 
         elif 'JANUARY' in lines:
-            print(lines.replace('JANUARY', '\nJANUARY'))
+            print(lines.replace('JANUARY', '\nJANUARY'), end='')
 
         elif 'FEBRUARY' in lines:
-            print(lines.replace('FEBRUARY', '\nFEBRUARY'))
+            print(lines.replace('FEBRUARY', '\nFEBRUARY'), end='')
 
         elif 'MARCH' in lines:
-            print(lines.replace('MARCH', '\nMARCH'))
+            print(lines.replace('MARCH', '\nMARCH'), end='')
                 
         elif 'MAY' in lines:
-            print(lines.replace('MAY', '\nMAY'))
+            print(lines.replace('MAY', '\nMAY'), end='')
 
         elif 'JUNE' in lines:
-            print(lines.replace('JUNE', '\nJUNE'))
+            print(lines.replace('JUNE', '\nJUNE'), end='')
 
         elif 'JULY' in lines:
-            print(lines.replace('JULY', '\nJULY'))
+            print(lines.replace('JULY', '\nJULY'), end='')
                
         elif 'AUGUST' in lines:
-            print(lines.replace('AUGUST', '\nAUGUST'))
+            print(lines.replace('AUGUST', '\nAUGUST'), end='')
 
         elif 'SEPTEMBER' in lines:
-            print(lines.replace('SEPTEMBER', '\nSEPTEMBER'))
+            print(lines.replace('SEPTEMBER', '\nSEPTEMBER'), end='')
                 
         elif 'OCTOBER' in lines:
-            print(lines.replace('OCTOBER', '\nOCTOBER'))
+            print(lines.replace('OCTOBER', '\nOCTOBER'), end='')
 
         elif 'NOVEMBER' in lines:
-            print(lines.replace('NOVEMBER', '\nNOVEMBER'))
+            print(lines.replace('NOVEMBER', '\nNOVEMBER'), end='')
 
         elif 'DECEMBER' in lines:
-            print(lines.replace('DECEMBER', '\nDECEMBER'))
+            print(lines.replace('DECEMBER', '\nDECEMBER'), end='')
                 
         else:
-            print(lines)
+            print(lines, end='')
 
 def main():
             
@@ -127,9 +127,8 @@ def main():
     #        process(arq.replace('\n', ''))
     #os.system("rm .tmpfiles")
     #print(pdf_to_text("/home/ricardo/Downloads/analise-de-desempenho.pdf"))
-    #d = cont_words('allfiles/118.pdf.txt') 
-    #print d
-    #print len(d)
+    d = cont_words('files/118.pdf.txt') 
+    split_header('files/118.pdf.txt')
     
 if __name__ == "__main__":
     main()
