@@ -1,0 +1,3413 @@
+IEEE TRANSACTIONS ON FUZZY SYSTEMS, VOL. 25, NO. 2, APRIL 2017
+
+439
+
+Fuzzy Dynamical System Scenario Simulation-Based
+
+Cross-Border Financial Contagion Analysis: A
+Perspective From International Capital Flows
+
+Xinxin Xu, Member, IEEE, Ziqiang Zeng, Member, IEEE, Jiuping Xu, Senior Member, IEEE,
+
+and Mengxiang Zhang, Student Member, IEEE
+
+AbstractThis paper focuses on investigating the cross-border
+nancial contagion based on a fuzzy dynamical system scenario
+simulation from a perspective of analyzing the volatility of interna-
+tional capital ows for a panel of 50 countries in emerging markets
+and advanced economies from 1980 to 2011. Increasing evidence
+has shown that nancial globalization has developed into a complex
+nonlinear dynamical system made up of economic subsystems with
+extensive nancial connections and linkages. The contagion effects
+of the spread of bonanzas in the 50 countries are identied and
+analyzed. The HodrickPrescott lter is employed to address the
+long-term net capital inow trend. The comovement of nancial
+contagion between the source country of nancial turbulence and
+the volatility-affected country is described as a fuzzy dynamical
+system in which the driving and response systems are coupled. A
+fuzzy dynamical system scenario simulation model under a liberal
+economy is established by employing nonlinear differential equa-
+tions to describe the contagion mechanism and the international
+capital ow volatility effects. The model is then extended to a dy-
+namical system model with macroeconomic control. The coupling
+strength uncertainty is addressed by employing an interval type-2
+fuzzy theory method. The properties of the volatility equilibrium
+point for the two models are discussed, and the volatility conta-
+gion principles based on locally asymptotic stability analysis are
+derived to explain the different volatility transmission patterns.
+
+Manuscript received August 1, 2015; revised October 22, 2015 and January
+19, 2016; accepted April 20, 2016. Date of publication June 1, 2016; date of
+current version March 29, 2017. This work was supported by the Research Foun-
+dation of Ministry of Education for the Doctoral Program of Higher Education
+of China under Grant 20130181110063, the Youth Program of National Natural
+Science Foundation of China under Grant 71501137, the General Program of
+China Postdoctoral Science Foundation under Grant 2015M572470 and Grant
+2015M572480, the International Postdoctoral Exchange Fellowship Program
+of China Postdoctoral Council under Grant 20150028, the project of Research
+Center for System Sciences and Enterprise Development under Grant Xq16B05,
+and Sichuan University under Grant skzx2015-sb04 and Grant skqy201647.
+
+X. Xu is with the School of Tourism and Economic Management, Chengdu
+University, Chengdu 610106, China, and also with the Uncertainty Decision-
+Making Laboratory, Business School, Sichuan University, Chengdu 610065,
+China (e-mail: xinxinxu@scu.edu.cn).
+
+Z. Zeng is with the Uncertainty Decision-Making Laboratory, Business
+School, Sichuan University, Chengdu 610065, China, the School of Tourism and
+Economic Management, Chengdu University, Chengdu 610106, China, and
+also with the Department of Civil and Environmental Engineering, University
+of Washington, Seattle, WA 98195 USA (e-mail: zengziqiang@scu.edu.cn).
+
+J. Xu is with the Uncertainty Decision-Making Laboratory, Business School-
+Sichuan University, Chengdu 610065, China (e-mail: xujiuping@scu.edu.cn).
+M. Zhang is with the Uncertainty Decision-Making Laboratory, Busi-
+(e-mail:
+
+ness School, Sichuan University, Chengdu 610065, China
+zhangmengxiang@stu.scu.edu.cn).
+
+Color versions of one or more of the gures in this paper are available online
+
+at http://ieeexplore.ieee.org.
+
+Digital Object Identier 10.1109/TFUZZ.2016.2574928
+
+Policy suggestions are given in three situations for providing man-
+agerial insights for policymakers and the explorations of response
+strategies are also presented. The global nancial crisis in 2008
+is used as an experimental study to demonstrate the validity and
+effectiveness of the simulation and modeling method.
+
+Index TermsFinancial contagion, fuzzy dynamical systems, in-
+ternational capital ows, nonlinear differential equations, volatility
+transmission patterns.
+
+I. INTRODUCTION
+
+T HE current economic crisis illustrates a critical need for a
+
+new and fundamental understanding of the structure and
+dynamics of economic systems [1][3]. The global economic
+system, as any other complex systems, reects a dynamic inter-
+action of a large number of economic entities [4]. To facilitate
+policy designs that reduce conict between individual interests
+and global efciency, it is necessary to address the systemic
+complexity in the economic systems, in which the dynamics
+of nancial contagion is one of the most important problems
+attracting attentions.
+
+The term nancial contagion [5] was rarely used before
+1995, and then only occasionally appeared in articles discussing
+the impact of the Mexican Peso crisis on other countries in
+Latin America. The events of the Thailands 1997 devaluation,
+the Russias 1998 devaluation, and the global nancial crisis
+in 2008 have prompted a number of academic papers, which
+have attempted to measure, understand, predict, and prevent
+international nancial contagion [6].
+
+Most nancial contagion research has focused on studying
+the following three critical aspects [7][9]: 1) Why the con-
+tagion spreads and how it can be stopped? 2) How contagion
+can be measured? 3) What nancial contagion channels there
+are? Studies focused on the rst aspect have concentrated on the
+theory and empirics of contagion including the denitions and
+effects of contagion, how contagion arises, and the statistical
+evidence assessing the existence of contagion [10]. Research
+addressing the second aspect has focused on developing general
+strategies to measure contagion including probability analysis
+[11], cross-market correlations [12], VAR models, latent fac-
+tor/GARCH models [13], and extreme value analysis [14]. Bae
+et al.s measurement of nancial contagion captured the coinci-
+dence of extreme return shocks across countries within a region
+and across regions [15]. Research on the third aspect has mod-
+eled and tested various contagion channels including real sector
+linkages (i.e., trade), nancial market linkages, nancial institu-
+
+1063-6706  2016 IEEE. Personal use is permitted, but republication/redistribution requires IEEE permission.
+
+See http://www.ieee.org/publications standards/publications/rights/index.html for more information.
+
+440
+
+IEEE TRANSACTIONS ON FUZZY SYSTEMS, VOL. 25, NO. 2, APRIL 2017
+
+tion linkages, and the interaction between nancial institutions
+and nancial markets [16]. Although signicant improvements
+have been made in addressing the above aspects, much is still
+unknown about what makes countries vulnerable to contagion
+and through which mechanisms contagion occurs [17].
+
+The cross-border transmission of nancial shocks has been
+the subject of rich literature [18]. While a large number of studies
+have focused on the strong comovements of asset prices, stock
+markets, and foreign exchange markets in the event of nancial
+stress, very few have discussed contagion or volatility transmis-
+sion patterns in terms of international capital ows [19], [20].
+However, there have been some empirical results which indi-
+cated the existence of contagion effects in capital ow volatility
+[21]. Forbes and Warnocks [11] results also showed that con-
+tagion, whether through trade, banking, or geography, was also
+associated with stop and retrenchment episodes in international
+capital ows.
+
+The high volatility of international capital ows on nancial
+markets, and the narrow capacity to handle this volatility by the
+markets, makes the beneciary country of the contagion vul-
+nerable to excessively large shocks and crises, frequently, and in
+a disturbing manner [22]. Developing domestic nancial regula-
+tions and planning international nancial architecture to prevent
+nancial contagion has become a top priority for both domestic
+nancial regulators and the international society. Therefore, un-
+derstanding the reasons and mechanisms behind international
+nancial contagion can assist policymakers improve the global
+nancial regulatory system and thus make it more resistant to
+shocks and contagions.
+
+However, existing nancial contagion theories are not suf-
+cient to resolve the transmission characteristics, uncertainties,
+and nonlinear dynamics in international capital ow volatility.
+Therefore, it is necessary to develop methodologies to reveal the
+contagion mechanism and the volatility impact of international
+capital ows. This paper, based on current improvements in
+empirical studies on the transmission of international capital
+ow volatility, attempts to develop a fuzzy dynamical system
+scenario simulation model in which the source country of
+nancial
+turbulence is coupled with the volatility-affected
+country through different nancial linkages to analyze the
+contagion mechanism, the nonlinear dynamics, the coupling
+uncertainty, and the impact of the cross-border transmission of
+nancial shocks.
+
+The concept of scenario simulation in this paper is dened as
+the modeling and simulation of different nancial contagion sit-
+uations through the establishment of a fuzzy dynamical system,
+the transformation to a crisp equivalent model, model calibration
+for initial value conditions and boundary value conditions, the
+identication of volatility transmission patterns, scenario analy-
+sis, policy suggestions, and an exploration of response strategies.
+The nancial volatility contagion analysis has two potential
+advantages for policymakers in a real-world situation. First, it
+can assist policymakers to understand and identify the volatil-
+ity contagion patterns that may occur under a liberal economy,
+and second, it can provide valuable information with macroeco-
+nomic control simulation analysis for the formulation of appro-
+priate response strategies for the establishment of effective mon-
+etary and scal policies. Since different types of nancial con-
+tagion volatility are ultimately reected as international capital
+
+ow movements, the proposed method in this paper can clearly
+reveal the dynamical features and volatility transmission princi-
+ples of nancial contagion in a more essential way. Further, the
+extension of a dynamical system under a liberal economy to one
+with macroeconomic control could be helpful in understanding
+the nancial contagion mechanism on a deeper theoretical level
+so as to support improvements in nancial policy making.
+
+The outline of this paper is as follows. Section II presents
+the key problem description through a discussion of the co-
+movements of international capital ow volatility, a contagion
+analysis based on capital ow bonanzas, the HodrickPrescott
+(HP) lter which addresses long-term net capital inow trends,
+and the dynamical system of nancial contagion with interval
+type-2 fuzziness. In Section III, a fuzzy dynamical system sce-
+nario simulation model under a liberal economy is established
+to describe the contagion mechanism and the international
+capital ow volatility effects, which is then further extended
+to a dynamical system model with macroeconomic control. In
+Sections IV and V, the properties of the volatility equilibrium
+points in the above two models are discussed and volatility
+contagion principles based on the local asymptotic stabil-
+ity analysis are derived to explain the different volatility
+transmission patterns. Policy suggestions are given in three
+situations to provide managerial insights for policymakers and
+the exploration of response strategies are also presented in
+Section VI. The scenario simulation framework is explained
+in Section VII. The global nancial crisis in 2008 is employed
+as an experimental study in Section VIII. Section IX ends this
+paper with conclusion and proposals for future research.
+
+II. KEY PROBLEM DESCRIPTION
+
+Financial contagion is used to refer to the spread of mostly
+negative market disturbances from one country to the other, a
+process observed through comovements in exchange rates, stock
+prices, sovereign spreads, and capital ows [6]. In this section,
+evidence of nancial contagion caused by international capital
+ow volatility is rst shown and analyzed. Then, a contagion
+analysis based on capital ow bonanzas is presented. The HP
+lter is introduced to address long-term net capital inow trends.
+Finally, the interval type-2 fuzziness of the coupling strengths
+between economies is discussed. The list of symbols used in
+this paper is summarized in Table I.
+A. Comovements of the International Capital Flow Volatility
+
+There has been signicant evidence of comovements in in-
+ternational capital ow volatility. The 1997 East Asian nancial
+crisis was linked to volatile short-term capital ows [23]. There
+also have been a few tests of capital ow comovements which
+have provided insights into the transmission channels of conta-
+gion. Lee et al.s empirical results [21], based on a sample of
+49 emerging and developing countries from 1980 to 2009, sug-
+gested that there were strong and signicant contagion effects in
+the volatility of capital ows to individual economies. The mag-
+nitudes of contagion was found to vary depending on the type of
+capital ows, whether it is foreign direct investment or portfolio
+and other investments (mostly bank lending). The ndings also
+suggested that the volatility dynamics of gross ows differed
+from that of the net ows in that the net inow volatility was
+more exposed to intraregional contagion.
+
+XU et al.: FUZZY DYNAMICAL SYSTEM SCENARIO SIMULATION-BASED CROSS-BORDER FINANCIAL CONTAGION ANALYSIS
+
+441
+
+TABLE I
+
+LIST OF NOTATIONS USED IN THIS PAPER
+
+Item
+
+Denition
+
+Item
+
+Denition
+
+a
+b
+
+B i (t)
+
+b
+k
+
+c l (( ) )
+c r (( ) )
+Cs v
+
+Cv s
+
+D
+
+d l 
+d r 
+F IT-2(R)
+G D P i (t)
+H (( )U
+ )
+
+H (( )L
+ )
+
+i
+k
+
+l  , r 
+
+m 
+
+ v (t)
+
+Inertial coefcient of the volatility-affected country
+Inertial coefcient of the source country of nancial turbulence
+
+Indicator function for episode of a bonanza of net
+capital inow for country i at time t
+Volatility transmission pattern indicator
+Left-centroid boundary of membership function of ( )
+Right-centroid boundary of membership function of ( )
+Fuzzy coupling coefcient for the impact from the
+source country of nancial turbulence to the
+volatility-affected country
+Fuzzy coupling coefcient for the impact from the
+volatility-affected country to the source country of
+nancial turbulence
+A simple connected region in the volatility contagion
+trend plane with boundary C
+Distance between the left boundary and the mean
+
+Distance between the right boundary and the mean
+Set of all IT-2 fuzzy numbers on R
+Nominal GDP for country i at time t
+Membership value of the element m  in the upper
+triangular membership function
+Membership value of the element m  in the lower
+triangular membership function
+Index of country
+Synthetic of the inertial coefcients and coupling
+coefcients
+Left and right boundaries of the preliminary estimated
+values of coupling coefcient
+Mean of the preliminary estimated values of
+
+coupling coefcient
+Macro-economic control input at time t by the
+governments and nancial institutes of the volatility-
+affected country
+
+B. Contagion Analysis Based on Capital Flow Bonanzas
+
+To examine if the volatility of international capital ows
+around the world has comovements during different periods,
+data from 50 countries from 1980 to 2011 were collected and
+the capital ow uctuations in each country in each year cal-
+culated. The country samples included 25 emerging and devel-
+oping Asian (EDA) countries and 25 advanced economies for
+which data were available. The period samples ranged from
+1980 to 2011, a period which covered several severe economic
+crises. Fig. 1 shows the number of countries which encountered
+international capital ow bonanzas from 1980 to 2011 for the
+EDA countries and the advanced economies.
+
+This paper employed the threshold method proposed by Men-
+doza and Terrones [24] to identify the capital ow uctuations,
+from which several episodes of surges and stops (sharp in-
+creases and decreases in net capital inows) were identied. A
+bonanza [25] or quantitative surge is dened as an episode in
+which the net capital inows to a country increase by more than
+a threshold value during a typical business cycle. There are three
+steps in identifying a bonanza. The rst step is the measure of
+net capital inows. However, because there is no comparability
+in the absolute value of net capital inows between different
+
+N F i (t)
+
+t
+T
+
+T D ev i (t)
+T r en d i (t)
+
+T r en d s (t)
+
+T r en d v (t)
+
+T s0 , T v 0
+(x, y )
+
+
+
+
+
+
+
+
+
+
+
+ s ,  v
+
+ T D e v i ( t )
+
+
+( )
+
+(x)
+
+(x)
+
+U M F
+
+L M F
+
+(  ) 
+(  ) 
+ s (t)
+
+Net capital inow for country i at time t
+Index of time
+Number of observations
+Deviation from the historical trend
+Historical trend of the net capital inow for
+country i at time t
+Historical trend of the net capital inow for the
+source country of nancial turbulence
+Historical trend of the net capital inow for the
+volatility-affected country
+Initial values of T r en d s (0) and T r en d v (0)
+Volatility equilibrium point
+Smoothing parameter of the H-P lter
+Cluster coefcient
+Crisp operator
+Ratio of inertial coefcients
+Ratio of the crisp fuzzy coupling coefcients
+
+Ratio of the exogenous coefcients between the
+
+volatility-affected country and the source country of
+nancial turbulence
+Deviation rate of the left boundary and the right
+boundary
+Exogenous coefcients of the source country of
+nancial turbulence and the volatility-affected country
+Standard deviation of detrended net capital inows
+in country i at time t
+IT-2 fuzzy number of coupling coefcient
+ -level of the triangular IT-2 fuzzy number of coupling
+coefcient
+Upper membership function of ( )
+Lower membership function of ( )
+Macro-economic control input at time t by the
+governments and nancial institutes of the source
+country of nancial turbulence
+
+countries, the ratio of net capital inows to nominal GDP is
+used. The second step is the detrending procedure. Since the
+overall volatility of net capital inows can differ across coun-
+tries, episodes were identied by sudden and large movements
+which were relative to not only each countrys trend, but also
+the volatility the country experienced in general. To estimate the
+long-term net capital inow trend, the HP lter [26][28], was
+employed. The nal step is the setting of the threshold value,
+which is dened as the standard deviation of the detrended net
+capital inows in country i. Therefore, the episode of a bonanza
+in the net capital inow for country i at time t was identied
+using the following equation:
+
+1,
+0,
+
+if T Devi(t) > T D ev i (t) and N F i (t)
+otherwise
+
+G D P i (t) > 1%
+
+(1)
+
+(cid:2)
+
+Bi(t) =
+
+in which an episode of a bonanza of net capital inows for
+country i at time t was identied when Bi(t) = 1; T Devi(t) =
+G D P i (t)  T rendi(t) is the deviation from the historical trend
+N F i (t)
+and T D ev i (t) is the standard deviation of detrended net capital
+inows in country i at time t; N Fi(t) denotes the net capital
+inow for country i at time t; GDPi(t) is the nominal gross
+
+442
+
+IEEE TRANSACTIONS ON FUZZY SYSTEMS, VOL. 25, NO. 2, APRIL 2017
+
+This approach identied 198 episodes of bonanzas from 1980
+to 2011, including 93 in EDA countries and 105 in advanced
+economies (See Fig. 1). With each nancial crisis, there were
+comovements in episodes of bonanzas for net capital inows
+between the EDA countries and the advanced economies. Take
+the global nancial crisis in 2008 as an example. The global
+nancial crisis arose from the 2007 U.S. subprime mortgage
+crisis. As shown in Fig. 1, net capital inow bonanza episodes
+can be seen from 2004 with a sharp increase from 2007 to 2008,
+and a sharp decrease in 2009 in both EDA countries and ad-
+vanced economies. Fig. 1 shows that 14 EDA countries suffered
+bonanzas over the two years, including Zimbabwe, Colombia,
+Congo, Bulgaria, Brazil, Botswana, Uruguay, Turkey, Tunisia,
+Mongolia, Honduras, Jamaica, Dominica Republic, and India,
+accounting for 67% of all EDA countries. At the same time,
+episodes of bonanzas of net capital inows appeared in ten ad-
+vanced economies. Based on the historical data for the banking
+and currency crisis episodes during the global nancial crisis
+in 2008 [29], it was found that 7 of the 24 bonanzas-suffered
+countries (14 EDA countries and 10 advanced economies) were
+affected by the banking and currency crisis in 2008. This in-
+dicated that the comovements in international capital ow bo-
+nanzas have a heterogeneous contagion effect on cross-border
+nancial shocks.
+
+There are two reasons for the occurrence of a heteroge-
+neous contagion effect. First, stronger nancial linkages with the
+source country of nancial turbulence and the other volatility-
+affected countries may make a country more vulnerable to be
+bonanzas suffered [30]. Second, the vulnerability of a country to
+a nancial crisis depends on the immunity and resilience of the
+economic system, the strength of domestic macroeconomic fun-
+damentals, government policy control, and investor condence
+[31]. These reasons can explain why some countries that experi-
+ence episodes of bonanzas of net capital inows are vulnerable
+to nancial crises, while others are not.
+
+C. HP Filter to Address Long-Term Net Capital Inow Trends
+To estimate the net capital inow historical trends for country
+i at time t [i.e., T rendi(t)], a ltering approach was employed.
+The approach advocated here is based on the HP lter [26],
+which was built on the earlier work of Whittaker [32], and is a
+standard method in business cycle research for removing trend
+movements. The HP lter was originally intended to decom-
+pose the GDP values series into a long-term growth component
+and a cyclical component. The mechanics of the lter splits the
+series into two parts, a smooth and a volatile one.
+
+In macroeconomics, the smooth part corresponds to long-term
+growth and the volatile part to the business cycle. In the context
+of net capital inows, the smooth part could be interpreted as
+the long-term historical trend of the net capital inow (i.e.,
+T rendi(t)) and the volatile part as deviations from the historical
+trend (i.e., T Devi(t)). The complex factors that have short-
+term impacts on the net capital inows lead to the volatility
+uncertainty. The HP lter can be helpful in eliminating the
+uncertain subordinate effect factors for the net capital inow
+volatility by removing the volatile part to illuminate the long-
+term historical trends of the net capital inow. Details for the
+
+Fig. 1. Number of countries encountering international capital ow bonanzas
+from 1980 to 2011 for EDA countries and advanced economies.
+
+domestic product for country i at time t; and T rendi(t) is the
+historical trend of the net capital inow for country i at time t.
+Therefore, each episode of bonanza was identied as a sequence
+of the years in which these criteria were met.
+
+Forbes and Warnock [11] dened nancial contagion as large
+changes in a countrys gross capital inows or outows result-
+ing from circumstances in another country or group of countries
+(but not the entire world). Here a mathematical denition for
+contagion from a bonanza perspective is given.
+
+Denition II.1: One or a group of markets, countries, or
+institutions can be affected by bonanza contagion during a
+nancial shock, if and only if their discrimination function
+Bi(t) = 1.
+
+XU et al.: FUZZY DYNAMICAL SYSTEM SCENARIO SIMULATION-BASED CROSS-BORDER FINANCIAL CONTAGION ANALYSIS
+
+443
+
+estimation of the long-term net capital inow trend using the
+HP lter are described in Section III.
+
+D. Dynamical System of Financial Contagion With Interval
+Type-2 Fuzziness
+
+To clearly examine the nonlinear interdependence and dy-
+namics of the contagion effects between the source country of
+nancial turbulence and the volatility-affected countries in a -
+nancial time series when a shock occurs, the global nancial
+system is treated as a dynamic system with different interna-
+tional capital ow volatility levels and heterogeneous coupling
+relationships between the subsystems. Countries are regarded
+as being coupled through nancial linkages with the coupling
+strength being determined based on the following factors: the
+degree of nancial liberalization and capital account openness,
+real sector linkages, nancial market linkages, nancial insti-
+tution linkages, the interaction between nancial institutions
+and nancial markets, and investor condence. Cross-border
+transmission of nancial shocks and nancial contagion can be
+seen as uctuations in the nonlinear interdependence between
+the nonlinear dynamic systems. The source country of nancial
+turbulence is considered the driving system which drives the
+contagion effects to the volatility-affected countries, which, in
+turn, are regarded as the response systems, so also have feed-
+back effects on the driving system. A nancial shock in the
+source country raises the energy in its nancial system, which
+is consequently spread to other nancially linked countries.
+
+Due to the nonlinear complexity of the nancial contagion
+system, there are uncertainties during the dynamic transmis-
+sion process, especially for the dynamic coupling relationships
+between the different countries. In fact, as international cap-
+ital ows are inherently involved with human decision mak-
+ing such as investments, loans, foreign exchange trading, and
+securities issuance, there is fuzziness in the coupling relation-
+ship between the source country of nancial turbulence and the
+volatility-affected country. Further, the interactive nancial con-
+tagion effects between the source country of nancial turbulence
+and the volatility-affected country result in the fuzziness of a
+secondary membership function (MF) for the coupling relation-
+ship. Since the coupling relationship appears as interval-type
+data with second-order uncertainties, interval type-2 fuzzy sets
+(IT-2 FSs) are employed to describe the coupling coefcient un-
+certainties between the source country of nancial turbulence
+and the volatility-affected country.
+
+The concept of type-2 fuzzy sets (T-2 FSs) was introduced by
+Zadeh [33] as an extension of the concept of type-1 fuzzy sets
+(T-1 FSs). T-2 FSs are useful in circumstances where it is difcult
+to specify a MF with precision [34] and have the potential to
+outperform T-1 FSs [35]. To handle the high-level uncertainty
+of data, Yager [36] proposed the rst decision support system
+using T-2 FSs. Because the computational complexity when
+using general T-2 FSs is very high, to date, IT-2 FSs [37] have
+been the most widely used T-2 FSs, and have been successfully
+applied to many practical elds [38][40].
+
+In this paper, the mean (i.e., m ), left boundary (i.e., l ), and
+right boundary (i.e., r ) of the preliminary estimated values for
+the coupling coefcient can be identied from a group of sam-
+ples, the details for which are explained in Section VIII. Let
+
+= r
+
+= m
+
+ l be the distance between the left boundary and
+dl 
+ m , the distance between the right bound-
+the mean dr 
+ary and the mean, , the deviation rate of the left boundary and
+the right boundary, and FIT-2(R), the set of all IT-2 fuzzy num-
+bers on R. The concept of -level of the triangular IT-2 fuzzy
+  FIT-2(R), 0    1, denoted by () is introduced
+number
+to address the IT-2 fuzziness of the coupling relationship and is
+(cid:5)(cid:6)
+(cid:3)(cid:4)
+dened as:
+() =
+
+(cid:5)
+
+(cid:4)
+
+,
+
+ dl 
+
+l
+
+ dr 
+
+r
+
+, l
+
++ dl 
+
+, m
+
+, r
+
++ dr 
+
+, l
+
++ dl 
+
+ dl 
+
+(2)
+where [l
+] are the
+deviation intervals for the left-hand endpoint l and the right-
+ under the  level deviation rate. The upper
+hand endpoint r of
+and lower MFs of () are dened as:
+
+ dr 
+
+] and [r
+
++ dr 
+
+, r
+
+0,
+x  (l
+ (l
+m
+x  (r
+ (r
+m
+0,
+
+l
+
+ dl 
+)
+ dl 
+) ,
++ dr 
+)
+) , m
++ dr 
+
+ dl 
+
+x < l
+ dl 
+ x < r
++ dr 
+
+x  r
+
+ x < m
+
++ dr 
+
+0,
+x  (l
+ (l
+m
+x  (r
+ (r
+m
+0,
+
+(3)
+
+x < l
+
++ dl 
+
+l
+
+)
++ dl 
+) ,
++ dl 
+ dr 
+)
+ dr 
+) , m
+
+ x < m
+ dr 
+
++ dl 
+ x < r
+ dr 
+
+x  r
+
+
+
+
+
+
+U M F
+
+( )
+
+(x) =
+
+LM F
+
+( )
+
+(x) =
+
+where U M F
+
+(4)
+(x) denotes the upper membership function,
+( )
+(x) the lower membership function of () , and
+and LM F
+the deviation rate  (0    1) reects the decision makers
+judgment regarding the inaccuracy of the collected data. Fig. 2
+illustrates the triangular IT-2 fuzzy MF for () . It should be
+noted that a more normal expression for () can be dened as:
+
+( )
+
+() = ((l
+(l
+
+ dl 
++ dl 
+
+, m
+
+, r
+
+, m
+
+, r
+
++ dr 
+ dr 
+
+ ))
+
+; H(()U
+; H(()L
+
+ )))
+
+(5)
+
+where H(()U
+ment m in the upper triangular membership function ()U
+
+ ) denotes the membership value of the ele-
+ =
+ ) denotes the membership value
+U M F
+of the element m in the lower triangular membership func-
+tion ()L
+ ) =
+
+is assumed H(()U
+
+(x), and H(()L
+
+(x). Since it
+
+ = LM F
+
+( )
+
+( )
+
+444
+
+IEEE TRANSACTIONS ON FUZZY SYSTEMS, VOL. 25, NO. 2, APRIL 2017
+
+real sector and the resilience of the nancial system to the shock.
+However, the fuzzy dynamic system simulation analysis on the
+international capital ow volatility in this paper may assist pol-
+icymakers in identifying the nancial shock effect in the early
+stages, thereby allowing them to anticipate the kind of inuence
+the shock will have in the near future in the source country of
+nancial turbulence and the volatility-affected countries so as
+to implement appropriate nancial policies in advance.
+
+A. Related Research on Dynamical System for Financial
+Analysis
+
+Due to the global impact of the nancial crisis, in recent
+years, the application of dynamical system theory has become
+a frontier issue in nancial analysis to address nancial conta-
+gion problems [41]. Several important contributions have been
+made in model development, theoretical testing, and nancial
+policy establishment. Castellacci and Choi [4] built a multia-
+gent dynamical system for the global economy to investigate
+and analyze nancial crises based on cash ow data. They also
+conducted a follow-up study on modeling contagion in the Euro-
+zone crisis using a wealth dynamical system [42]. Son and Park
+[43] investigated the effects of delayed feedback on the dy-
+namical model of a nancial system, which described the time
+variation in interest rates, investment demands, and price indices
+to establish scal policy. Hu and Chen [44] modeled macroe-
+conomics using a novel discrete nonlinear fractional dynamical
+system which considered gross domestic product, ination, and
+the unemployment rate. While these studies have signicantly
+improved the nancial systems modeling through the use of
+dynamical system theory based on the data of wealth, interest
+rate, investment demand, price indices, gross domestic product,
+ination, and unemployment rate, international capital ows
+are still unexplored through establishing the dynamical system
+model for nancial systems to reveal the dynamical features
+and volatility transmission principles of the nancial contagion
+in a more essential way. In fact, the changes in variables (i.e.,
+equity returns, interest rates, exchange rates, sovereign spreads)
+used to identify nancial contagion are ultimately reected as
+the movements of the international capital inows and outows,
+which is why nancial contagion is analyzed from an interna-
+tional capital ow perspective in the dynamical system model
+proposed in this paper. Additionally, the model proposed in this
+paper extends the nancial contagion analysis of a dynamical
+system under a liberal economy to a system that encompasses
+macroeconomic control, which may be more useful for policy-
+makers seeking to identify volatility transmission patterns and
+develop response strategies to set nancial policy.
+
+B. Model Formulation
+
+The use of fuzzy differential equations (FDE) has been a
+natural way to model dynamical systems under possibilistic
+uncertainty [45], [46]. Fuzzy dynamical systems based on FDEs
+have also been widely applied to fuzzy control systems [47],
+bifurcations of fuzzy nonlinear dynamical systems [48], and
+many other elds [49], [50].
+
+Based on the above analysis, this paper seeks to establish a
+fuzzy dynamical system scenario simulation model based on
+FDEs to simulate the dynamics of contagion of international
+
+Fig. 2. Triangular IT-2 fuzzy MF of ( ) .
+
+Fig. 3. Dynamical system of nancial contagion with fuzziness for coupled
+countries.
+
+H(()L
+ ) = 1 when handling the coupling coefcient uncer-
+tainty, to simplify the expression, (2) is employed when per-
+forming the mathematical derivation in the following sections.
+ to
+Therefore, a -level of the triangular IT-2 fuzzy number
+describe the coupling coefcient uncertainty can be identied
+using a parameterized quadruple:
+
+, )|0    1}.
+
+Let
+
+(6)
+Csv denote the fuzzy coupling coefcient for the impact
+from the source country of nancial turbulence to the volatility-
+Cv s be the fuzzy coupling coefcient for
+affected country, and
+the impact from the volatility-affected country to the source
+country of nancial turbulence. Fig. 3 shows the dynamical
+system of nancial contagion with triangular IT-2 fuzziness for
+the coupled countries.
+
+{(l
+
+, m
+
+, r
+
+III. MODELING
+
+Even though there is a potential for a shock to be transmitted
+from one country to another, this does not mean it will deni-
+tively occur. Whether a shock is transmitted, and whether it has
+a large effect on the real sector depends on the resilience of the
+
+XU et al.: FUZZY DYNAMICAL SYSTEM SCENARIO SIMULATION-BASED CROSS-BORDER FINANCIAL CONTAGION ANALYSIS
+
+445
+
+for the latter. Since the number of input parameters for the min-
+imization problem in (7) is T , the computational complexity of
+the above problem can be expressed as a function f(T ) (i.e.,
+computation time, which is described as the number of steps
+a Turing machine performs for a given input) which reects
+the growth speed of computation time along with the increased
+number of input parameters. To solve the minimization prob-
+lem, the gradient of (8) for each T rendi(t) (t = 1, 2, . . . , T ) is
+set to be zero; therefore, there are T gradient linear equations to
+form a T  T square matrix equation which can be solved by
+Gaussian elimination. It is well known that the computational
+complexity of the Gaussian elimination for an n  n matrix is
+O(n3) [51]. This means the computational complexity of the
+minimization problem in (7) is f(T ) = O(T 3), which implies
+that it belongs to a P (polynomial-time solvable) class problem
+and has low computational complexity.
+
+Although most researchers have followed HP [26] and used
+a value of 1600 for the smoothing parameter when using quar-
+terly data, there is less agreement in the literature when moving
+to other frequencies. Backus and Kehoe [52] used a value of
+100 for annual data, whereas Correia et al. [53] and Cooley
+and Ohanian [54] suggested a value of 400. Baxter and King
+[55] have shown that a value of around 10 for annual data is
+much more reasonable. Ravn and Uhlig [27] found that the l-
+ter smoothing parameter should be adjusted by multiplying it
+with the fourth power of the observation frequency ratios. This
+yielded a smoothing parameter value of 6.25 for annual data,
+which was close to the value of 10 given by Baxter and King
+[55]. This conclusion was further conrmed by Iacobucci and
+Noullez [56].
+
+To determine which  performed best for the datasets typi-
+cally encountered in this study, the above four  candidate values
+(i.e., 6.25, 10, 100, 400) for annual data were compared based on
+the U.S. net capital inow data from 1980 to 2010 in Fig. 5. Let
+F be the minimum value for (7), which shows the tness of the
+group of data for T rendi(t) (t = 1, 2, . . . , T ) and is estimated
+using the smoothing parameter . By inputting the four groups
+of data for T rendi(t) (t = 1, 2, . . . , T ) with their correspond-
+ing smoothing parameter value into (7), respectively, the tness
+values for F with  = 6.25, 10, 100, 400 were calculated as
+follows:
+
+F6.25 = 1.725  103, F10 = 1.973  103
+F100 = 3.908  103, F400 = 4.877  103.
+
+Since F6.25 < F10 < F100 < F400, the test results showed that
+N Fi(t)
+GDPi(t) when  = 6.25.
+the T rendi(t) best t the input series
+As a result,  = 6.25 was selected to calculate T rendi(t) for
+the annual data, and  = 1600 was selected for the quarterly
+data in this paper.
+
+ries
+
+By employing the HP lter, the original noisy input se-
+N Fi(t)
+GDPi(t) can be decomposed into a trend component and
+a cyclical component. Evidence from empirical investigations
+has shown that a basic dynamical long-term trend for economic
+variables is more suitable to be estimated using a trend com-
+ponent [26]. Since the dynamical features of the nancial sys-
+tem discussed in this paper correspond to a basic dynamical
+
+Fig. 4. Historical trends of the net capital inows [i.e., T rendi (t)] for the
+U.S. and Ireland during the global nancial crisis in 2008.
+
+capital ow volatility between the source country of nancial
+turbulence and the volatility-affected country. Through the ob-
+servation of historical data focused on international capital ow
+volatility in different countries over several nancial crisis, it
+was found that in most cases, the net capital inows of the
+source country of nancial turbulence gradually increased be-
+fore the nancial shock occurred, and came to a sudden stop
+(i.e., sharp decrease in net capital inows) after the shock. The
+Mexican Peso crisis, the Asian nancial crisis in 1997, and the
+global nancial crisis in 2008 are all salient examples. While the
+reasons for the increase in the net capital inows to the source
+country of nancial turbulence before the shock varied in the
+different crises due to government policy errors, international -
+nancial speculation, and improper long-term nancial policies,
+the reasons for the sudden stop could be as simple as for-
+eign investors rapidly withdrawing their capital from the source
+country of nancial turbulence because they had lost condence
+in the nancial markets after the shock. On the other hand, for
+most of the volatility-affected countries, net capital inows in-
+creased (i.e., the global nancial crisis in 2008 and the Mexican
+Peso crisis, see Fig. 4) due to the large capital outows from
+the source country of nancial turbulence. Fig. 4 illustrates the
+historical trends of the net capital inows (i.e., T rendi(t)) for
+the U.S. (i.e., the source country of nancial turbulence) and
+Ireland (i.e., the volatility-affected country) during the global
+nancial crisis in 2008.
+
+To estimate the historical trends of the net capital inows
+(i.e., T rendi(t)) for each country, the HP lter was employed,
+which is a nonparametric method that returns a smoothed series
+N Fi(t)
+T rendi(t) from a noisy (or volatile) input series
+GDPi(t) . Val-
+ues T rendi(t) were chosen to solve the following minimization
+problem:
+
+T(cid:11)
+
+t=1
+
+
+
+
+min
+
+T r en d i (t)
+
+(cid:13)2
+ T rendi(t)
+
+(cid:12)
+T 1(cid:11)
++
+(T rendi(t)  T rendi(t  1))]2
+
+N Fi(t)
+GDPi(t)
+[(T rendi(t + 1)  T rendi(t))
+
+t=2
+
+
+
+
+(7)
+
+where T is the number of observations. The rst sum is the pun-
+ishment for deviating from the original series and the second is
+the punishment for roughness of the smoothed series. The larger
+the value of the smoothing parameter , the higher is the penalty
+
+446
+
+IEEE TRANSACTIONS ON FUZZY SYSTEMS, VOL. 25, NO. 2, APRIL 2017
+
+considered the driving system, so T rends(t) is employed as a
+state indicator of the driving system. Let b (b > 0) denote the
+inertial coefcient of the source country of nancial turbulence,
+and bT rends(t) be the inertial momentum. It can be seen that
+the inertial momentum is linearly negatively correlated with the
+historical trend T rends(t). On the other hand, the net capi-
+tal inow for the volatility-affected country also deviates from
+the normal equilibrium value in response to the contagion ef-
+fects from the source country of nancial turbulence. Here, the
+volatility-affected country is regarded as the response system,
+so T rendv (t) is applied as the state indicator of the response
+system. Let a be the inertial coefcient of the volatility-affected
+country, which reects the inertial state of the rate of change for
+the value of T rendv (t) before the impact of the nancial shock
+becomes effective. When a < 0 (see Fig. 4), this means the net
+capital inow trend in the volatility-affected country has an iner-
+tial decreasing trend before the nancial shock takes effect, and
+when a > 0, the inertial trend is increasing. Since a = 0 rarely
+happens, to simplify the theoretical proof in the following sec-
+tion, in this paper, it is assumed that a (cid:7)= 0. The driving system
+also has a contagion effect  Csv T rendv (t)[T rends(t)]2 on
+Cv sT rendv (t)[T rends(t)]2
+the response system, so the term
+describes the synthetic inuence of the driving effect from
+the nancial shock and the feedback effect from the response
+system.
+
+Since most source countries of nancial turbulence have large
+net capital inows before the nancial shock, and in most cases,
+the net capital inows for the volatility-affected countries could
+be negative or nonnegative when the shock spreads, this paper
+considers the initial value of T rends(0) to be positive, and the
+initial value of T rendv (0) to be either negative or nonnega-
+tive. Let T s0 and T v0 be the initial values for T rends(0) and
+T rendv (0), respectively, then the initial value (Cauchy) condi-
+tions for the fuzzy dynamical system scenario simulation model
+
+can be given as: (cid:2)
+
+T rendv (0) = T v0  R
+T rends(0) = T s0 > 0.
+
+(8)
+
+Csv and
+
+It should be noted that the triangular IT-2 fuzzy coupling coef-
+Cv s could be different because the source coun-
+cients
+try of nancial turbulence and the volatility-affected country
+may have different contagion mechanisms on the coupled chan-
+nels. The inherent human involvement in international capital
+Csv and
+ows leads to the fuzziness in the coupling coefcients
+Cv s, and the interactive nancial contagion effects between the
+source country of nancial turbulence and the volatility-affected
+country result in the fuzziness in the secondary MFs for the
+coupling coefcients, which can be regarded as the IT-2 fuzzy
+numbers. The physical meaning of the above two uncertain pa-
+rameters respectively reects the nancial coupling strength in
+two opposite coupling directions (i.e.,
+try of nancial turbulence to the volatility-affected country, and
+
+sv, from the source coun-
+vs, from the volatility-affected country to the source country
+
+of nancial turbulence) between the source country of nancial
+turbulence and the volatility-affected country for a nonlinear
+nancial system, where the coupling strength shows the im-
+pact level of the volatility transmission from the source country
+
+Fig. 5. Comparing of different smoothing parameters for annual data based
+on net capital inow data of the U.S.
+
+long-term trend, it is reasonable to lter the short-term cyclical
+component by applying the HP lter to reect the essential
+basic trends in the nancial contagion dynamics from an in-
+ternational capital ow perspective. In fact, the cointegration
+theory and error-correction theory indicate that if there are co-
+movements of economic variables during a set of time series,
+they trend together to determine the long-term equilibrium, so
+disturbances from the cyclical component have no effect on
+long-term equilibrium convergence [57]. In the time series, the
+long-term comovements of economic variables can be analyzed
+by focusing on the trend component after the cycle component is
+ltered out. The contagion analysis based on capital ow bonan-
+zas in this paper indicated that there were comovements in the
+international capital ows between the different countries that
+suffered from nancial shock. These deviations from the long-
+term international capital ow trend feed back to the dependent
+variable changes to move toward a long-term equilibrium. As
+a result, the trend component decomposed by the HP lter is
+able to reect the essential characteristics of a basic dynamical
+long-term trend when discussing nancial system stability.
+
+This study, inspired by the idea of the two-country model
+proposed by Stockman and Tesar [58], builds on several re-
+cent works on capital ow volatility by Forbes and Warnock
+[11], Neumann et al. [59], and Lee et al. [21]. To maintain
+the capital account balance, the net capital inows of both the
+source country of nancial turbulence and the volatility-affected
+country tend toward their equilibriums in normal years. Let
+T rends(t) denote the historical trend of the net capital inow
+for the source country of nancial turbulence, and T rendv (t),
+for the volatility-affected country. When the impact of the nan-
+cial shock is felt, the net capital inows in the source country
+of nancial turbulence sharply decrease, adding to the driving
+force. Therefore, the source country of nancial turbulence is
+
+XU et al.: FUZZY DYNAMICAL SYSTEM SCENARIO SIMULATION-BASED CROSS-BORDER FINANCIAL CONTAGION ANALYSIS
+
+447
+
+
+
+
+of nancial turbulence or the volatility-affected country, and is
+determined by the degree of nancial liberalization, capital ac-
+count openness, capital structure, real sector linkages, nancial
+linkages, and investor condence in the two countries. Based on
+the above analysis, the following initial value (Cauchy) prob-
+lem for the fuzzy dynamic system scenario simulation model is
+established:
+
+= a  Csv T rendv (t)[T rends(t)]2
+=bT rends(t) + Cv sT rendv (t)[T rends(t)]2
+
+
+
+
+dT rendv (t)
+
+dt
+
+dt
+
+dT rends(t)
+T rendv (0) = T v0  R
+T rends(0) = T s0 > 0
+a (cid:7)= 0
+b > 0
+Csv  FI T 2(R)
+Cv s  FI T 2(R)
+
+(9)
+where T rends(t) is the historical trend of the net capital inow
+for the source country of nancial turbulence; T rendv (t) is
+the historical trend of the net capital inow for the volatility-
+affected country; a is the inertial coefcient of the volatility-
+affected country; b denotes the inertial coefcient of the source
+Csv denotes the fuzzy coupling
+country of nancial turbulence;
+coefcient for the impact from the source country of nancial
+Cv s is the fuzzy
+turbulence to the volatility-affected country; and
+coupling coefcient for the impact from the volatility-affected
+country to the source country of nancial turbulence.
+
+Csv and
+
+C. Crisp Equivalent Model Under Boundary Value Conditions
+Since it is not possible to describe the solution to the Model
+Cv s are transferred
+(9) unless the fuzzy coefcients
+into a parameter cluster, here, a crisp operator  is intro-
+duced, which transfers the -level of the triangular IT-2 fuzzy
+number () into a parameter spectrum within the interval
+[cl(() ), cr (() )], where cl(() ) and cr (() ) are the left-
+and right-centroid boundaries [60] of the MF of () respec-
+tively.
+
+Based on the idea of the enhanced KarnikMendel (EKM) al-
+gorithms [61], since the fuzzy coupling coefcients considered
+in this paper are specic triangular IT-2 fuzzy numbers, the com-
+putation of the centroid boundaries can be signicantly reduced
+by employing the following equations to calculate cl(() ) and
+cr (() ):
+cl(() )
+(cid:17) m 
+(cid:17) m 
+ d l 
+ d l 
+
+(cid:17) r 
+(cid:17) r 
+
+(x)dx +
+
+(x)dx +
+
+ d r 
+
+ d r 
+
+xU M F
+
+xLM F
+
+(x)dx
+
+m 
+
+m 
+
+( )
+
+( )
+
+LM F
+
+( )
+
+l 
+
+=
+
+(x)dx
+
+U M F
+
+( )
+
+l 
+
+(10)
+
+cr (() )
+(cid:17) m 
+(cid:17) m 
+
++ d l 
+
+l 
+
+l 
+
++ d l 
+
+=
+
+xLM F
+
+( )
+
+(x)dx +
+
+LM F
+
+( )
+
+(x)dx +
+
+(cid:17) r 
+(cid:17) r 
+
+m 
+
+m 
+
++ d r 
+
++ d r 
+
+xU M F
+
+( )
+
+(x)dx
+
+.
+
+U M F
+
+( )
+
+(x)dx
+
+(11)
+
+According to (2), (6), (10), and (11), for a -level of the
+triangular IT-2 fuzzy number () considered in this paper, the
+crisp operator  is dened as:
+
+(() , ) = (1  )cl(() ) + cr (() )
+
+(12)
+where  is a cluster coefcient, and 0    1. When the values
+ and  are xed, i.e.,  = 0 and  = 0, the Model (9) can be
+transferred into a crisp equivalent model as:
+
+dT rendv (t)
+
+dt
+
+dT rends(t)
+
+dt
+
+= a  (( Csv ) , )T rendv (t)[T rends(t)]2
+= bT rends(t)
++(( Cv s) , )T rendv (t)[T rends(t)]2
+
+T rendv (0) = T v0  R
+T rends(0) = T s0 > 0
+a (cid:7)= 0
+b > 0
+ = 0,
+ = 0,
+
+0    1
+0    1
+
+(13)
+where  = 0 and  = 0 are regarded as the boundary value
+conditions, and the above Model (13) is actually a boundary
+value problem of the fuzzy dynamical system scenario simula-
+tion model. When the cluster coefcient  varies in the interval
+[0, 1], the Model (13) derives a cluster of crisp equivalent mod-
+els for the fuzzy dynamical system scenario simulation model.
+It should be noted that the selected value  may be different
+for different coupling coefcients. However, for simplicity, this
+paper assumes that all fuzzy coefcients in the model have the
+same value . Since control inputs (i.e., investment or manage-
+ment policies) from governments and nancial institutes are not
+considered in Model (13), it is regarded as a dynamical system
+model under a liberal economy, which simulates a free nancial
+system with no macroeconomic interventions. However, when
+a nancial crisis occurs, it is necessary for governments and
+nancial institutes to take macroeconomic control to reduce the
+nancial contagion impact. For the potential usage for policy-
+makers, the next part extends the dynamical system model under
+a liberal economy to a model with macroeconomic control to
+establish effective nancial policies.
+
+D. Dynamical System Model With Macroeconomic Control
+
+During the global nancial crisis in 2008, the U.S. Federal
+Reserve (FDR) and central banks around the world took a series
+of emergency actions to expand money supply so as to avoid
+the nancial contagion impact [62]. These government and
+
+448
+
+IEEE TRANSACTIONS ON FUZZY SYSTEMS, VOL. 25, NO. 2, APRIL 2017
+
+
+
+
+nancial institution capital injections and the associated man-
+agement policies could be seen as macroeconomic control inputs
+into the nancial system. Let v (t) and s(t) be the government
+and nancial institution macroeconomic control inputs at time
+t for the volatility-affected country and the source country of
+nancial turbulence. Then Model (13), which reects the situ-
+ation under a liberal economy, can be extended to a dynamical
+system model with macroeconomic control as
+
+dT rendv (t)
+
+dt
+
+dT rends (t)
+
+dt
+
+= a  (( Cs v ) , )T rendv (t)[T rends (t)]2
+
++v (t)
+
+= bT rends (t)
+
++(( Cv s ) , )T rendv (t)[T rends (t)]2 + s (t)
+
+T rendv (0) = T v0  R
+T rends (0) = T s0 > 0
+a (cid:7)= 0
+b > 0
+ = 0 ,
+ = 0 ,
+
+0    1
+0    1
+
+(14)
+
+where v (t) and s(t) are regarded as the control impulses at
+time t and are measured as net capital inows per unit time.
+When a nancial crisis occurs, the government and nancial
+institution capital injections and management policies in the
+volatility-affected country and the source country of nancial
+turbulence ultimately reect the changes in net capital inows
+per unit time in the nancial system; therefore, the macroeco-
+nomic control effect is relevant to the government and nan-
+cial institution control impulses (i.e., v (t) and s(t)) from
+the volatility-affected country and the source country of nan-
+cial turbulence. When v (t) = 0 and s(t) = 0 for all time t,
+Model (14) is reduced to a dynamical system model under a
+liberal economy, as shown in Model (13).
+
+The computational complexity of the simulation for both
+Models (13) and (14) depends on the number of simulation
+iterations (i.e., m). The time complexity for simulating Models
+(13) and (14) is O(m), which indicates a low computational
+complexity and implies that it belongs to a P (polynomial-time
+solvable) class problem.
+
+IV. MODEL ANALYSIS UNDER A LIBERAL ECONOMY
+
+Since it is the dynamical system model under a liberal econ-
+omy that shows the essential features of a nancial system
+without macroeconomic interventions, this section discusses
+the types of volatility equilibrium points for Model (13), an-
+alyzes the asymptotic stability of the volatility equilibrium
+point in different situations to form a series of volatility conta-
+gion principles, and conducts a sensitivity analysis on the ini-
+tial value conditions and boundary value conditions. It should
+be noted that all analyses are based on the boundary value
+problem for the fuzzy dynamical system scenario simulation
+model with the initial value conditions T rendv (0) = T v0  R
+and T rends(0) = T s0 > 0, and the boundary value conditions
+
+ = 0 and  = 0. It is also assumed that (( Csv ) , ) > 0
+and (( Cv s) , ) > 0, which reects a practical situation.
+
+A. Volatility Equilibrium Point of the Model Under a Liberal
+Economy
+
+The volatility equilibrium points for the Model (13) are de-
+ned as the points at which the rate of change for both T rendv (t)
+and T rends(t) is zero. To analyze the asymptotic stability of the
+model, the volatility equilibrium points for the model need to be
+determined rst. Let  = a
+b be the ratio of inertial coefcients,
+
+ = (( Csv ) , )
+(( Cv s) , )
+
+be the ratio of the crisp fuzzy coupling coefcients,
+
+s =
+
+b
+
+(( Cv s) , )
+
+denote the exogenous coefcient of the source country of nan-
+cial turbulence, which is the ratio of the inertial coefcient and
+the crisp fuzzy coupling coefcient of the source country, and
+
+v =
+
+a
+
+(( Csv ) , )
+
+denote the exogenous coefcient of the volatility-affected coun-
+try, which is the ratio of the inertial coefcient and the crisp
+fuzzy coupling coefcient of the volatility-affected country.
+Therefore, the ratio of the exogenous coefcients between the
+volatility-affected country and the source country of nancial
+turbulence is  = v
+s
+
+ . The following lemma is given.
+
+= 
+
+Lemma IV.1: (Exogenous position of the volatility equilib-
+rium point) There is a unique volatility equilibrium point for
+Model (13) located at ( s
+, ), the position of which depends
+
+on the exogenous coefcient of the source country of nancial
+turbulence, and the ratio of the exogenous coefcients.
+
+Proof: Let
+
+
+
+
+dT rendv (t)
+
+dt
+
+dT rends(t)
+
+dt
+
+= 0
+
+= 0.
+
+Therefore,
+
+
+ a  (( Csv ) , )T rendv (t)[T rends(t)]2 = 0
+bT rends(t) + (( Cv s) , )T rendv (t)[T rends(t)]2 = 0.
+By solving the above equations, the following unique solution
+is determined:
+
+
+
+
+T rendv (t) = b2(( Csv ) , )
+a2(( Cv s) , )
+T rends(t) = a(( Cv s) , )
+b(( Csv ) , )
+
+= s
+
+
+= s
+
+
+= 
+
+
+= .
+
+XU et al.: FUZZY DYNAMICAL SYSTEM SCENARIO SIMULATION-BASED CROSS-BORDER FINANCIAL CONTAGION ANALYSIS
+
+449
+
+The volatility equilibrium point for Model (13), therefore, is
+located at ( s
+, ), which implies that the position is dependent
+
+on the exogenous coefcient of the source country of nancial
+turbulence (i.e., s), and the ratio of the exogenous coefcients
+(cid:2)
+(i.e., ).
+
+B. Volatility Contagion Principles Under a Liberal Economy
+Based on a Local Asymptotic Stability Analysis
+
+To address the nonlinearity of Model (13) before analyzing
+the asymptotic stability of the volatility equilibrium point, a
+typical approach has been local linearization. According Brauer
+et al.[63], an asymptotic stability of the equilibrium point for
+linearization implies an asymptotic stability of the equilibrium
+for a nonlinear system. Conversely, instability of the equilibrium
+point for the linearization implies instability of the equilibrium
+for a nonlinear system. However, as each local model is known
+to be valid for only a certain range of operating conditions, these
+results only guarantee the local properties for nonlinear dynam-
+ical systems. Nonetheless, since the fuzzy dynamical system
+scenario simulation model in this paper is only for short-term
+study, and Model (13) has good differentiability, continuity, and
+convexity, the local asymptotic stability theory still has signi-
+cance when handling the cases in this paper. Future research on
+a more complex global asymptotic stability theory is discussed
+in Section IX.
+
+According to Lemma IV.1,
+dx
+dt
+
+let x = T rendv (t), y =
+T rends(t), x = s
+= F (x, y),
+= G(x, y),
+the asymptotic stability or instability of the volatility equilib-
+rium point for Model (13) is determined by the eigenvalues of
+the following matrix A:
+
+dy
+dt
+
+ , y = ,
+
+ F (x, y)
+
+G(x, y)
+
+x
+
+,
+
+F (x, y)
+
+
+
+
+(( Csv ) , )2, 2(( Csv ) , )s
+(( Cv s) , )2, b + 2(( Cv s) , )s
+
+G(x, y)
+
+x
+
+y
+
+y
+
+,
+
+A =
+
+=
+
+
+
+
+where F (x, y) = a  (( Csv ) , )xy2 and G(x, y) = by +
+(( Cv s) , )xy2. Let k = (( Csv ) , )2,
+since s =
+
+, thus matrix A could be
+
+b
+
+(( Cv s) , )
+deduced as:
+
+where
+
+, and  = (( Csv ) , )
+(( Cv s) , )
+
+
+k, 2b
+
+(cid:6)2 2(( Cv s) , )
+(( Csv ) , )
+
+(cid:3) a
+
+A =
+
+k =
+
+k
+
+
+b
+
+b
+
+,
+
+is a synthetic of the inertial coefcients and coupling coefcients
+which reects the inertia states of the initial net capital inow
+volatility trend and the coupling strengths for both the source
+
+country of nancial turbulence and the volatility-affected coun-
+try. The trace, determinant, and  of matrix A can be expressed
+as
+
+trA(x, y) = b  k,
+
+detA(x, y) = bk
+
+ = [trA(x, y)]2  4 detA(x, y) = b2  6bk + k2.
+Based on the above analysis, the following principles are
+
+given.
+
+Principle IV.2: (Contractive
+
+contagion) The
+volatility equilibrium point for Model (13) is locally asymp-
+totically stable, which implies a contractive volatility conta-
+gion between the source country of nancial turbulence and the
+
+volatility
+
+b
+k
+
+< 1.
+
+volatility-affected country, if
+Proof: Based on the local asymptotic stability theory, if
+trA(x, y) = b  k < 0, and detA(x, y) = bk > 0, then the
+volatility equilibrium point for Model (13) is locally asymp-
+totically stable. Since k = (( Csv ) , )2 > 0, and b > 0, this
+< 1, then the
+indicates that bk > 0 always holds. Therefore, if
+volatility equilibrium point for Model (13) is locally asymptoti-
+cally stable. Based on an analysis of the phase portraits in this sit-
+uation, the locally asymptotically stability of the volatility equi-
+librium point implies a contractive volatility contagion between
+the source country of nancial turbulence and the volatility-
+(cid:2)
+affected country.
+Principle IV.3: (Steady contractive volatility contagion) The
+volatility equilibrium point for Model (13) is a locally asymptot-
+ically stable node, which implies a steady contractive volatility
+contagion between the source country of nancial turbulence
+
+b
+k
+
+and the volatility-affected country, if
+
+Proof: According to Principle IV.2, since
+
+2 <
+1, the volatility equilibrium point for Model (13) is locally
+asymptotically stable, which implies a contractive volatility con-
+tagion between the source country of nancial turbulence and
+the volatility-affected country. Based on local asymptotic stabil-
+ity theory, if trA(x, y) = b  k < 0, detA(x, y) = bk > 0,
+and  = b2  6bk + k2  0, then the volatility equilibrium
+point for Model (13) is a locally asymptotically stable node.
+Since k2 > 0, thus,
+
+b
+k
+
+
+ 3  2
+b
+k
+
+2.
+
+ 3  2
+
+ = b2  6bk + k2  0  
+
+ 3)2  8  b
+k
+
+ ( b
+k
+
+ 3 + 2
+
+k2 = ( b
+k
+
+ 3  2
+
+) + 1  0
+
+)2  6( b
+k
+
+ 3 + 2
+
+2.
+
+2 or
+
+b
+k
+
+b
+2 > 1 does not meet the requirements of
+Since
+k
+
+trA(x, y) = b  k < 0, it can be known that only when
+
+3  2
+2, the volatility equilibrium point for Model (13) is a
+locally asymptotically stable node. Based on the analysis on
+the phase portraits in this situation, a locally asymptotically
+stable node implies that there is a steady contractive volatility
+contagion between the source country of nancial turbulence
+(cid:2)
+and the volatility-affected country.
+Principle IV.4: (Fluctuated contractive volatility contagion)
+The volatility equilibrium point for Model (13) is a locally
+
+b
+k
+
+450
+
+IEEE TRANSACTIONS ON FUZZY SYSTEMS, VOL. 25, NO. 2, APRIL 2017
+
+b
+k
+
+(13)
+
+< 1.
+
+for Model
+
+asymptotically stable spiral point, which implies a uctuated
+contractive volatility contagion between the source country of
+nancial turbulence and the volatility-affected country, if 3 
+
+2 <
+Proof: According to local asymptotic stability theory, the
+volatility equilibrium point
+is a locally
+asymptotically stable spiral point, if trA(x, y) = b  k < 0,
+detA(x, y) = bk > 0, and  = b2  6bk + k2 < 0. Based on
+< 1, and
+the proofs in Principle IV.2 and IV.3, this means
+3  
+ble spiral point if 3  
+
+
+2 > 1, the volatility equi-
+librium point for Model (13) is a locally asymptotically sta-
+< 1. By analyzing the phase
+portraits in this situation, the locally asymptotically stable spi-
+ral point implies a uctuated contractive volatility contagion
+between the source country of nancial turbulence and the
+(cid:2)
+volatility-affected country.
+Principle IV.5: (Steady expansile volatility contagion) The
+volatility equilibrium point for Model (13) is a locally unsta-
+ble node, which implies a steady expansile volatility conta-
+gion between the source country of nancial turbulence and the
+
+2. Since 3 +
+
+< 3 +
+
+2 <
+
+2 <
+
+
+
+b
+k
+
+b
+k
+
+b
+k
+
+
+ 3 + 2
+
+2.
+
+b
+k
+
+volatility-affected country, if
+
+b
+k
+
+> 1, and
+
+
+ 3 + 2
+b
+k
+
+ 3 + 2
+
+Proof: Similar to the proof in Principle IV.4, the volatility
+equilibrium point for Model (13) is a locally unstable node,
+if trA(x, y) = b  k > 0, detA(x, y) = bk > 0, and  =
+
+ 3  2
+b2  6bk + k2  0. This means
+2,
+
+2. Since 3  2
+
+b
+k
+2 < 1, the volatility equilib-
+or
+rium point for Model (13) is a locally unstable node, only if
+b
+2. The analysis of the phase portraits in this situ-
+k
+ation indicates that the locally unstable node implies a steady
+expansile volatility contagion between the source country of
+(cid:2)
+nancial turbulence and the volatility-affected country.
+Principle IV.6: (Fluctuated expansile (FE) volatility conta-
+gion) The volatility equilibrium point for Model (13) is a lo-
+cally unstable spiral point, which implies an FE volatility con-
+tagion between the source country of nancial turbulence and
+the volatility-affected country, if 1 <
+detA
+(x, y) = bk > 0, and  = b2  6bk + k2 < 0, the volatility
+
+equilibrium point for Model (13) is a locally unstable spiral
+< 3 + 2
+2.
+Because 3  
+2 < 1, the volatility equilibrium point for Model
+
+< 3 + 2
+(13) is a locally unstable spiral point if 1 <
+2.
+By analyzing the phase portraits in this situation, the locally
+implies an FE volatility contagion
+unstable spiral point
+between the source country of nancial turbulence and the
+(cid:2)
+volatility-affected country.
+Principle IV.7: (Fluctuated stationary volatility contagion)
+The volatility equilibrium point for Model (13) is a center
+point, which implies a uctuated stationary volatility conta-
+gion between the source country of nancial turbulence and the
+
+2.
+trA(x, y) = b  k > 0,
+
+> 1, and 3  
+
+
+< 3 + 2
+
+point. This implies
+
+Proof: Since
+
+when
+
+2 <
+
+b
+k
+
+b
+k
+
+b
+k
+
+b
+k
+
+volatility-affected country, if
+
+b
+k
+
+= 1.
+
+Fig. 6.
+under a liberal economy.
+
+Phase portraits for different types of volatility transmission patterns
+
+b
+k
+
+The above principles indicate that in this paper
+
+Proof: When trA(x, y) = b  k = 0 and detA(x, y) =
+bk > 0, the volatility equilibrium point for Model (13) is a cen-
+= 1. By observing the phase portraits
+ter point. This means
+in this situation, it can be seen that the point near the volatil-
+ity equilibrium point follows a circular movement and periodi-
+cally surrounds the center which implies a uctuated stationary
+volatility contagion between the source country of nancial tur-
+(cid:2)
+bulence and the volatility-affected country.
+b
+k could be
+regarded as a volatility transmission pattern indicator of the -
+nancial contagion which reects the uctuation behavior (i.e.,
+steady or uctuated) and the trend directions (i.e., contractive,
+expansile, or stationary). These volatility contagion principles
+describe six types of volatility transmission patterns for inter-
+national capital ows, in which the contractive and expansile
+volatility contagions show a strong similarity to the volatility
+transmission patterns in stock markets [20] and the heat-wave
+and meteor-shower effects in foreign exchange markets [19].
+The steady or uctuated contractive and expansile volatility
+contagions are extensions of the basic volatility transmission
+patterns and give more details about the uctuation behavior.
+The uctuated stationary volatility contagion is a specic case
+and rarely happens in practical situations. It should be noted,
+however, that all the above principles are only applicable to the
+local area that contains the volatility equilibrium point.
+
+Based on the above analysis, all possible phase portraits for
+the different volatility transmission patterns for Model (13) are
+illustrated in Fig. 6, where the boundary value conditions are set
+as:  = 0.1,  = 0.5. Table II shows the parameter settings for
+the initial value conditions, inertial coefcients, and triangular
+
+XU et al.: FUZZY DYNAMICAL SYSTEM SCENARIO SIMULATION-BASED CROSS-BORDER FINANCIAL CONTAGION ANALYSIS
+
+451
+
+PARAMETER SETTINGS FOR DIFFERENT TYPES OF VOLATILITY
+
+TRANSMISSION PATTERNS
+
+TABLE II
+
+rium point for Model (13) in D, the volatilities in both countries
+will increase without restriction in D, which implies a local
+expansivity of expansile volatility contagion.
+
+Parameter Settings
+
+Pattern
+indicator
+
+Type
+
+Inertial
+
+coefcient
+
+Initial value
+condition
+
+b
+k
+
+0.022
+0.796
+6.128
+1.480
+1.000
+
+SC
+FC
+SE
+FE
+FS
+
+b
+
+a
+
+T r en d v (0)
+
+T r en d s (0)
+
+0.106
+0.446
+0.546
+0.458
+0.666
+
+0.223
+0.323
+0.223
+0.285
+0.203
+
+0.092
+1.120
+2.150
+0.092
+0.320
+
+1.610
+0.420
+0.350
+0.064
+0.320
+
+ -level of triangular IT-2 fuzzy coupling coefcient
+
+( Cs v )
+
+( Cv s )
+
+([0.73,0.74], 0.98, [1.39,1.41])
+([1.04,1.05], 1.19, [1.32,1.33])
+([0.74,0.76], 0.98, [1.21,1.23])
+([0.64,0.68], 0.75, [0.81,0.84])
+([9.40,9.48], 9.61, [9.74,9.81])
+
+SC
+FC
+SE
+FE
+FS
+SC=Steady contractive, FC=Fluctuated contractive,
+SE=Steady expansile, FE=Fluctuated expansile,
+FS=Fluctuated Stationary
+
+([0.87,0.89],1.03,[1.24,1.27])
+([0.89,0.92],1.12,[1.35,1.39])
+([0.58,0.61],0.72,[0.96,0.99])
+([0.68,0.71],0.77,[0.84,0.89])
+([7.79,7.83],7.91,[7.99,8.07])
+
+IT-2 fuzzy coupling coefcients for the above ve different
+situations.
+
+Let D be a simple connected region in the volatility contagion
+trend plane with a boundary C, then the following principle can
+be obtained.
+
+b
+k
+
+Principle IV.8: (Local expansivity of expansile volatility
+> 1, then there is a simple connected region
+contagion) If
+D such that there is no limit cycle for the volatility equilibrium
+point for Model (13) in D, where D is the neighborhood of the
+volatility equilibrium point, and F (x, y) and G(x, y) are both
+continuously differentiable near the volatility equilibrium point
+in D, which implies a local expansivity of expansile volatility
+contagion.
+
+b
+k
+
+Proof: Since
+
+> 1, this implies
+trA(x, y) = b  k = F (x, y)
+
+x
+
++ G(x, y)
+
+y
+
+> 0.
+
+x
+
+y
+
+x
+
+y
+
+F (x, y)
+
++ G(x, y)
+
++ G(x, y)
+
+Because F (x, y) and G(x, y) are both continuously differen-
+tiable near the volatility equilibrium point, there must be a sim-
+> 0
+ple connected region D such that
+for any (x, y)  D. According to Bendixsons theorem [64], if
+F (x, y)
+is either strictly positive or strictly neg-
+ative in a simply connected region D, then there is no periodic
+= G(x, y) in D, which means there
+orbit for
+is no limit cycle for the volatility equilibrium point for Model
+> 1,
+(13) in D. According to Principles IV.5 and IV.6, if
+this implies an expansile volatility contagion between the
+source country of nancial turbulence and the volatility-affected
+country. Since there is no limit cycle for the volatility equilib-
+
+= F (x, y),
+
+dx
+dt
+
+dy
+dt
+
+b
+k
+
+C. Sensitivity Analysis on Initial Value Conditions for Model
+Calibration Under a Liberal Economy
+
+It is important to explore what happens if the volatility-
+affected countries have different initial net capital inow con-
+ditions when a nancial shock takes effect. Based on historical
+data, it can be seen that most real nancial crises fall into an
+2. As
+FE volatility contagion situation, i.e., 1 <
+a result, the sensitivity analysis on the initial value conditions
+is focused on an FE volatility contagion situation. The bound-
+ary value conditions are set as:  = 0.1,  = 0.5. These results
+could provide managerial insights to policymakers.
+
+
+< 3 + 2
+
+b
+k
+
+In this analysis, the sensitivity of the initial value conditions
+for the volatility-affected country and the source country of -
+nancial turbulence are, respectively, tested. To test the sensitivity
+of the initial value condition for the volatility-affected country,
+the initial value of T rends(0) for the source country of nan-
+cial turbulence is xed at 0.064, and the three initial values
+of T rendv (0) for the volatility-affected country, i.e., 0.0915,
+0.0920, 0.0925, are selected for the fuzzy dynamical system
+scenario simulation testing. To test the sensitivity of the initial
+value condition for the source country of nancial turbulence,
+the initial value T rendv (0) for the volatility-affected country is
+xed at 0.0920, and the three initial values for T rends(0) for
+the source country of nancial turbulence, i.e., 0.0635, 0.0640,
+0.0645, are selected for the fuzzy dynamical system scenario
+simulation testing. The parameter settings for the inertial co-
+efcients and the -level of the triangular IT-2 fuzzy coupling
+coefcients for the FE volatility contagion in Table II were
+employed. The simulation results are shown in Fig. 7. Both
+the net capital inow simulated trend results for the volatility-
+affected country and the source country of nancial turbulence
+from the above two test groups shown in Fig. 7 indicate a high
+sensitivity level to the initial value conditions. A very small
+deviation in the initial value of T rendv (0) can lead to signif-
+icant capital inow trend deviations for the volatility-affected
+country and the source country of nancial turbulence which
+seriously impacts the nancial system. The testing on the initial
+value of T rends(0) shows an even higher sensitivity compared
+with T rendv (0). The simulated tracks for the trends of capital
+inow for the source country of nancial turbulence and the
+volatility-affected country in the two test groups imply that the
+net capital inow trends in the two countries uctuate in the
+early stages, then the vibration amplitude gradually increases,
+and nally, the net capital inow trend in the volatility-affected
+country increases sharply, while the net capital inow trend in
+the source country of nancial turbulence rst decreases sharply
+and then gradually slows down. The results in Fig. 7 also imply
+that a volatility-affected country with a lower initial value for
+T rendv (0) would suffer more signicant capital inow devia-
+tions, while a source country of nancial turbulence with a lower
+initial value for T rends(0) would have a stronger volatility con-
+tagion effect on the volatility-affected country. Therefore, it is
+important for governments and nancial institutions to control
+
+452
+
+IEEE TRANSACTIONS ON FUZZY SYSTEMS, VOL. 25, NO. 2, APRIL 2017
+
+Fig. 7.
+
+Simulation results for sensitivity analysis on initial value conditions under the situation of FE volatility contagion.
+
+the volatility in the early stages, as deviations sharply increase
+after the early uctuations.
+
+D. Sensitivity Analysis on Boundary Value Conditions for
+Model Calibration Under a Liberal Economy
+
+A sensitivity analysis on the boundary value conditions was
+also conducted to check the robustness of the deviation rate 
+and the cluster coefcient  on Model (13). The parameter set-
+tings for the FE volatility contagion in Table II were employed.
+To test the robustness of the cluster coefcient , the deviation
+rate  was set as  = 0.1, and the three cluster coefcients, i.e.,
+ = 0.25,  = 0.5, and  = 0.75, were selected for the simula-
+tion testing. To test the robustness of the deviation rate , the
+cluster coefcient  was set to  = 0.5, and the three deviation
+rates, i.e.,  = 0.05,  = 0.1, and  = 0.15, were selected. The
+simulation results for the above two test groups shown in Fig. 8
+illustrate the simulated trends of the net capital inows for the
+volatility-affected country and the source country of nancial
+turbulence, and the simulated tracks for the trends of capital
+inows for the source country of nancial turbulence and the
+volatility-affected country. The simulated trends of the net cap-
+ital inows for the volatility-affected country and the source
+country of nancial turbulence shown in Fig. 8 indicate a rela-
+tively high level of stability in the early stage for both the cluster
+coefcient  and the deviation rate , as a small deviation in
+the cluster coefcient  or the deviation rate  does not lead
+to a signicant difference in the simulated trends for the net
+capital inows for both the volatility-affected country and the
+
+source country of nancial turbulence. It also implies that the
+vibration amplitude under different boundary value conditions
+is linearly negatively correlated with the cluster coefcient .
+This phenomenon also applies to the deviation rate . While
+there are some uctuations in the capital inow trends for both
+two countries over time, the simulated tracks under different
+boundary value conditions have nearly the same trend as the
+track in the early stage. Therefore, the simulated tracks for the
+capital inow trends for the source country of nancial turbu-
+lence and the volatility-affected country conrm the stability of
+the boundary value conditions in the early stage for Model (13).
+This property of the boundary value conditions for Model (13)
+indicates that the fuzzy dynamical system scenario simulation
+analysis on nancial contagion through the perspective of inter-
+national capital ow volatility is feasible, as small deviations in
+the estimated parameters do not lead to misleading results.
+
+V. MODEL ANALYSIS WITH MACROECONOMIC CONTROL
+This section discusses the properties of Model (14) under a
+macroeconomic control situation. Since Model (14) can be re-
+garded as an extension of Model (13), based on the Lemma IV.1,
+and the Principles IV.2IV.7 proved in the model analysis under
+a liberal economy, similar conclusion can be derived for Model
+(14), as shown in Principle V.1. To simplify the expression, the
+following variables are introduced and dened:
+(t) = (( Csv ) , ) s(t)
+
++ (( Cv s) , )
+
+(cid:24)
+
+b
+
+(cid:25)
+
+a
+b
+
++ v (t)
+b
+
+XU et al.: FUZZY DYNAMICAL SYSTEM SCENARIO SIMULATION-BASED CROSS-BORDER FINANCIAL CONTAGION ANALYSIS
+
+453
+
+Fig. 8.
+
+Simulation results for sensitivity analysis on boundary value conditions under the situation of FE volatility contagion.
+
+(t) =
+
+2(( Cv s) , )(a + v (t))
+
+(t)
+
+,
+
+(t) =
+
+ 2(t)
+
+(( Csv ) , )
+
+.
+
+Principle V.1: (Volatility contagion principle with macroe-
+conomic control) There is a unique volatility equilibrium point
+for Model (14) located at
+
+(cid:27)
+
+(cid:26)
+
+a + v (t)
+
+(t)
+
+,
+
+(t)
+
+(( Csv ) , )
+
+at time t, which implies ve different volatility contagion pat-
+terns between the source country of nancial turbulence and
+the volatility-affected country at time t as described below:
+1) when (t) < (t) + b and [(t) + b + (t)]2  2[2(t) +
+b2 + 2(t)], this is a locally asymptotically stable node which
+implies a steady contractive volatility contagion at time t; 2)
+when (t) < (t) + b and [(t) + b + (t)]2 < 2[2(t) + b2 +
+2(t)], this is a locally asymptotically stable spiral point which
+implies a uctuated contractive volatility contagion at time t; 3)
+when (t) > (t) + b and [(t) + b + (t)]2  2[2(t) + b2 +
+2(t)], this is a locally unstable node which implies a steady ex-
+pansile volatility contagion at time t; 4) when (t) > (t) + b
+and [(t) + b + (t)]2 < 2[2(t) + b2 + 2(t)], this is a locally
+unstable spiral point which implies an FE volatility contagion
+at time t; 5) when (t) = (t) + b, this is a center point which
+implies a uctuated stationary volatility contagion at time t.
+
+Due to length limitations, the proof for Principle V.1 is omit-
+ted. Note that the volatility equilibrium point for Model (14) is
+
+time varying, which implies that the macroeconomic control in-
+put (i.e., v (t) and s(t)) at time t changes the original volatility
+contagion pattern between the source country of nancial tur-
+bulence and the volatility-affected country. If the strength of the
+macroeconomic control input is appropriate, it may be possible
+for governments and nancial institutions in the source coun-
+try of nancial turbulence and the volatility-affected countries
+to reduce the nancial crisis impact by breaking the original
+volatility contagion pattern and change the nancial situation
+from an economic recession to a better economic equilibrium
+trend.
+
+VI. POLICY SUGGESTIONS AND EXPLORATION
+
+OF RESPONSE STRATEGIES
+
+In this section, policy suggestions are summarized based on
+the model analysis under a liberal economy, and nancial crisis
+response strategies are presented based on the macroeconomic
+control model analysis for potential usage in the establishment
+of nancial policy.
+
+A. Policy Suggestions
+
+Based on the model analysis under a liberal economy, from
+the perspective of the international capital ow analysis, the
+following dynamical system mechanisms of nancial contagion
+are concluded in three different situations, which may provide
+insightful suggestions for policymakers in governments and -
+nancial institutions.
+
+454
+
+IEEE TRANSACTIONS ON FUZZY SYSTEMS, VOL. 25, NO. 2, APRIL 2017
+
+b
+k
+
+b
+k
+
+b
+k
+
+2 <
+
+
+< 3  2
+
+Situation 1: When the pattern indicator of the volatility conta-
+< 1, according to Principles IV.2, IV.3, and IV.4, this
+gion is
+implies a contractive volatility contagion between the source
+country of nancial turbulence and the volatility-affected coun-
+2, there is a steady contractive volatility
+
+try; when
+
+contagion; and when 3  2
+< 1, there is a uctuated
+contractive volatility contagion. If the volatility equilibrium
+point (i.e., (x, y)) is located in a position close to the initial
+position (i.e., (T rendv (0), T rends(0))) along the trend track,
+the uctuations of the trends of the net capital inows for the
+source country of nancial turbulence and the volatility-affected
+countries are controllable, and the nancial volatility contagion
+does not innitely increase. The spread of the nancial shock
+is limited due to the economic immunity and resilience of the
+source country of nancial turbulence and the volatility-affected
+countries.
+the volatility equilibrium point
+(i.e., (x, y)) is located far from the initial position [i.e.,
+(T rendv (0), T rends(0))] along the trend track, the local the-
+ory of the fuzzy dynamical system is not sufcient to solve
+the problem, so a global theory of the fuzzy dynamical system
+should be employed. However, since Model (13) has good differ-
+entiability, continuity, and convexity, local theory is applicable
+to a relatively large region in the plane, and a nancial shock
+may lead to serious net capital inow volatilities for both the
+source country of nancial turbulence and the volatility-affected
+countries. Efcient monetary policies and scal policies must
+be implemented by the governments and nancial institutions
+to control the situation so as to slow down the spread of the
+nancial shock and reduce nancial loss.
+
+On the other hand,
+
+if
+
+Situation 2: When the pattern indicator of the volatility conta-
+> 1, according to Principles IV.5 and IV.6, this implies
+
+gion is
+
+b
+k
+
+
+ 3 + 2
+
+< 3 + 2
+
+b
+k
+
+2) or
+
+b
+k
+
+a steady expansile volatility contagion (when
+
+2). Since it
+a FE volatility contagion (when 1 <
+has been proved in Principle IV.8 that no matter whether the
+initial position (i.e., (T rendv (0), T rends(0))) is far from or
+near to the volatility equilibrium point (i.e., (x, y)), because
+b
+> 1 and F (x, y) and G(x, y) are both continuously differen-
+k
+tiable in the whole plane space (i.e., R2), a simple connected
+region D can be found where both the initial position and the
+volatility equilibrium point are in D, so there is no limit cy-
+cle for the volatility equilibrium point or the initial position for
+Model (13) in D, which implies a local expansivity of expansile
+volatility contagion. This is the worst nancial contagion situ-
+ation, as there is no limit to the spread of the nancial shock.
+The net capital ow trends for both the source country of nan-
+cial turbulence and the volatility-affected country may sharply
+uctuate and lead to an extensive spread of the nancial crisis.
+The nonlinear contagion effects between the source country of
+nancial turbulence and the volatility-affected country become
+increasingly stronger over a short time and have a serious im-
+pact on the nancial markets and trade exports. Governments
+and nancial institutes need to implement decisive and effective
+economic policies before and after the nancial shock.
+
+Situation 3: When the pattern indicator of the volatility con-
+k = 1, according to Principle IV.7, this implies a uc-
+tagion is b
+tuated stationary volatility contagion. In this situation, the net
+capital ow trends for both the source country of nancial turbu-
+lence and the volatility-affected country periodically uctuate
+within a limited range; however, a small disturbance or shock
+may result in greater uctuation amplitude. As this situation
+usually occurs in the early stages of the nancial shock spread,
+the potential risk of a nancial crisis is usually ignored. How-
+ever, for governments and nancial institutions, this is the best
+time to control an extensive spread of the nancial shock, as the
+nancial contagion in this situation is suppressed and unstable
+under a relatively weak transmission mechanism.
+
+B. Exploration of Response Strategies
+
+Based on the macroeconomic control model analysis, a ten-
+tative exploration of possible nancial crisis response strategies
+is presented to guide nancial policy. Before a nancial crisis
+occurs, Principles IV.2-IV.7, which were proven in the model
+analysis under a liberal economy, can be employed to identify
+the situation using the pattern indicator of the volatility conta-
+gion b
+k . If a nancial shock occurs, governments and nancial
+institutions in the source country of nancial turbulence and the
+volatility-affected country must take timely action to implement
+nancial policy for reducing the nancial crisis impact.
+
+According to Principle V.1, discussed in the macroeconomic
+control model analysis, the following considerations may be
+useful for the development of appropriate response strategies.
+To reduce the nancial shock impact, the best strategy for the
+governments and nancial institutions in the source country
+of nancial turbulence and the volatility-affected country is to
+break the current volatility contagion pattern at time t0 and
+converge to a new volatility equilibrium point (i.e., (x, y))
+near to the current position (i.e., (T rendv (t0), T rends(t0))).
+This would result in a more stable economic state following a
+contractive volatility contagion (steady or uctuated) pattern by
+continuously implementing macroeconomic control from time
+t0. Due to the huge data quantities of international capital in-
+ows and outows and data restrictions from governments and
+nancial institutions, rather than presenting a real-world case
+study, a numerical experiment is presented, as shown in Fig. 9.
+In this experiment, the parameter settings for the inertial coef-
+cients, initial value condition, and -level of the triangular IT-2
+fuzzy coupling coefcients for the FE volatility contagion in
+Table II are employed, in which the boundary value conditions
+are set as:  = 0.1,  = 0.5. To enable the readers to have a
+better understanding of the macroeconomic control effect, the
+input control variables (i.e., v (t) and s(t)) are dened as
+continuous xed control impulses from time t0, which lead to a
+uctuated contractive volatility contagion pattern as expressed
+below:
+
+v (t) =
+
+0,
+0.02,
+
+t < t0
+t  t0
+
+, s(t) =
+
+0,
+0.08,
+
+t < t0
+t  t0.
+
+(cid:2)
+
+(cid:2)
+
+the net capital
+
+As shown in Fig. 9, after macroeconomic control is taken
+from time t0,
+inow simulated trends for
+the volatility-affected country and the source country of
+nancial
+turbulence change from the original FE volatil-
+ity contagion pattern into a uctuated contractive volatility
+
+XU et al.: FUZZY DYNAMICAL SYSTEM SCENARIO SIMULATION-BASED CROSS-BORDER FINANCIAL CONTAGION ANALYSIS
+
+455
+
+Fig. 9.
+
+Simulation results for dynamical system model with macroeconomic control.
+
+contagion pattern. The simulated track of the trend of net cap-
+ital inows for the source country of nancial turbulence and
+the volatility-affected country also shows that the macroeco-
+nomic control breaks the current volatility contagion pattern
+since from t0 and drives the point (T rendv (t), T rends(t))
+following a uctuated contractive volatility contagion pattern
+to a new volatility equilibrium point near to the current posi-
+tion (i.e., (T rendv (t0), T rends(t0))) to avoid sharp nancial
+uctuations and the extensive spread of the nancial shock.
+Since the volatility-affected country usually encounters large
+net capital inows during a nancial crisis, its corresponding
+macroeconomic control value is set at a negative value (i.e.,
+v (t) = 0.02, when t  t0), and similarly, the corresponding
+macroeconomic control value for the source country of nan-
+cial turbulence is set at a positive value (i.e., s(t) = 0.08, when
+t  t0) to offset the drastic net capital outows.
+
+By adjusting the macroeconomic control input values, dif-
+ferent volatility contagion patterns between the source country
+of nancial turbulence and the volatility-affected country can
+be simulated, which can be useful references for policymak-
+ers when seeking to develop effective response strategies. The
+numerical experiment also indicates that appropriate response
+strategies depend on cooperative macroeconomic control poli-
+cies in both the source country of nancial turbulence and the
+volatility-affected country. Any poor decision from either coun-
+try may lead to disordered nancial uctuations and serious
+impacts on the nancial markets in both countries. Therefore,
+the cross-border cooperative macroeconomic control strategies
+among governments and nancial institutions in different coun-
+tries may be an important trend for future research. Chaotic
+behavior of the governments and nancial institutions in the
+dynamical system model of the nancial system is the next step
+of this study.
+
+VII. SCENARIO SIMULATION FRAMEWORK
+
+To show the complete modeling and simulation process for
+different nancial contagion situations, a scenario simulation
+framework was developed as shown in Fig. 10. There are
+seven main procedures in the scenario simulation in this pa-
+per, including the establishment of the fuzzy dynamical system,
+crisp equivalent model transformation, model calibration for ini-
+tial value conditions and boundary value conditions, volatility
+
+transmission pattern identication, scenario analysis, policy
+suggestions, and the exploration of response strategies.
+
+The technologies involved in the establishment of the fuzzy
+dynamical system are the HP lter to address long-term net
+capital inow trends, IT-2 fuzzy numbers to express the cou-
+pling coefcient uncertainties, and FDEs to describe the dy-
+namics of the driving and response systems in the nancial
+contagion. In the crisp equivalent model transformation, the
+idea of EKM algorithms is employed, and the boundary value
+conditions are formulated by dening the clustering coefcient
+and the deviation rate, which allow for the IT-2 fuzzy simulation
+of the fuzzy dynamical system. The model calibration for the
+initial value conditions and the boundary value conditions tests
+the stability of the fuzzy dynamical system scenario simulation
+model. After volatility transmission pattern identication, sce-
+nario analyses and policy suggestions under a liberal economy
+can be developed for different nancial contagion situations ac-
+cording to the principles derived in Sections IV and VI. The
+exploration of response strategies can be used as references for
+the establishment of nancial policy by employing the principle
+of model analysis with macroeconomic control, as discussed in
+Sections V and VI.
+
+VIII. EXPERIMENTAL STUDY
+
+To test the effectiveness of the fuzzy dynamical system sce-
+nario simulation model, the global nancial crisis in 2008 was
+employed as an experimental study. All data for estimating the
+model parameters were collected from CEICs global database
+[65].
+
+A. Identication of Source Country of Financial Turbulence
+and Volatility-Affected Countries
+
+In the experimental study, the source country of the nancial
+turbulence and volatility-affected countries were determined ac-
+cording to the real-world situation. In fact, there has been evi-
+dence showing that the United States was the epicentre of the
+global nancial crisis which originated from the subprime mort-
+gage crisis in August 2007 [62]. Financial institutions in other
+advanced economies were affected because of their exposure to
+structured credits and because of weaknesses in prudential su-
+pervision and the nancial institution risk-management systems.
+Barclays Capital pointed out that the exposure of banks in the
+
+456
+
+IEEE TRANSACTIONS ON FUZZY SYSTEMS, VOL. 25, NO. 2, APRIL 2017
+
+PARAMETER ESTIMATIONS FOR THE FIVE SELECTED COUNTRIES
+
+TABLE III
+
+Country
+
+Parameter Estimation
+
+Name
+
+b
+
+Ireland
+Italy
+Spain
+Denmark
+Belgium
+
+0.318
+0.318
+0.318
+0.318
+0.318
+
+a
+
+0.385
+0.413
+0.113
+0.407
+0.419
+
+T r en d v (0)
+
+T r en d s (0)
+
+0.018
+0.013
+0.081
+0.034
+0.026
+
+0.052
+0.052
+0.052
+0.052
+0.052
+
+ -level of triangular IT-2 fuzzy coupling coefcient
+
+( Cs v )
+
+( Cv s )
+
+Ireland
+Italy
+Spain
+Denmark
+Belgium
+
+([2.82,2.93], 3.25, [3.69,3.77])
+([2.63,2.71], 2.97, [3.24,3.32])
+([0.91,1.02], 1.27, [1.61,1.69])
+([1.61,1.69], 1.94, [2.34,2.53])
+([1.43,1.51], 1.75, [1.97,2.11])
+
+([0.41,0.48],0.67,[0.89,0.95])
+([0.35,0.39],0.49,[0.61,0.68])
+([0.62,0.69],0.83,[1.02,1.09])
+([0.32,0.39],0.51,[0.75,0.82])
+([0.31,0.38],0.43,[0.57,0.61])
+
+were selected as the volatility-affected countries as they were
+identied as both bonanzas-suffered and crisis-affected during
+the global nancial crisis in 2008.
+
+B. Parameter Estimation
+
+The long-term net capital inow trends for each country were
+estimated by employing the HP lter on the historical data. The
+inertial coefcient of the source country of nancial turbulence
+b and the inertial coefcient of the volatility-affected country a
+were estimated based on the historical net capital inows and the
+GDP trend data in the selected countries. It should be noted that
+the ratio of net capital inows to the nominal GDP of a country
+is employed in this paper, since a country with a much higher
+nominal GDP is more resilient to net capital inow volatility.
+The -level of the triangular IT-2 fuzzy coupling coefcients
+( Csv ) and ( Cv s) were estimated for each country using the
+following steps. First, a group of preliminary estimated values
+for each of the two parameters were determined by employing
+a multivariate nonlinear regression method based on a group
+of samples from the net capital inow historical trend data ac-
+cording to the differential equations in Model (13), in which
+the inertial coefcients b and a had already been estimated and
+were regarded as known parameters. The historical trend data
+for the group of samples were taken from different time se-
+ries. Then, the mean (i.e., m ), left boundary (i.e., l ), and right
+boundary (i.e., r ) for the preliminary estimated values were
+integrated and transferred into the -level of the triangular IT-
+
+2 fuzzy numbers (i.e., () = ([l
+, [r
+])) for each of the two parameters, where the de-
+dr 
+ l ,
+viation rate  was set within the interval [0, 1], dl 
+ m . Table III shows the parameter estimations
+and dr 
+for the ve selected countries.
+
+ dl 
+
++ dr 
+
+= m
+
+, l
+
++ dl 
+
+], m
+
+, r
+
+= r
+
+C. Scenario Simulation for Verication
+
+Based on the above estimated parameters, the fuzzy dynami-
+cal system scenario simulation was implemented for each coun-
+try. To maintain consistent comparisons between the different
+
+Fig. 10.
+
+Scenario simulation framework of the nancial contagion.
+
+United States to Greece, Ireland, Portugal, and Spain achieved
+17.6 billion dollar. Cross-sectional exposure also played an im-
+portant role in the contagion through direct borrowing and parent
+funding. From the end of 2009, some European countries had
+experienced a debt crisis as a ratio of debt to GDP that signi-
+cantly exceeded the specied value set by the Maastricht Treaty.
+A 750 billion Euro rescue plan was consequently approved by
+the European Union to prevent the debt crisis spreading. Based
+on the above analysis and through an investigation of the his-
+torical data, the U.S. was regarded as the source country of the
+nancial turbulence in this experimental study, and ve coun-
+tries, including Ireland, Italy, Spain, Denmark, and Belgium,
+
+XU et al.: FUZZY DYNAMICAL SYSTEM SCENARIO SIMULATION-BASED CROSS-BORDER FINANCIAL CONTAGION ANALYSIS
+
+457
+
+D. Results Analysis and Discussions
+
+In Fig. 11, the simulated net capital inow trends had a sig-
+nicantly greater variation trend than the historical long-term
+net capital inow trends. This was considered reasonable as the
+FDR and most central banks continuously implemented bailout
+measures, monetary policies, and scal policies to efciently
+weaken the nancial shock spread during the nancial crisis.
+
+The historical long-term net capital inow trends for each
+country in Fig. 11 also imply that a nancial contagion may
+spread before a nancial shock occurs. There may be an accu-
+mulative effect during the early stages of a nancial contagion
+which may bring the volatility-affected countries into bonanzas-
+suffered, and a dramatic trend change of the net capital inow
+will occur for the volatility-affected countries when the nancial
+shock happens and may nally lead them to be crisis-affected.
+This explains the dynamical mechanism of the nancial conta-
+gion from the perspective of international capital ows.
+
+IX. CONCLUSION AND FUTURE WORK
+
+Financial globalization has accelerated the formulation of a
+complex nonlinear dynamical system constituted by an exten-
+sive nancial linkage coupling of economic subsystems. This
+paper investigated nancial contagion based on a fuzzy dy-
+namical system scenario simulation to analyze the volatility of
+international capital ows for a panel of 50 countries in emerg-
+ing markets and advanced economies from 1980 to 2011. The
+method proposed in this paper may assist policymakers who
+identify volatility transmission patterns of a nancial shock in
+early stages to allow for the formulation of appropriate response
+strategies that can be used as references for the establishment of
+effective monetary and scal policies.
+
+The contagion effects of the bonanza spread in the 50 coun-
+tries were identied and analyzed. The results indicated that the
+comovements of international capital ow bonanzas have het-
+erogeneous contagion effects for nancial shock across coun-
+tries. The HP lter was employed to address the long-term
+net capital inow trends. The comovement of nancial conta-
+gion between the source country of nancial turbulence and
+the volatility-affected country was described as a fuzzy dynam-
+ical system in which the driving and response systems were
+coupled. A fuzzy dynamical system scenario simulation model
+under a liberal economy was established to describe the con-
+tagion mechanism and the effects on the international capital
+ow volatility, which was then extended to a dynamical system
+model with macroeconomic control.
+
+The uncertainty of the coupling strength was addressed by
+employing the IT-2 fuzzy theory method. The properties of the
+volatility equilibrium point for the above two models, as well as
+the volatility contagion principles based on locally asymptotic
+stability analysis, were discussed for explaining the different
+volatility transmission patterns. Policy suggestions were made
+in three situations for providing managerial insights for policy-
+makers and an exploration of possible response strategies was
+also presented. A scenario simulation framework was built to
+illustrate the simulation and modeling method. The global -
+nancial crisis in 2008 was employed as an empirical study, in
+which the dynamical mechanism of the nancial contagion was
+explained.
+
+Fig. 11. Results of the fuzzy dynamical system scenario simulation for the
+selected ve countries.
+
+countries, the boundary value conditions for Model (13) for each
+country were set at the same value, the deviation rate was set
+at  = 0.1, and the cluster coefcient was selected as  = 0.50.
+The initial value conditions for each country were determined
+according to the estimated long-term net capital inow trends.
+The simulation start time for each country was set at the year
+the country rst suffered bonanzas before the nancial crisis
+occurred. The results for the fuzzy dynamical system scenario
+simulation for the selected ve countries are shown in Fig. 11
+and compared with the historical long-term net capital inow
+trends.
+
+458
+
+IEEE TRANSACTIONS ON FUZZY SYSTEMS, VOL. 25, NO. 2, APRIL 2017
+
+The future work will focus on the following ve directions:
+1) considering the comovements of the nancial contagion be-
+tween multiple countries coupled through extensive nancial
+connections and linkages; 2) extending the local theory of fuzzy
+dynamical system scenario simulation to a global theory which
+can be applied to wider range of situations; 3) exploring the
+uncertainty of the nancial contagion more comprehensively by
+employing the fuzzy-rough theory method; 4) considering the
+time-delay effect of the response for the volatility-affected coun-
+tries during a nancial shock; 5) analyzing the chaotic behavior
+of the governments and nancial institutions in the dynamical
+system model of the nancial system.
+
+ACKNOWLEDGMENT
+
+The authors would like to appreciate the editors and anony-
+mous referees for their helpful and constructive comments and
+suggestions, which have helped to improve this article.
+
+REFERENCES
+
+[1] F. Schweitzer, G. Fagiolo, D. Sornette, F. Vega-Redondo, A. Vespignani,
+and D. R. White, Economic networks: The new challenges, Science,
+vol. 325, no. 5939, pp. 422425, 2009.
+
+[2] Y. Leitner, Financial networks: Contagion, commitment, and private sec-
+
+tor bailouts, J. Finance, vol. 60, no. 6, pp. 29252953, 2005.
+
+[3] P. Glasserman and B. P. Young, How likely is contagion in nancial
+
+networks? J. Banking Finance, vol. 50, pp. 383399, 2015.
+
+[4] G. Castellacci and Y. Choi, Financial instability contagion: A dynamical
+systems approach, Quant. Finance, vol. 14, no. 7, pp. 12431255, 2014.
+[5] F. Allen and D. Gale, Financial contagion, J. Political Econ., vol. 108,
+
+no. 1, pp. 133, 2000.
+
+[6] S. Claessens and K. J. Forbes, Eds, International Financial Contagion.
+
+New York, NY, USA: Springer-Verlag, 2001.
+
+[7] K. J. Forbes and R. Rigobon, Measuring contagion: Conceptual and
+empirical issues, International Financial Contagion, S. Claessens and
+K. J. Forbes. New York, NY, USA: Springer-Verlag, 2001.
+
+[8] S. Claessens, R. Dornbusch, and Y. C. Park, Contagion: Why crises spread
+and how this can be stopped? in International Financial Contagion,
+S. Claessens and K. J. Forbes, Eds. New York, NY, USA: Springer-Verlag,
+2001.
+
+[9] M. Pritsker, The channels for nancial contagion, in International Fi-
+nancial Contagion, S. Claessens and K. J. Forbes, Eds. New York, NY,
+USA: Springer-Verlag, 2001.
+
+[10] M. Elliott, B. Golub, and M. O. Jackson, Financial networks and conta-
+
+gion, Amer. Econ. Rev., vol. 104, no. 10, pp. 31153153, 2014.
+
+[11] K. J. Forbes and F. E. Warnock, Capital ow waves: Surges, stops, ight,
+
+and retrenchment, J. Int. Econ., vol. 88, no. 2, pp. 235251, 2012.
+
+[12] M. Bordo and A. Murshid, Are nancial crises becoming more conta-
+gious? What is the Historical Evidence on Contagion? in International
+Financial Contagion, S. Claessens and K. J. Forbes, Eds. New York, NY,
+USA: Springer-Verlag, 2001.
+
+[13] M. Dungey, R. A. Fry, B. Gonzalez-Hermosillo, and V. Martin, Trans-
+mission of Financial Crises and Contagion: A Latent Factor Approach.
+New York, NY, USA: Oxford Univ. Press, 2010.
+
+[14] N. Boyson, C. Stahel, and R. Stulz, Hedge fund contagion and liquidity
+
+shocks, J. Finance, vol. 65, no. 5, pp. 17891816, 2010.
+
+[15] K. H. Bae, G. A. Karolyi, and R. M. Stulz, A new approach to measuring
+nancial contagion, Rev. Financial Stud., vol. 16, no. 3, pp. 717763,
+2003.
+
+[16] D. Collins and S. Gavron, Channels of nancial market contagion, Appl.
+
+Econ., vol. 36, no. 21, pp. 24612469, 2004.
+
+[17] R. Dornbusch, Y. C. Park, and S. Claessens, Contagion: Understanding
+how it spreads, World Bank Res. Obs., vol. 15, no. 2, pp. 177197, 2000.
+[18] C. Raddatz and S. L. Schmulder, On the international transmission
+of shocks: Micro-evidence from mutual fund portfolios, J. Int. Econ.,
+vol. 88, no. 2, pp. 357374, 2012.
+
+[19] M. Melvin and B. P. Melvin, The global transmission of volatility in the
+foreign exchange market, Rev. Econ. Statist., vol. 85, no. 3, pp. 670679,
+2003.
+
+[20] N. Nomikos and E. Salvador, The role of volatility regimes on volatil-
+ity transmission patterns, Quant. Finance, vol. 14, no. 1, pp. 113,
+2014.
+
+[21] H. H. Lee, C. Y. Park, and H. S. Byun, Do contagion effects exist in
+
+capital ow volatility? J. Jpn. Int. Econ., vol. 30, pp. 7695, 2013.
+
+[22] R. D. Vilag, G. H. Ionescu, M. D. Ungureanu, and I. Vasile, Contagion
+causes-rational or irrational behavior, in Proc. Ind. Revolutions Glob-
+alization Post-Globalization Perspect. Vol IV: Bank. Account. Financial
+Syst. 21st Century Perspect., 2009, pp. 669678.
+
+[23] S. Grifth-Jones, Stabilising capital ows to developing countries, IDS
+
+Bull., vol. 30, no. 1, pp. 3349, 1999.
+
+[24] E. G. Mendoza and M. E. Terrones, An anatomy of credit booms: Evi-
+dence from macro aggregates and micro data, Nat. Bureau Econom. Res.,
+Working Paper 14049, 2008.
+
+[25] C. M. Reinhart and V. R. Reinhart, Capital ow bonanzas: An encom-
+passing view of the past and present, Nat. Bureau Econom. Res., Working
+Paper 14321, 2008.
+
+[26] R. J. Hodrick and E. C. Prescott, Postwar U.S. business cycles: An
+investigation, J. Money Credit Banking, vol. 29, no. 1,
+
+empirical
+pp. 116, 1997.
+
+[27] M. O. Ravn and H. Uhlig, On adjusting the Hodrick-Prescott lter for the
+frequency of observations, Rev. Econ. Statist., vol. 84, no. 2, pp. 371376,
+2002.
+
+[28] R. Weron and M. Zator, A note on using the Hodrick-Prescott lter in
+
+electricity markets, Energy Econ., vol. 48, pp. 16, 2015.
+
+[29] L. Laeven and F. Valencia, Systemic banking crises database: An update,
+
+IMF Working Paper 12/163, 2012.
+
+[30] M. Fratzscher, Capital ows, push versus pull factors and the global
+
+nancial crisis, J. Int. Econ., vol. 88, no. 2, pp. 341356, 2012.
+
+[31] G. Fazio, Extreme interdependence and extreme contagion between
+emerging markets, J. Int. Money Finance, vol. 26, no. 8, pp. 12611291,
+2007.
+
+[32] E. T. Whittaker, On a new method of graduation, Proc. Edinburgh Math.
+
+Soc., vol. 41, pp. 6375, 1922.
+
+[33] L. A. Zadeh, The concept of a linguistic variable and its application to
+
+approximate reasoning-1, Inf. Sci., vol. 8, pp. 199249, 1975.
+
+[34] J. M. Mendel and X. W. Liu, Simplied interval type-2 fuzzy logic
+systems, IEEE Trans. Fuzzy Syst., vol. 21, no. 6, pp. 10561069, Dec.
+2013.
+
+[35] J. M. Mendel and R. I. John, Type-2 fuzzy sets made simple, IEEE
+
+Trans. Fuzzy Syst., vol. 10, no. 2, pp. 117127, Apr. 2002.
+
+[36] R. R. Yager, Fuzzy Subsets of Type II in Decisions, J. Cybern., vol. 10,
+
+nos. 13, pp. 137159, 1980.
+
+[37] J. M. Mendel, R. I. John, and F. Liu, Interval type-2 fuzzy logic systems
+made simple, IEEE Trans. Fuzzy Syst., vol. 14, no. 6, pp. 808821,
+Dec. 2006.
+
+[38] E. A. Jammeh, M. Fleury, C. Wagner, H. Hagras, and M. Ghanbari,
+Interval type-2 fuzzy logic congestion control for video streaming across
+IP networks, IEEE Trans. Fuzzy Syst., vol. 17, no. 5, pp. 11231142, Oct.
+2009.
+
+[39] J. M. Mendel and H. W. Wu, Type-2 fuzzistics for symmetric interval
+type-2 fuzzy sets: Part 1, forward problems, IEEE Trans. Fuzzy Syst.,
+vol. 14, no. 6, pp. 781792, Dec. 2006.
+
+[40] J. M. Mendel and H. W. Wu, Type-2 fuzzistics for symmetric interval
+type-2 fuzzy sets: Part 2, inverse problems, IEEE Trans. Fuzzy Syst.,
+vol. 15, no. 2, pp. 301308, Apr. 2007.
+
+[41] Y. Choi and R. Douady, Financial crisis dynamics: Attempt to dene a
+market instability indicator, Quant. Finance, vol. 12, no. 9, pp. 1351
+1365, 2012.
+
+[42] G. Castellacci and Y. Choi, Modeling contagion in the Eurozone crisis
+via dynamical systems, J. Banking Finance, vol. 50, pp. 400410, 2015.
+[43] W. S. Son and Y. J. Park, Delayed feedback on the dynamical model of a
+nancial system, Chaos Solitons Fractals, vol. 44, nos. 4/5, pp. 208217,
+2011.
+
+[44] Z. H. Hu and W. Chen, Modeling of macroeconomics by a novel dis-
+crete nonlinear fractional dynamical system, Discrete Dyn. Nature Soc.,
+vol. 2013, p. 9, 2013, Art. no. 275134.
+
+[45] B. Bede, I. J. Rudas, and A. L. Bencsik, First order linear fuzzy differential
+equations under generalized differentiability, Inf. Sci., vol. 177, pp. 1648
+1662, 2007.
+
+[46] M. Chen, Y. Fu, X. Xue, and C. Wu, Two-point boundary value problems
+of undamped uncertain dynamical systems, Fuzzy Sets Syst., vol. 159,
+pp. 20772089, 2008.
+
+[47] B. Chen and X. Liu, Reliable control design of fuzzy dynamical systems
+with time-varying delay, Fuzzy Sets Syst., vol. 146, pp. 349374, 2004.
+
+XU et al.: FUZZY DYNAMICAL SYSTEM SCENARIO SIMULATION-BASED CROSS-BORDER FINANCIAL CONTAGION ANALYSIS
+
+459
+
+[48] L. Hong and J. Sun, Bifurcations of fuzzy nonlinear dynamical systems,
+
+Commun. Nonlinear Sci. Numer. Simul., vol. 11, no. 1, pp. 112, 2006.
+
+[49] J. P. Xu, Z. G. Liao, and Z. N. Hu, A class of linear differential dynamical
+systems with fuzzy initial condition, Fuzzy Sets Syst., vol. 158, no. 21,
+pp. 23392358, 2007.
+
+[50] J. P. Xu, Z. G. Liao, and J. J. Nieto, A class of linear differential dynam-
+ical systems with fuzzy matrices, J. Math. Anal. Appl., vol. 368, no. 1,
+pp. 5468, 2010.
+
+[51] S. Arora and B. Barak, Computational Complexity: A Modern Approach.
+
+London, U.K.: Cambridge Univ. Press, 2009.
+
+[52] D. K. Backus and P. J. Kehoe, International evidence on the historical
+properties of business cycles, Amer. Econ. Rev., vol. 88, no. 4, pp. 864
+888, 1992.
+
+[53] I. H. Correia, J. L. Neves, and S. T. Rebelo, Business cycles from
+1850C1950: New facts about old data, Eur. Econ. Rev., vol. 36, nos.
+2/3, pp. 459467, 1992.
+
+[54] T. J. Cooley and L. E. Ohanian, The cyclical behavior of prices, J.
+
+Monetary Econ., vol. 28, no. 1, pp. 2560, 1991.
+
+[55] M. Baxter and R. King, Measuring business cycles: Approximate band-
+pass lters for economic time series, Rev. Econ. Statist., vol. 81, no. 4,
+pp. 575593, 1999.
+
+[56] A. Iacobucci and A. Noullez, A frequency selective lter for short-length
+
+time series, Comput. Econ., vol. 25, nos. 1/2, pp. 75102, 2005.
+
+[57] R. F. Engle and C. W. J. Granger, Co-integration and error correction:
+Representation, estimation, and testing, Econometrica, vol. 55, no. 2,
+pp. 251276, 1987.
+
+[58] A. C. Stockman and L. L. Tesar, Tastes and technology in a 2-country
+model of the business cycle: Explainning international comovements,
+Amer. Econ. Rev., vol. 85, no. 1, pp. 168185, 1995.
+
+[59] R. M. Neumann, R. Penl, and A. Tanku, Volatility of capital ows and
+nancial liberalization: Do specic ows respond differently? Int. Rev.
+Econ. Finance, vol. 18, no. 3, pp. 488501, 2009.
+
+[60] H. W. Wu and J. M. Mendel, Uncertainty bounds and their use in the
+design of interval type-2 fuzzy logic systems, IEEE Trans. Fuzzy Syst.,
+vol. 10, no. 5, pp. 622639, Oct. 2002.
+
+[61] D. R. Wu and J. M. Mendel, Enhanced KarnikMendel algorithms,
+
+IEEE Trans. Fuzzy Syst., vol. 17, no. 4, pp. 923934, Aug. 2009.
+
+[62] D. Kenourgios and D. Dimitriou, Contagion of the global nancial cri-
+sis and the real economy: A regional analysis, Econ. Model., vol. 44,
+pp. 283293, 2015.
+
+[63] F. Brauer and C. Castillo-Chavez, Mathematical Models in Population
+Biology and Epidemiology. New York, NY, USA: Springer-Verlag, 2001.
+[64] T. Bendixson, Sus les courbes denies par des equations differentielles,
+
+Acta Math., vol. 24, pp. 188, 1901.
+[65] CEIC, Global Database, 2015.
+
+ceicdata.com/en/products/global
+
+[Online]. Available: http:/www.
+
+Xinxin Xu (M15) received the Ph.D degree in eco-
+nomics from Sichuan University, Chengdu, China, in
+2014, and was a Visiting Scholar at National Univer-
+sity of Singapore, Singapore, from 2012 to 2013.
+
+She is currently a Postdoctoral Fellow at Sichuan
+University, and an Adjunct Distinguished Associate
+Research Fellow with Chengdu University, Chengdu.
+She received the General Program of China Postdoc-
+toral Science Foundation (Grant No. 2015M572470)
+and the research fund of Sichuan University (Grant
+No. skzx2015-sb04) in 2015. Her research interests
+include nancial engineering, macroeconomics, world economics, and dynam-
+ical systems.
+
+Dr. Xu is a Member of the IEEE Control Systems Society and a Member of
+
+the IEEE Systems, Man, and Cybernetics Society.
+
+Ziqiang Zeng (S11M15) received the B.S. de-
+gree in applied mathematics and the Ph.D. degree in
+management science and engineering from Sichuan
+University, Chengdu, China, in 2009 and 2014, re-
+spectively, and was a Visiting Scholar at the Univer-
+sity of Florida, Gainesville, FL, USA, from 2012 to
+2013.
+
+He is currently a Postdoctoral Fellow with Sichuan
+University, and is supported by the China Postdoc-
+toral Science Foundation to be a Postdoctoral Fellow
+working with the University of Washington, Seattle,
+WA, USA, from 2016 to 2018. He also acts as an Adjunct Distinguished As-
+sociate Research Fellow at Chengdu University, Chengdu, China, since 2015.
+He has published more than 20 peer-reviewed papers in international journals
+and conferences, and two books by Springer and Sichuan University Press. He
+received the Youth Program of National Natural Science Foundation of China
+(Grant No. 71501137), the General Program of China Postdoctoral Science
+Foundation (Grant No. 2015M572480) in 2015, the project of Research Center
+for System Sciences and Enterprise Development (Grant No. Xq16B05) and the
+research fund of Sichuan University (Grant No. skqy201647) in 2016. His cur-
+rent research interest includes multistage decision making, nancial contagion,
+fuzzy theory, and engineering optimization.
+
+Dr. Zeng is a Member of the IEEE Control Systems Society, a Member of
+the IEEE Systems, Man, and Cybernetics Society, and an Associate Member of
+American Society of Civil Engineers.
+
+Jiuping Xu (M11SM14) received the rst Ph.D.
+degree in applied mathematics
+from Tsinghua
+University, Beijing, China, in 1995, and the second
+Ph.D. degree in physical chemistry from Sichuan
+University, Chengdu, China, in 1999.
+
+He is currently a Distinguished Professor of
+Chang Jiang Scholars Program with Sichuan Uni-
+versity. He has published more than 40 books by
+Springer, Taylor & Francis, and more than 400
+international peer-reviewed journal papers in areas
+of uncertainty decision making, systems engineer-
+ing, economic theorem, and information science. His current research interests
+include uncertainty decision making, nancial engineering, fuzzy dynamical
+systems, and complex systems with applications.
+
+Prof. Xu has been appointed as an Academician of the International Academy
+of Systems and Cybernetic Sciences since 2010. He is also a Lifetime Academi-
+cian of the Lot Zadeh International Academy of Sciences in recognition of
+his contribution to the development of science and organization of scientic
+forums since 2014. He is currently the President of the International Society for
+Management Science and Engineering Management, the Vice President of the
+Chinese Society of Optimization & Overall Planning and Economical Math-
+ematics, and the Vice President of the Management Science and Engineering
+Society of China. At present, He is a Member of the IEEE Control Systems
+Society, a Member of the IEEE Systems, Man, and Cybernetics Society, and a
+Member of the American Society of Civil Engineers.
+
+Mengxiang Zhang (S14) received the B.S. and the
+M.S. degrees in system science from Sichuan Univer-
+sity, Chengdu, China, in 2012 and 2015, respectively,
+where he is currently working toward the Ph.D. de-
+gree in management science and engineering.
+
+He has published several peer-reviewed papers in
+international journals. His areas of research interests
+mainly focus on dynamical system, uncertain deci-
+sion making, and system engineering.
+
+Mr. Zhang is a Member of the IEEE Control Sys-
+tems Society and a Student Member of the American
+
+Society of Civil Engineers.
+
+
