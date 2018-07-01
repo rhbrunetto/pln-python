@@ -7,4 +7,4 @@ class Chapter:
 
   def show(self):
     print("> Number:", self.number)
-    print("> Content:", self.content)
+    # print("> Content:", self.content)
