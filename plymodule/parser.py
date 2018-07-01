@@ -1,40 +1,71 @@
-import ply.yacc as yacc
+# Yacc example
 
+import ply.yacc as yacc
+import data
 # Get the token map from the lexer.  This is required.
 from lexer import tokens
+from data.article import Article
 
-def p_expression_plus(p):
-    'expression : expression PLUS term'
-    p[0] = p[1] + p[3]
+def p_article(p):
+    'article : header'
+    p[0] = Article(p[1], p[2], p[3])
+    print "Article rule"
 
-def p_expression_minus(p):
-    'expression : expression MINUS term'
-    p[0] = p[1] - p[3]
+def p_header_code(p):
+    'header : code publication titleandauthor abstract keywords'
+    print "Header_code rule"
 
-def p_expression_term(p):
-    'expression : term'
-    p[0] = p[1]
+def p_header_pub(p):
+    'header : publication code titleandauthor abstract keywords'
+    print "Header_pub rule"
 
-def p_term_times(p):
-    'term : term TIMES factor'
-    p[0] = p[1] * p[3]
+def p_code(p):
+    'code : NUMBER'
+    print "Code rule"
 
-def p_term_div(p):
-    'term : term DIVIDE factor'
-    p[0] = p[1] / p[3]
+def p_publication(p):
+    'publication : IEEE text VIRGULA MONTH YEAR'
+    print "Publication rule"
 
-def p_term_factor(p):
-    'term : factor'
-    p[0] = p[1]
+def p_abstract(p):
+    'abstract : ABSTRACT text INDEX'
+    print "Abstract rule"
 
-def p_factor_num(p):
-    'factor : NUMBER'
-    p[0] = p[1]
+def p_keywords(p):
+    'keywords : INDEX text INTRO'
+    print "Keywords rule"
 
-def p_factor_expr(p):
-    'factor : LPAREN expression RPAREN'
-    p[0] = p[2]
+# def p_content(p):
+#     'content : INTRO text REFERENCES'
+#     print "Content rule"
+
+# def p_references(p):
+#     'references : REFERENCES text'
+#     print "References rule"
+
+def p_titleandauthor(p):
+    'titleandauthor : text'
+    print "Title and author rule"
+
+def p_text(p):
+    'text : GENERAL'
+    print "Text rule"
+    
+# def p_titleandauthor(p):
+#     'titleandauthor : '
 
 # Error rule for syntax errors
 def p_error(p):
     print("Syntax error in input!")
+
+# Build the parser
+parser = yacc.yacc()
+
+# while True:
+#   try:
+#       s = raw_input('calc > ')
+#   except EOFError:
+#       break
+#   if not s: continue
+#   result = parser.parse(s)
+#   print(result)

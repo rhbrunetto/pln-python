@@ -12,7 +12,7 @@
 
 import os
 import re
-import plymodule.lexer
+# import plymodule
 from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
 from pdfminer.pdfpage import PDFPage
 from pdfminer.converter import TextConverter
@@ -53,13 +53,14 @@ def process(path):
     return
 
 def main():
-    directory = "/home/ricardo/uem/ia/t2/files/"
-    os.system("ls " + directory + "*.pdf > .tmpfiles")
-    with open(".tmpfiles", "r") as ins:
-        files = ins.readlines()
-        for arq in files:
-            process(arq.replace('\n', ''))
-    os.system("rm .tmpfiles")
+    directory = "/home/ricardo/uem/ia/t2/files/13.pdf"
+    # os.system("ls " + directory + "*.pdf > .tmpfiles")
+    # with open(".tmpfiles", "r") as ins:
+        # files = ins.readlines()
+        # for arq in files:
+            # process(arq.replace('\n', ''))
+    # os.system("rm .tmpfiles")
+    process(directory)
     # print(pdf_to_text("/home/ricardo/Downloads/analise-de-desempenho.pdf"))
             
 

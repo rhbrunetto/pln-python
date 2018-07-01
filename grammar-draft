@@ -1,4 +1,4 @@
->>> Gramática proposta
+>>>Gramática proposta
 
 ARTICLE: HEADER BODY REFERENCES
 
@@ -15,7 +15,7 @@ MONTH: "JANUARY" | "FEBRUARY" | "MARCH" | "APRIL" | "MAY" | "JUNE"
 
 YEAR: <number>
 
-TITLE: <text-in-caps>
+TITLE: <text>
 
 AUTHOR: <text>
 

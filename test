@@ -1,0 +1,52 @@
+2194
+
+IEEE TRANSACTIONS ON CONTROL SYSTEMS TECHNOLOGY, VOL. 25, NO. 6, NOVEMBER 2017
+
+Feedback Controllers as Financial Advisors for Low-Income Individuals
+
+Hugo Gonzalez Villasanti and Kevin M. Passino, Fellow, IEEE
+
+Abstract— Feedback controllers are introduced to help manage
+an individual’s or household’s ﬁnancial life and build savings. The
+controllers can be viewed as ﬁnancial advisors for an individual’s
+resource allocation problem, which is modeled as a nonlinear
+discrete time stochastic system with income uncertainties, asset
+losses, and constraints on cash ﬂow and credit. We introduce a
+model predictive controller (MPC) and a proportional-integral-
+derivative (PID) controller, and compare them with a benchmark
+method employed in ﬁnance and economics, stochastic dynamic
+programming (DP). Both MPC and PID produce similar consis-
+tency in ﬁnancial management compared with DP. They also
+offer the advantage of low computational complexity relative
+to DP, which allows us to efﬁciently perform assessments of
+robustness (reliability) and disturbance rejection (e.g., effects of
+uncertainties), both of which are of signiﬁcant practical engineer-
+ing importance. In addition, this ﬂexibility enables us to uncover
+the system’s properties, such as the existence of a “poverty
+trap" caused by constraints in the control space and dynamics.
+The effectiveness of a PID-based aid intervention for low-skilled
+and low-endowed agents that lie within the trap is assessed
+and contrasted with other existing cash transfer programs, with
+results that support a further implementation analysis. These
+assessments constitute a novel application of feedback controllers
+that, besides effectively dealing with scarcity constraints, present
+practical advantages that are shown to translate into an ability
+to implement the MPC or PID controller in a variety of ways
+for low-income individuals via computer-assistive methods (e.g.,
+a cell phone).
+
+Index
+control
+derivative (PID) control, reliability, safety net.
+
+Terms— Feedback
+(MPC),
+poverty
+
+control, model
+trap,
+
+predictive
+proportional-integral-
+
+I. INTRODUCTION
