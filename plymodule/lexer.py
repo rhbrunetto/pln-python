@@ -13,6 +13,8 @@ tokens = (
    'YEAR',
    'MONTH',
 #    'INTRO',
+   'REFERENCE_B',
+   'REFERENCE_L',
    'REFERENCES',
    'GENERAL'
 )
@@ -46,15 +48,21 @@ def t_ABSTRACT(t):
 
 def t_CHAPTER_MARK(t):
     r'\I{1,3}\.\s([A-Z]+\s)+|(\I{1,2})?V\.\s([A-Z]+\s)+'
-    # 'III\.\s([A-Z]+\s)+|II\.\s([A-Z]+\s)+|IV\.\s([A-Z]+\s)+|I\.\s([A-Z]+\s)+|V\.\s([A-Z]+\s)+'
-    # 'IV\.\S|I\.\s|II\.\s|III\.\s|V\.\s|VI\.\s'
+    return t
+
+def t_REFERENCE_B(t):
+    r'\[\d+\]((.*\S\.*\n)+)'
+    return t
+
+def t_REFERENCE_L(t):
+    r'\[\d+\].*\http\.+'
     return t
 
 t_REFERENCES    = 'REFERENCES'
 # t_VIRGULA       = r','
 # t_CAPSTEXT      = r'[A-Z]+|\\s+'
 # t_GENERAL = r'.+\S?(?=\,)'
-
+# \[\d+\](.*[,\d+{4}.]|.*\n+)
 def t_YEAR(t):
     r'\d{4}'
     t.value = int(t.value)    

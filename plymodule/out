@@ -1,862 +1,107 @@
-Code rule
-Text rule
-Publication rule
-Text rule
-Text general rule
-Title and author rule
-Text rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Abstract rule
-Text rule
-Text general rule
-Text rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Keywords rule
-Header_code rule
-('> Publication:', 'TRANSACTIONS ON CONTROL SYSTEMS TECHNOLOGY, VOL. 25, NO. 6,november2017')
-('> Code:', 2194)
-('> Title_Author:', 'Feedback Controllers as Financial Advisors for Low-Income IndividualsHugo Gonzalez Villasanti and Kevin M. Passino, Fellow, IEEE')
-('> Abstract:', '\xe2\x80\x94 Feedback controllers are introduced to help managean individual\xe2\x80\x99s or household\xe2\x80\x99s \xef\xac\x81nancial life and build savings. Thecontrollers can be viewed as \xef\xac\x81nancial advisors for an individual\xe2\x80\x99sresource allocation problem, which is modeled as a nonlineardiscrete time stochastic system with income uncertainties, assetlosses, and constraints on cash \xef\xac\x82ow and credit. We introduce amodel predictive controller (MPC) and a proportional-integral-derivative (PID) controller, and compare them with a benchmarkmethod employed in \xef\xac\x81nance and economics, stochastic dynamicprogramming (DP). Both MPC and PID produce similar consis-tency in \xef\xac\x81nancial management compared with DP. They alsooffer the advantage of low computational complexity relativeto DP, which allows us to ef\xef\xac\x81ciently perform assessments ofrobustness (reliability) and disturbance rejection (e.g., effects ofuncertainties), both of which are of signi\xef\xac\x81cant practical engineer-ing importance. In addition, this \xef\xac\x82exibility enables us to uncoverthe system\xe2\x80\x99s properties, such as the existence of a \xe2\x80\x9cpovertytrap" caused by constraints in the control space and dynamics.The effectiveness of a PID-based aid intervention for low-skilledand low-endowed agents that lie within the trap is assessedand contrasted with other existing cash transfer programs, withresults that support a further implementation analysis. Theseassessments constitute a novel application of feedback controllersthat, besides effectively dealing with scarcity constraints, presentpractical advantages that are shown to translate into an abilityto implement the MPC or PID controller in a variety of waysfor low-income individuals via computer-assistive methods (e.g.,a cell phone).')
-('> Keywords:', 'controlderivative (PID) control, reliability, safety net.Feedback(MPC),povertycontrol, modeltrap,predictiveproportional-integral-')
-Chapter text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text year rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter rule
+("Illegal character '\x0c'", 929)
+('> Article: ', 'Feedback Controllers as Financial Advisors for Low-Income IndividualsHugo Gonzalez Villasanti and Kevin M. Passino, Fellow, IEEE')
+('> Publication: ', 'TRANSACTIONS ON CONTROL SYSTEMS TECHNOLOGY, VOL. 25, NO. 6,november2017')
+> Chapters: 
 ('> Number:', 'I. INTRODUCTION\n')
-('> Content:', 'H UMANITY is facing signi\xef\xac\x81cant challenges to improvethe quality of life of more than 1 billion people thatlive in extreme poverty. Engineers are increasingly committingthemselves to developing and implementing technologies thatimprove the overall welfare of the poor [1], proposing practicalapplications based on the empirical and theoretical \xef\xac\x81ndings inthe context of social, political, and economical systems. Thisbrief introduces the use of \xe2\x80\x9cfeedback control engineering\xe2\x80\x9d tohelp poor manage their \xef\xac\x81nancial lives.This brief aimed at alleviating poverty has identi\xef\xac\x81ed bestpractices to overcome poverty, as noted in [2] and [3].The optimal allocation of investment and consumption hasbeen studied in [4], with extensions to household \xef\xac\x81nanceManuscript received June 20, 2016; revised August 27, 2016; acceptedSeptember 25, 2016. Date of publication December 9, 2016; date of currentversion October 9, 2017. Manuscript received in \xef\xac\x81nal form November 20,2016. Recommended by Associate Editor S. Di Cairano.The authors are with the Department of Electrical and ComputerEngineering, Ohio State University, Columbus, OH 43210 USA (e-mail:gonzalezvillasanti.1@osu.edu).Color versions of one or more of the \xef\xac\x81gures in this paper are availableonline at http://ieeexplore.ieee.org.Digital Object Identi\xef\xac\x81er 10.1109/TCST.2016.2632524in [5], and some insights into households in developingeconomies can be found in [6]. Viewing economic systemsas evolving dynamical systems, where agents need to adaptthemselves to a changing environment, can lead to a holisticview of the phenomena and the design of better tools to helpwith the pressing need for managing the economic lives of thepoor.Various publications stress the importance of providingbetter tools for the \xef\xac\x81nancial lives of the poor [2], [7]\xe2\x80\x93[9].In [7], three fundamental \xef\xac\x81nancial needs are identi\xef\xac\x81ed from asurvey of 250 households from South Asia and South Africa.The \xef\xac\x81rst of these needs is to cope with irregular income tomeet daily basic needs. The second is to deal with \xe2\x80\x9cshocks,\xe2\x80\x9deven with low savings, and the third is to \xef\xac\x81nd strategiesto accumulate larger sums of money via savings. This lastneed is considered as signi\xef\xac\x81cant importance in [2], where,after analyzing individuals in 49 villages in Thailand, theauthors concluded that the households that could accumulatesavings by any means often dealt better with uncertainties andshocks.Treating an economic agent and the local market as adynamical system opens the possibility of employing feedbackcontrollers both in economics [10]\xe2\x80\x93[12] and \xef\xac\x81nance [13], [14].Furthermore, controllers to manage budgets, overcome sav-ings, and credit constraints could become tools to overcomelow \xef\xac\x81nancial literacy of people in poverty [15], and achieveresilience by adapting to the changing environment whendealing with risk and uncertainties. A potential frameworkfor the implementation of these controllers could be a micro-\xef\xac\x81nance institution that deals with individuals (households),and mainly small-scale entrepreneurs, seeking to improvetheir well-being and escape poverty. There has been a broadconsensus among scholars on the role of micro\xef\xac\x81nance as atool to alleviate poverty [7], [8], and their close contact withpeople represents an attractive alternative to apply feedbackcontrollers as \xef\xac\x81nancial advisors for their clients.Building on this brief, our goal is to model the \xef\xac\x81nancial lifeof low-income individuals and \xef\xac\x81nd, via feedback controllers,the decisions he/she must make in order to cope with thethree needs stated above. Also, the external interventions inthe form of cash transfers that must be performed in order toassist them in this \xef\xac\x81nancial quest are assessed, including aPID-based transfer program. Overall, this brief provides anovel and important application of feedback controllers, onethat directly assists individuals in escaping poverty withmobile or PC implementation.')
-Chapter text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text year rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text year rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter rule
 ('> Number:', 'II. MODEL OF ECONOMIC ')
-('> Content:', 'AGENT\xe2\x80\x99S DYNAMICS\xe2\x80\x9cHouseholds\xe2\x80\x9d in development economics are often por-trayed as both consumption and production units, either wageearners or small entrepreneurs [16]. Building on the classical1063-6536 \xc2\xa9 2016 IEEE. Personal use is permitted, but republication/redistribution requires IEEE permission.See http://www.ieee.org/publications_standards/publications/rights/index.html for more information.\x0cGONZALEZ VILLASANTI AND PASSINO: FEEDBACK CONTROLLERS AS FINANCIAL ADVISORS FOR LOW-INCOME INDIVIDUALS2195models of \xef\xac\x81nancial resource allocation between risky andrisk-less assets of Merton [4] and Samuelson [17], and theirsubsequent improvements that introduced various constraints,we propose a discrete time multiple input multiple outputstochastic model with state-dependent constraints that re\xef\xac\x82ectincome uncertainties, investments, risks, liquidity, and creditconstraints for underprivileged households. The dynamicalmodel presented here intends to re\xef\xac\x82ect the three main chal-lenges identi\xef\xac\x81ed in [7], along with \xef\xac\x81nancial management dataof poor families in [2].A. Household DynamicsIn \xef\xac\x81nancial accounting, individual wealth is usually repre-sented as composed of two dimensions: assets and liabilities.Meanwhile, assets are classi\xef\xac\x81ed either in current and \xef\xac\x81xedassets. In this brief, we model current assets as composedonly of cash in hand x1(k) \xe2\x88\x88 R while \xef\xac\x81xed assets aremodeled as x2(k) \xe2\x88\x88 R. We assume that all the agent\xe2\x80\x99s \xef\xac\x81xedassets generate income, thus referring to x2(k) as capital.We also consider that the current assets are employed to fundconsumption and all transactions that require cash, and thatthe sale of \xef\xac\x81xed assets is done without cost or time delay.is represented with x3(k) \xe2\x88\x88 R. Thus,Liabilities or debtthe state variable is x(k) = [x1(k), x2(k), x3(k)]T and thecontrol or decision variable is u(k) = [u1(k), u2(k), u3(k)]T ,where u1(k) \xe2\x88\x88 R is the agent\xe2\x80\x99s expenses or consumption, andu2(k) \xe2\x88\x88 R is the \xef\xac\x82ow from capital to cash in hand in periodk to fund consumption u1(k) and debt payment u3(k) \xe2\x88\x88 R,which is positive (negative), when it decreases (increases)debt. Here, we will represent an agent who, at each timestep, must decide how much to consume for a household\xe2\x80\x99sneeds, how much to invest into the working capital x2(k) tosecure future income, how much to decrease or increase debtx3(k), and how much to save, i.e., increase cash in hand x1 inorder to overcome uncertain income and possible shocks. Themodel is\xe2\x8e\x9b\xe2\x8e\x9dx1(k) \xe2\x88\x92 3(cid:4)j=1\xe2\x8e\x9e\xe2\x8e\xa0 (1 \xe2\x88\x92 s1(k))x1(k + 1) =x2(k + 1) = (x2(k) + u2(k))(1 + i2(k) \xe2\x88\x92 s2(k))x3(k + 1) = (x3(k) \xe2\x88\x92 u3(k))(1 + i3)(1b)(1c)where i2(k) \xe2\x88\x88 R is a random return on the capital investedx2(k). As the markets in developing countries evolve in adifferent way than in the developed world and there is a gapin the literature in representing those markets, we chose tomodel this variable as i2(k) = \xce\xbc + \xcf\x83 (k), where \xce\xbcm is theexpected or mean return on the investment and \xcf\x83 (k) is azero mean Gaussian random variable. Furthermore, i3 \xe2\x89\xa5 0is the debt interest rate, and the random variables s1(k) \xe2\x89\xa5 0and s2(k) \xe2\x89\xa5 0 represent negative shocks to cash in hand andworking capital, respectively, e.g., unexpected healthcare costor damage to assets by natural disasters. They are modeled asindependent and uncorrelated discrete time events with speci\xef\xac\x81cprobability mass functions de\xef\xac\x81ned below.u j (k)(1a)B. ConstraintsThe constraints on the control space can be modeled asu1(k) \xe2\x89\xa5 cmin \xe2\x89\xa5 0u2(k) \xe2\x89\xa5 \xe2\x88\x92x2(k)u3(k) \xe2\x89\xa5 x3(k) \xe2\x88\x92 climu1(k) + u2(k) + u3(k) \xe2\x89\xa4 x1(k)(2a)(2b)(2c)(2d)where the lower bound on u1(k) is the subsistence constraint orminimum consumption needed to survive. The lower bound onu2(k) is the available amount for disinvestment and the lowerbound corresponding to u3(k) is determined by the availableamount to withdraw as credit, which is the difference betweenthe amount owed and the credit limit clim \xe2\x89\xa5 0. Next, theupper bound on the sum u1(k)+ u2(k)+ u3(k) is the liquidityconstraint, and it simply implies that at the beginning of eachperiod k, the agent cannot create a budget that will depleteall of his cash in hand, and if the desired consumption u1(k)is greater than the available cash, i.e., if u1(k) > x1(k), thenthe de\xef\xac\x81cit must be covered by the working capital x2(k) viau2(k) < 0 and/or via debt with u3(k) < 0 as explained above.C. Objective Function\xe2\x88\x97 \xe2\x88\x88 U\xe2\x88\x97|+|u(k)\xe2\x88\x92u\xe2\x88\x97|T R|u(k)\xe2\x88\x92u\xe2\x88\x97|T Q|x(k)\xe2\x88\x92xWith this model, we will try to develop controllers thathelp the agent to build savings that will make him/her moreresilient to shocks and uncertainty. Our goal is not to modelthe agent\xe2\x80\x99s behavior by employing cost functions, such as theconstant relative risk aversion utility function or other standardisoelastic cost function [18]; instead, we seek to minimize arunning quadratic cost over a \xef\xac\x81nite horizon with target states\xe2\x88\x97 \xe2\x88\x88 R2 and controls uxg(x, u) = |x(k)\xe2\x88\x92x\xe2\x88\x97|.(3)The parameters of Q and R assign weights to consumption,the desire to quickly accumulate assets, or the commitment topay debt. Although these values correspond to behavioral traitsand a connection that can be drawn with standard economicterms, such as impatience and risk aversion, more researchis needed to properly establish this connection. Here, wedistance ourselves from the economic questions and insteadfocus on performance and reliability assessment. Throughoutthis brief, we make the assumption that the agents have perfectknowledge of the states, i.e., the agent has information abouthis/her cash in hand, working capital, and debt, which isusually the case for individuals or households with a basiclevel of \xef\xac\x81nancial literacy. This avoids the need for estimatorsand observers for the state.')
-Chapter text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text number rule
-Chapter text text rule
-Chapter text number rule
-Chapter text text rule
-Chapter text number rule
-Chapter text text rule
-Chapter text number rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text year rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text number rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text number rule
-Chapter text text rule
-Chapter text text rule
-Chapter text number rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text number rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text IEEE rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter rule
 ('> Number:', 'III. HOUSEHOLD ECONOMIC DECISION MAKING\n')
-('> Content:', 'USING FEEDBACKA. Dynamic ProgrammingA very common method employed to solve dynamiceconomic models, such as the one above,is dynamicprogramming (DP). Using the terminology found [19], thebasic problem in DP usesx(k + 1) = fk (x(k), u(k), w(k)),k = 0, 1, . . . , N \xe2\x88\x92 1\x0c2196IEEETRANSACTIONS ON CONTROL SYSTEMS TECHNOLOGY, VOL. 25, NO. 6, NOVEMBER 2017where the state x(k) is an element of S(k) and controlu(k) \xe2\x88\x88 Uk(x(k)). The random disturbance w(k) is assumedto be independent of the past values of the disturbance. Usingthe principle of optimality, an optimal control policy is foundemploying the following routine, which proceeds backward intime from period N \xe2\x88\x92 1 to period 0 byJN (x N ) = gN (x N ){gk(x(k), u(k), w(k))Jk(x(k)) = minu(k)\xe2\x88\x88Uk+ Jk+1( fk(x(k), u(k), w(k)))}Ew(k)(5)for k = 0, 1, . . . , N \xe2\x88\x92 1J0(x0) = J\xe2\x88\x97(x0).In general, a closed-form solution for the DP routine isnot possible except for some special cases. One typically hasto resort to a discretization of the state space and proceedwith a numerical computation. The computational effort thatincreases with the number discretization points leads to the\xe2\x80\x9ccurse of dimensionality,\xe2\x80\x9d which implies thatthe realisticmodels with a large number of variables can quickly becomeintractable in terms of computational analysis and implemen-tation. Numerical methods to overcome the curse have beenproposed in [20] and [21], although the computational coststill remains high for practical implementation, as seen inthis brief. Here, we considered the problem as an in\xef\xac\x81nite-horizon stochastic shortest path problem and solve it via policyiteration, employing a scattered data interpolation algorithm.B. Model Predictive ControlModel predictive controller (MPC) features the explicit useof a model to predict the economic system\xe2\x80\x99s behavior, and thecalculation of a control sequence minimizing a cost functionwith a receding horizon strategy. The process is repeated ateach time step with the use of the output measurements. TheMPC resembles human decision making with the use of amodel (mental model of the process) [22]. To present theformulation, suppose we havex (k + 1) = fk (x(k), u(k), w(k)),with the same assumptions as DP with respect to x(k) \xe2\x88\x88 Skand u(k) \xe2\x88\x88 Uk(x(k)). Then, the MPC algorithm proceeds asfollows at each time k.1) Given a time horizon k + m, \xef\xac\x81nd a controller sequencek = 0, 1, . . . , N \xe2\x88\x92 1{u(k), u(k + 1), . . . , u(k + m \xe2\x88\x92 1)} that minimizesk+m\xe2\x88\x921(cid:4)i=kgi (x(i ), u(i ))subject to the constraintsx(i + 1) = fi (x(i ), u(i ))u(i ) \xe2\x88\x88 Ui ,i = k, k + 1, . . . , k + m \xe2\x88\x92 1.2) Apply the control input\xce\xbc(x(k)) = u(k).3) Return to step 1 until the \xef\xac\x81nal time N.Solving an open loop problem allows us avoid the compli-cations of the curse of dimensionality, yet recomputation ateach step while in a feedback loop leads to good performance(as has been seen in a multitude of very complex industrialapplications [23]).(4)C. Proportional-Integral-Derivative ControlA widely successful controller for many industrial appli-cations is the proportional-integral-derivative (PID) controller.An advantage of this controller is that no prior knowledge ofthe plant parameters is required and yet, via appropriate tuning,good performance is often obtained even for nonlinear modelswith random variables, as is the case here. PID control is themost widely implemented feedback controller in the world,with successful application to countless challenging feedbackcontrol problems.1) Formulation: As the PID controller does not explicitlyconsider the minimization of a cost function in its usualform, we build a reference vector r (k), where the referencetrajectories are ramps from the initial condition x0 to thewith given slopes for each state, denoteddesired values xby the vector S. The goal of the controller will be to drive theerror e(k) = r (k) \xe2\x88\x92 x(k) to zero, where the reference vectorr (k) is\xe2\x88\x97r (k) = min{x0 + k S, x\xe2\x88\x97}.We de\xef\xac\x81ne a PID controller as the feedback law correspond-ing to each input ui (k) for i \xe2\x88\x88 {1, 2, 3}. Each controllerproduces an input based on the error value de\xef\xac\x81ned as ei (k) =ri (k) \xe2\x88\x92 xi (k), thenui (k) = Pi (k) + Ii (k) + Di (k)for i \xe2\x88\x88 {1, 2, 3}wherePi (k) = K p,i ei (k),Ii (k) = Ii (k \xe2\x88\x92 1) + Kt,i ei (k)andDi (k) =Kd,iKd,i + Kn,i+ Kd,i Kn,iKd,i + Kn,iDi (k \xe2\x88\x92 1)(ei (k) \xe2\x88\x92 ei (k \xe2\x88\x92 1))where Pi (k), Ii (k), and Di (k) are the proportional, integral,and derivative terms and in the same way, the constants K p,i ,Kt,i , and Kd,i are the proportional, integral, and derivativegains, and Kn,i is the \xe2\x80\x9c\xef\xac\x81lter coef\xef\xac\x81cient.\xe2\x80\x9dTo tune the controller gains for the three PID controllers,simulations were performed to \xef\xac\x81nd the parameters that min-imize both the error vector e(k) = [e1(k), e2(k), e3(k)]T andat the same time make the controller reliable, de\xef\xac\x81ned in thisbrief as the ability to avoid \xe2\x80\x9cmanagement failures,\xe2\x80\x9d i.e., theevent where, at some time period k, the controller is unableto \xef\xac\x81nd a solution within the feasible set Uk. The managementfailure event represents the situation, where there is not enoughliquidity to ensure the acquisition of basic needs to ensuresubsistence. We develop a \xe2\x80\x9cprojection algorithm\xe2\x80\x9d to ensurethat the control input remains in the feasible set Uk.\x0cGONZALEZ VILLASANTI AND PASSINO: FEEDBACK CONTROLLERS AS FINANCIAL ADVISORS FOR LOW-INCOME INDIVIDUALS2197p(s1(k)) = p(s2(k)) =\xe2\x8e\xa7\xe2\x8e\xaa\xe2\x8e\xaa\xe2\x8e\xaa\xe2\x8e\xa8\xe2\x8e\xaa\xe2\x8e\xaa\xe2\x8e\xaa\xe2\x8e\xa90.980.010.0050.005if s1(k) = 0if s1(k) = 0.2if s1(k) = 0.3if s1(k) = 0.5.(6)')
-Chapter text rule
-Chapter text year rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text number rule
-Chapter text text rule
-Chapter text text rule
-Chapter text number rule
-Chapter text text rule
-Chapter text text rule
-Chapter text number rule
-Chapter text text rule
-Chapter text text rule
-Chapter text number rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text IEEE rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text year rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text year rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text year rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text IEEE rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text year rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text number rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text number rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter rule
 ('> Number:', 'IV. RESULTS\n')
-('> Content:', 'In the \xef\xac\x81rst part of this section, we will show resultsfor time trajectories, computational complexity, and goalattainment performance for the three controllers implemented.In the second part, further assessment on disturbance rejection,reliability, and cash transfer is performed on the MPC and PIDcontrollers.A. Simulation ParametersThe time length considered is N = 150 weeks, with thesample interval equal to one week. The random return oninvestment isi2(k) = \xce\xbc + \xcf\x83 (k).In the following simulations, we chose \xce\xbc \xe2\x88\x88 0.22, 0.4, whichlie within the range found in [2]. The volatility of the returnon the investment \xcf\x83 (k) follows a discrete normal distributionwith zero mean and standard deviation \xcf\x83 = \xce\xbc/4. Furthermore,the variables s1(k) and s2(k), corresponding to discrete shocks,were generated in the following way [24] and both follow thesame probability mass functionThe minimum consumption is umin = 6.7 that representsan expenditure of around $0.95 per day for an individ-ual. Lower amounts are not considered as the spirit ofthese \xef\xac\x81nancial advisors is to keep a relative digni\xef\xac\x81ed liveli-hood across the process. The initial conditions were cho-sen to be x(0) = [cmin, clim, 0]T to denote an agent thatwho can access a credit equalto his/her initial endow-\xe2\x88\x97 =ment. The reference state and input values are x[80, 200, 0]T and u\xe2\x88\x97 = [x(\xce\xbc/1 + \xce\xbc), 0]T ,(\xce\xbc/1 + \xce\xbc),\xe2\x88\x92x\xe2\x88\x97\xe2\x88\x97(1), 1, 0.6] andrespectively. Matrices Q = diag[0.8x\xe2\x88\x97(2)/x2R = diag[3x\xe2\x88\x97(1), 0, 0] are designed to represent an\xe2\x88\x97(2)/uindividual with higher priority to consume, followed by thedesire to accumulate capital and cash in hand. Hence, thegoal is to increase capital and at the same time incrementthe consumption while managing the debt.\xe2\x88\x972B. PerformanceWith respect to controller parameters, for the DP approach,we had to discretize both the state and control spaces andbuild a \xef\xac\x81nite Markov chain to obtain a desired feedbacklaw within our computational capabilities. For this, we chosex1(k) \xe2\x88\x88 [0, 90], x2(k) \xe2\x88\x88 [0, 250],x3(k) \xe2\x88\x88 [0, clim],u1(k) \xe2\x88\x88 [6.7, 90], u2(k) \xe2\x88\x88 [\xe2\x88\x9290, 50}, and u3(k) \xe2\x88\x88 [clim, clim].We employ 15 discretization points for each variable and use ascattered data interpolation algorithm based on triangulation ofthe points on the optimal policy and state space. With this, weavoid the computational intensive methods of approximate pol-icy iteration, which usually require a large number of simula-tions to train a neural network that approximates the cost-to-gofunction. To discretize the random variable \xcf\x83 (k), we employ abinomial distribution. For the MPC, the prediction horizon waschosen as m = 15 simulating that the controller would havean estimation of the mean return on investment micrometerof up to \xef\xac\x81fteen weeks. We tuned the PID controllers toobtain a good compromise between tracking and reliabilityperformance. We chose, after tuning, for PID controller 1,K p,1 = \xe2\x88\x921.1025, Kt,1 = \xe2\x88\x920.6615, and Kd,1 = 0, for PIDcontroller 2, K p,2 = 1.1025, Kt,2 = 0.6615, and Kd,2 = 0,and for PID controller 3, K p,3 = \xe2\x88\x921.1025, Kt,3 = \xe2\x88\x920.0662,and Kd,3 = 0. We also determined PID\xe2\x80\x99s ramp slope to allowhigher consumption and maintain reliability by reaching thedesired values at the 25th week.To show the results of tracking performance, we evaluatetime trajectories for the three controllers, for two differentcases: 1) a relatively well endowed and skilled individual with\xce\xbc = 0.4 and clim = 50 and 2) an unskilled individual with lowinitial capital and credit limit, with \xce\xbc = 0.22 and clim = 25.All simulations were performed under the same sequenceof random numbers, and to simplify the implementation ofthe DP controller, we chose s1 = 0 in these \xef\xac\x81rst roundof simulations. Fig. 1 shows the results of x(k) and u(k)for DP, MPC, and PID controllers for case 2). It can beseen that the MPC and DP provide a \xe2\x80\x9csmoother\xe2\x80\x9d regulationaround the desired consumption than the PID whose tuning setpoints are seen in the more \xe2\x80\x9caggressive\xe2\x80\x9d behavior. However,the PID shows that it is practical to climb the ramp towardthe desired state while managing debt. In the initial stagesof the simulation, all controllers reduce consumption to theminimum while accumulating assets that generate income.Also, notice the reaction of the controllers to a shock: theMPC and DP incur a debt and repay the loan in severalweeks in order to maintain consumption as high as possible,whereas the PID projection algorithm responds by practicallynot taking any loans and instead, it reduces consumption.This is due to the fact that the desired consumption was notexplicitly used in the PID formulation and that the projectionalgorithm \xef\xac\x81nds the closest point in the control space Uk fromthe output of the PID. Fig. 2 shows results for average wealth(x1 + x2 \xe2\x88\x92 x3) over time using Monte Carlo simulations with1500runs for the unskilled and skilled cases. The boxes edgescorrespond to \xef\xac\x81rst and third quartiles, the notches representmedian, and the outer horizontal lines are within a distanceof 1.5 interquartile distance from the median. We see thatalthough the DP controller uses an interpolation of its discretestate space, it achieves a similar performance than the MPC,specially for the skilled case, when the individual is wellendowed to achieve the desired wealth. The PID shows itsability to track the reference trajectory, showing little variancebetween Monte Carlo runs.C. Computational ComplexityTo further compare the strategies, an analysis of computa-tional complexity is performed, measuring the time in secondsto perform the controllers\xe2\x80\x99 computation within the simulationon a PC and the memory used to store the required variables.To compute the time, we use the tic/toc function in MATLABthat uses internal sources of time service. This analysis is\x0c2198IEEETRANSACTIONS ON CONTROL SYSTEMS TECHNOLOGY, VOL. 25, NO. 6, NOVEMBER 2017TABLE IPROCESSING TIME IN SECONDSThe preprocessing stage refers to any process that occursbefore the actual simulation and in this speci\xef\xac\x81c case,itonly refers to the time and memory employed to obtain theoptimal policy for the DP, where the effects of the curse ofdimensionality are clearly seen, especially in terms of memoryuse. With respect to the actual simulation time, the MPCprocessing time is 37 times higher than the PID, basicallybecause of the optimization process that has to be performedat each iteration in the MPC. The extensive time and memoryrequired to compute the optimal policy for the DP case makesthe analysis performed in Sections IV.D and IV.E very lengthy,where variations in the model parameters are considered. Thisfact will make the DP approach infeasible in cases where thereexists uncertainty about the process parameters, and severalpreprocessing processes would be needed.D. Disturbance RejectionTo further assess the performance of the controllers, weanalyze the disturbance rejection behavior for two sourcesof uncertainties in the model: the multiplicative disturbanceon the volatility of the return on investment \xcf\x83 (k) and theeffect of the agent not following the advice, represented bythe random vector z(k), which is a Gaussian additive inputdisturbance with mean 1. Hence, in the latter case, the actualconsumption is u1(k) = u1(k)+z(k), i.e., on average, the agentis consuming more and investing less than what is suggested.Taking \xce\xbc = 0.3 and clim = 66.67, x\xe2\x88\x97 = [80, 300, 0], theplot in the top of Fig. 3(a) shows the effects of \xcf\x83 on wealthw(k) = x1(k)+x2(k)\xe2\x88\x92x3(k) for the MPC, with the horizontallines as the median wealth for a 2000 run Monte Carlosimulation, and the bottom and top edges of the boxes arethe \xef\xac\x81rst and third quartile. The dotted line represents thedesired value for wealth. The bottom plot of Fig. 3(a) showsthe same result, now with respect to the standard deviationof input disturbance z(k) and \xef\xac\x81xing \xcf\x83 = 0.075. Fig. 3(a)shows similar results for the PID controller. It can be seenthat both MPC and PID maintain wealth close to its desiredvalue despite the uncertainties. Although when \xcf\x83 is higherthan 0.267, or roughly 90% of the mean return on investmentmicrometer, the PID performance degrades abruptly again dueto the constraints in the model that leads to managementfailures, while the MPC does good tracking of desired wealth.With respect to input disturbance rejection, we see that forthe values chosen, all controllers maintain wealth close to thedesired value, with the PID controller performing better byallowing less deviation from the reference.Fig. 1.Time trajectories for cash in hand x1, capital x2, debt x3,consumption u1, investment u2, and debt payment u3 for a poorly endowed,unskilled individual. Dotted lines: desired state and control input. (a) DPcontroller. (b) MPC. (c) PID controller.Fig. 2. Median (notch), \xef\xac\x81rst and third quartiles (box edges) of average wealthfor DP (yellow), MPC (red), and PID (blue). Dotted line: desired wealth.of particular importance when projecting the feasibility of anactual implementation of the controllers in real environmentswith mobile phones or PCs. Results are shown in Table I.E. ReliabilityIn Section IV-D, we showed that the consumption and debtpayment must be held at the minimum values, and maximum\x0cGONZALEZ VILLASANTI AND PASSINO: FEEDBACK CONTROLLERS AS FINANCIAL ADVISORS FOR LOW-INCOME INDIVIDUALS2199Fig. 3. 2000-run Monte Carlo simulation results showing the median wealth(red horizontal lines) of the sample, with the bottom and top edges of the boxesrepresenting the 25th and 75th percentile, respectively, for various values ofthe standard deviation of the volatility of the return on investment \xcf\x83 (k) (top)and the standard deviation of the input disturbance z(k) (bottom) for (a) MPCand (b) PID controllers.capital investment must be set to achieve the desired wealthquickly. However, it has to be clari\xef\xac\x81ed that not all agents aresuf\xef\xac\x81ciently endowed to climb that wealth ramp, and suffer theeffects of the scarcity constraints. In [7], is it described howagents with low skills and low initial capital perform severaltransfers between cash in hand, capital, and debt in order tosecure consumption and subsistence. Considering those issues,the aim of this section is to show how the feedback controllersperform in situations, where the effects of the input constraintsin (2a)\xe2\x80\x93(2d) are more severe. To measure such performance,we de\xef\xac\x81ne a reliability index, which takes a value of zero (0)if the simulation failed with a management failure as de\xef\xac\x81nedin Section III-C1, whereas it takes value one (1) if the run hasnot failed. Fig. 4 shows average reliability index results using2000runs in a Monte Carlo simulation for the three con-trollers. The axes are the mean return on investment microme-ter and initial capital x2(0) = clim. Here, the plots correspondto the MPC (top) and PID (bottom). The plots present twoclearly differentiated zones and an intermediate zone. The zoneto the top-right of the plot corresponds to agents endowedwell enough to reach the desired states and control inputswithout failures, whereas the number of agents achieving thatFig. 4.2000-run Monte Carlo simulation results for reliability index forvarious values of mean return on investment \xce\xbcm and initial capital x2(0) for(a) MPC and (b) PID controllers. Values close to zero (one)implieshigher (lower) number of management failure cases.is zero for households with initial wealth and mean returnon investment that lies in the bottom-left of the plot, in the\xe2\x80\x9cmanagement failure zone.\xe2\x80\x9d We can see that both MPC andPID show very similar reliability performance. Note that thered dots in the plots represent the individual parameters usedin the simulations in Fig. 1.These results show what can be interpreted as a \xe2\x80\x9cpovertytrap,\xe2\x80\x9d using the terms de\xef\xac\x81ned in [25], where the low ability toobtain income (low micrometer) and low initial endowmenthinder the possibility of reaching the desired wealth andspending. However, in [25], the poverty trap is a consequenceof multiple equilibria in a nonlinear system, whereas in ourcase, it can be argued that the set of points whose initialconditions are in the trap are not included in any positiveinvariant set for closed loop system as de\xef\xac\x81ned in [26]. Thus,according to the same reference, the system does not showpersistent feasibility, implying that there is no control law thatcan steer the system to the desired values without violatingthe constraints.F. PID-Based Cash Transfer ProgramAs we argued above, some agents will not be able to reachthe desired wealth despite the use of the \xef\xac\x81nancial advisors dueto system\xe2\x80\x99s properties and parameters. As the goal of this brief\x0c2200IEEETRANSACTIONS ON CONTROL SYSTEMS TECHNOLOGY, VOL. 25, NO. 6, NOVEMBER 2017is to explore an alternative to assist low income people in theirquest for \xef\xac\x81nancial reliability, it is convenient to ask, whichare some ef\xef\xac\x81cient ways to help them beyond the scope of thetools we propose. For this, we select agents with characteristicsthat lie inside the \xe2\x80\x9cpoverty trap\xe2\x80\x9d described above and assumethat they employ the MPC \xef\xac\x81nancial advisor. Then, we analyzethree prospective interventions or aid programs to assist theseagents: 1) weekly cash transfers into x1(k), usually framed as\xe2\x80\x9cunconditional cash transfers;\xe2\x80\x9d 2) a lump sum cash transferinto x1(k) performed once at the beginning of the simulation;and 3) weekly \xe2\x80\x9ccontrolled\xe2\x80\x9d cash transfers onto x1(k). We usethe word \xe2\x80\x9ccontrolled\xe2\x80\x9d to denote the fact that the amount ofthe transfer will be the output of a PI controller that has as aninput the difference between the individual\xe2\x80\x99s current wealthand a desired wealth trajectory, modeled here as a ramp,similar to the implemented for the PID controllers above.We assume that the transfers are only performed during the\xef\xac\x81rst 30 weeks of the simulation. We compare the transfermethods by measuring performance in terms of mean andstandard deviation of the reliability index for several \xef\xac\x81xedfunding amounts available for transfer programs and degreesof uncertainty. We de\xef\xac\x81ne the degree of uncertainty with a \xe2\x80\x9criskparameter\xe2\x80\x9d P \xe2\x88\x88 [0, 0.2] as follows: shocks s1 and s2 will varyaccording top(s1(k)) = p(s2(k)) =\xe2\x8e\xa7\xe2\x8e\xaa\xe2\x8e\xaa\xe2\x8e\xaa\xe2\x8e\xa8\xe2\x8e\xaa\xe2\x8e\xaa\xe2\x8e\xaa\xe2\x8e\xa91\xe2\x88\x92 P if s1(k) = 0if s1(k) = P1/3Pif s1(k) = 2P1/3Pif s1(k) = 3P.1/3P(7)An input disturbance, i.e., the effect of the individual notfollowing the advice, will also be modeled in terms of Pwith a Gaussian random variable with mean 10P and standarddeviation P/10. We take \xce\xbc = 0.15, cmin = 6.7, and clim = 30to simulate an individual in the management failure zone. PIDcontroller parameters are taken to be K p = 0.95, Ki = 0.15,and Kd = 0, tuned to provide higher reliability, and thewealth reference ramp is designed such that the desired wealthis achieved in a year, in the 52nd week. Fig. 5 shows theperformance results for each transfer program. The top plot ofFig. 5(a) shows mean wealth reliability index and the bottomplot shows its standard deviation for a 2000-run Monte Carlosimulation for the distributed cash transfer program, while theresults for the lump sum and controlled transfer programs areshown in Fig. 5(b) and (c), respectively. Both the lump sumand the controlled program show higher values of reliabilityindex than the distributed weekly cash transfers for the loweramounts of program funding. The standard deviation is highfor the values of funding and P, where the programs transitionfrom failure (reliability = 0) to success (reliability = 1). Theseobservations show the clear effect of the poverty trap and theimportance of a \xe2\x80\x9cbig push\xe2\x80\x9d provided by large transfers at thebeginning of the program to overcome the trap. The controlledtransfer program seems to provide a similar performance thanthe lump sum program both in terms of mean and standarddeviation, with a small advantage when it comes to low valuesof program funding. Although the results are promising forthe PID-based cash transfer program, more analysis is neededFig. 5. 2000-run Monte Carlo simulation results for mean (top) and standarddeviation (bottom) of the reliability index for various values of programfunding and risk parameter P for (a) distributed cash transfer, (b) lump sumtransfer, and (c) controlled transfer.to determine which program is viable, such as availabilityof funds at the beginning of the simulation for the lumpsum program or if the controlled transfer program couldbe implemented with an estimate of the individual\xe2\x80\x99s wealth(relaxing the assumption that he/she uses the \xef\xac\x81nancial advisor),among others.\x0cGONZALEZ VILLASANTI AND PASSINO: FEEDBACK CONTROLLERS AS FINANCIAL ADVISORS FOR LOW-INCOME INDIVIDUALS2201')
-Chapter text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter text text rule
-Chapter rule
 ('> Number:', 'V. CONCLUSION\n')
-('> Content:', 'We have evaluated three feedback controllers that could helpmanage the \xef\xac\x81nancial lives of the poor. Based on a trackingperformance similar to the one shown by the DP controllerwith lower computational effort, along with adequate distur-bance rejection behavior, we conclude that the MPC and PIDcontrollers are viable tools to help manage the \xef\xac\x81nancial livesof the poor, with the advantage of smoother consumptionpatterns provided by MPC, which is a desired feature whenconsidering real implementations. The reliability results alsoshowed that both PID and MPC can manage the \xef\xac\x81nanciallives of low-skilled and low-endowed agents but only up toa certain threshold, beyond which external intervention isneeded to ensure present and future subsistence under limitedresources. The controllers allowed households to be betterprepared to deal with uncertain income and shocks via propermanagement of their \xef\xac\x81nancial life, building the savings thatmay grant them the ability to perform the necessary invest-ments to improve their well-being. We also tested a PID-basedcash transfer program, with similar reliability improvementresults to those obtained with a lump sum transfer method.Future work could be done on modeling the dynamics ofthe return on the investment i2(k), including the effects ofeducation, health, and market factors, using adaptive controland estimation methods. It would be interesting to incorporatethe \xef\xac\x81ndings in behavioral economics into the design of thecontrollers. In addition, the effects of cooperation/competitionbetween agents via decentralized control techniques could beconsidered.')
-Chapter Sequence rule
-Chapter Sequence recursive rule
-Chapter Sequence recursive rule
-Chapter Sequence recursive rule
-Chapter Sequence recursive rule
-Content rule
-Code rule
-Code rule
-Code rule
-Code rule
-("Illegal character '\x0c'", 990)
-Text rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-code general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-code general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-code general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-code general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-Text general rule
-References rule
-Article rule
-<data.article.Article instance at 0x7f09b35885a8>
+> References: 
+[1] K. M. Passino, Humanitarian Engineering: Advancing Technologies
+for Sustainable Development, 3nd ed. Columbus, OH, USA: Bede
+Publishing, 2016.
+
+[2] A. Pawasutipaisit and R. M. Townsend, “Wealth accumulation and
+factors accounting for success,” J. Econ., vol. 161, no. 1, pp. 56–81,
+2011.
+
+[3] S. Rutherford, The Poor
+
+and Their Money. Oxford, U.K.:Oxford Univ. Press, 2001.
+[4] R. C. Merton, “Optimum consumption and portfolio rules in a
+continuous-time model,” J. Econ. Theory, vol. 3, no. 4, pp. 373–413,
+1971.
+
+[5] J. Y. Campbell and L. M. Viceira, “Consumption and portfolio decisions
+when expected returns are time varying,” Nat. Bureau Econ. Res.,
+Tech. Rep. 5857, vol. 114, pp. 433–495, 1999.
+
+[6] F. J. Zimmerman and M. R. Carter, “Asset smoothing, consumption
+smoothing and the reproduction of inequality under risk and subsistence
+constraints,” J. Develop. Econ., vol. 71, no. 2, pp. 233–260, 2003.
+
+[7] D. Collins, J. Morduch, S. Rutherford, and O. Ruthven, Portfolios of the
+Poor: How the World’s Poor Live on Two Dollars a Day. Princeton, NJ,
+USA: Princeton Univ. Press, 2009.
+
+[8] D. Hulme and P. Mosley, Finance Against Poverty. Evanston, IL, USA:
+
+Routledge, 1996.
+[9] J. Zollmann, “Kenya ﬁnancial diaries: shilingi KWA shilingi—The
+ﬁnancial lives of the poor,” FSD Kenya, Nairobi, Kenya, Tech. Rep.,
+2014.
+
+[10] D. A. Kendrick, Stochastic Control for Economic Models. New York,
+
+NY, USA: McGraw-Hill, 1981.
+[11] J. Segupta and P. Fanchon, Control Theory Methods in Economics.
+
+Norwell, MA, USA: Springer, 1997.
+[12] T. F. Cosimano, “Optimal experimentation and the perturbation method
+in the neighborhood of the augmented linear regulator problem,” J. Econ.
+Dyn. Control, vol. 32, no. 6, pp. 1857–1894, 2008.
+
+[13] F. Herzog, G. Dondi, and H. P. Geering, “Stochastic model predictive
+control and portfolio optimization,” Int. J. Theor. Appl. Finance, vol. 10,
+no. 2, pp. 203–233, 2007.
+
+[14] V. V. Dombrovskii, D. V. Dombrovskii, and E. A. Lyashenko, “Predictive
+control of random-parameter systems with multiplicative noise. Appli-
+cation to investment portfolio optimization,” Autom. Remote Control,
+vol. 66, no. 4, pp. 583–595, 2005.
+
+[15] D. Karlan, A. L. Ratan, and J. Zinman, “Savings by and for the poor:
+A research review and agenda,” Rev. Income Wealth, vol. 60, no. 1,
+pp. 36–78, 2014.
+
+[16] J. E. Taylor and I. Adelman, “Agricultural household models: Gene-
+sis, evolution, and extensions,” Rev. Econ. Household, vol. 1, no. 1,
+pp. 33–58, 2003.
+
+[17] P. A. Samuelson, “Lifetime portfolio selection by dynamic stochastic
+
+programming,” Rev. Econ. Statist., vol. 51, no. 3, pp. 239–246, 1969.
+[18] A. Mas-Colell, M. D. Whinston, and J. R. Green, Microeconomic
+
+Theory. New York, NY, USA: Oxford Univ. Press, 1995.
+[19] D. P. Bertsekas, Dynamic Programming and Optimal Control, vol. 1.
+
+Belmont, MA, USA: Athena Scientiﬁc, 1995.
+[20] D. P. Bertsekas and J. N. Tsitsiklis, Neuro-Dynamic Programming.
+
+Belmont, MA, USA: Athena Scientiﬁc, 1996.
+[21] H. J. Kushner and P. G. Dupuis, Numerical Methods for Sto-
+chastic Control Problems in Continuous Time. Hamburg, Germany:
+Springer-Verlag, 2001.
+
+[22] K. Passino, Biomimicry for Optimization, Control, and Automation.
+
+London, U.K.: Springer-Verlag, 2005.
+[23] S. J. Qin and T. A. Badgwell, “A survey of industrial model predictive
+control technology,” Control Eng. Pract., vol. 11, no. 7, pp. 733–764,
+2003.
+
+[24] C. B. Barrett, M. R. Carter, and M. Ikegami, “Poverty traps and social
+protection,” World Bank, Social Protection, Washington, DC, USA,
+Tech. Rep. 0804, 2008.
+
+[25] P. M. R. Carter and C. B. Barrett, “The economics of poverty traps
+and persistent poverty: An asset-based approach,” J. Develop. Studies,
+vol. 42, no. 2, pp. 178–199, 2006.
+
+[26] F. Borrelli, A. Bemporad, and M. Morari. (2015). Predictive Con-
+[Online]. Available:
+
+for Linear and Hybrid Systems, 2015.trolhttp://www.mpc.berkeley.edu/mpc-course-material
+<data.article.Article instance at 0x7f9ddc9ff5a8>
