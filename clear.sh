@@ -3,3 +3,7 @@ rm */*.pyc
 rm */*/*.pyc
 rm */*tab.py
 rm */*.out
+rm *.pyc
+rm .*.swp
+rm files/*.txt
+rm files/*.out

@@ -13,7 +13,7 @@ from __future__ import print_function
 import os
 import re
 import fileinput
-# import plymodule
+import plymodule
 import operator
 from nltk.corpus import stopwords
 from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
@@ -54,7 +54,6 @@ def pdf_to_text(pdfname):
     return text
 
 def process(path):
-    # print(path)
     text_file = open(path+".txt", "w")
     text_file.write(pdf_to_text(path))
     text_file.close()
@@ -76,67 +75,87 @@ def cont_words(file):
 
 def split_header(file):
     f = fileinput.FileInput(file, inplace=True )
+    found = False
     for lines in f:
-
-        if 'APRIL' in lines:
+        if ('APRIL' in lines) and (not found):
             print(lines.replace('APRIL', '\nAPRIL'), end="")
-
-        elif 'JANUARY' in lines:
+            found = True
+        elif ('JANUARY' in lines) and (not found):
             print(lines.replace('JANUARY', '\nJANUARY'), end='')
-
-        elif 'FEBRUARY' in lines:
+            found = True
+        elif ('FEBRUARY' in lines) and (not found):
             print(lines.replace('FEBRUARY', '\nFEBRUARY'), end='')
-
-        elif 'MARCH' in lines:
+            found = True
+        elif ('MARCH' in lines) and (not found):
             print(lines.replace('MARCH', '\nMARCH'), end='')
-                
-        elif 'MAY' in lines:
+            found = True
+        elif ('MAY' in lines) and (not found):
             print(lines.replace('MAY', '\nMAY'), end='')
-
-        elif 'JUNE' in lines:
+            found = True
+        elif ('JUNE') in lines and (not found):
             print(lines.replace('JUNE', '\nJUNE'), end='')
-
-        elif 'JULY' in lines:
+            found = True
+        elif ('JULY' in lines) and (not found):
             print(lines.replace('JULY', '\nJULY'), end='')
-               
-        elif 'AUGUST' in lines:
+            found = True
+        elif ('AUGUST') in lines and (not found):
             print(lines.replace('AUGUST', '\nAUGUST'), end='')
-
-        elif 'SEPTEMBER' in lines:
+            found = True
+        elif ('SEPTEMBER') in lines and (not found):
             print(lines.replace('SEPTEMBER', '\nSEPTEMBER'), end='')
-                
-        elif 'OCTOBER' in lines:
+            found = True
+        elif ('OCTOBER') in lines and (not found):
             print(lines.replace('OCTOBER', '\nOCTOBER'), end='')
-
-        elif 'NOVEMBER' in lines:
+            found = True
+        elif ('NOVEMBER') in lines and (not found):
             print(lines.replace('NOVEMBER', '\nNOVEMBER'), end='')
-
-        elif 'DECEMBER' in lines:
+            found = True
+        elif ('DECEMBER' in lines) and (not found):
             print(lines.replace('DECEMBER', '\nDECEMBER'), end='')
-                
+            found = True
         else:
             print(lines, end='')
 
-def main():
-            
-    directory = "files/"
+def convert_to_text(directory):
     os.system("ls " + directory + "*.pdf > .tmpfiles")
     with open(".tmpfiles", "r") as ins:
        files = ins.readlines()
        for arq in files:
+           print("Converting " + arq)
            process(arq.replace('\n', ''))
-        #    split_header(arq.replace('.pdf', '.pdf.txt'))
     os.system("rm .tmpfiles")
-    # os.system("ls " + directory + "*.pdf.txt > .tmpfiles")
-    # with open(".tmpfiles", "r") as ins:
-    #    files = ins.readlines()
-    #    for arq in files:
-    #        split_header(arq.replace('\n', ''))
-    #     #    split_header(arq.replace('.pdf', '.pdf.txt'))
-    # os.system("rm .tmpfiles")
-    #print(pdf_to_text("/home/ricardo/Downloads/analise-de-desempenho.pdf"))
-    # d = cont_words('files/118.pdf.txt') 
-    # split_header('files/118.pdf.txt')
+
+def apply_preprocess(directory):
+    os.system("ls " + directory + "*.pdf.txt > .tmpfiles")
+    with open(".tmpfiles", "r") as ins:
+       files = ins.readlines()
+       for arq in files:
+           print("Pre-processing " + arq)
+           split_header(arq.replace('\n', ''))
+    os.system("rm .tmpfiles")
+
+def apply_pln(path):
+    print("Parsing " + path)
+    article = plymodule.parsing(path)
+    article.setTopTen(cont_words(path)[0:10])
+    output = path.replace('.pdf.txt', '.out')
+    with open(output, "w") as out:
+        out.write(article.toString())
+    out.close()
+
+def parse(directory):
+    os.system("ls " + directory + "*.pdf.txt > .tmpfiles")
+    with open(".tmpfiles", "r") as ins:
+       files = ins.readlines()
+       for arq in files:
+           apply_pln(arq.replace('\n', ''))
+    os.system("rm .tmpfiles")
+
+def main():        
+    directory = "files/"
+    convert_to_text(directory)
+    apply_preprocess(directory)
+    parse(directory)
     
 if __name__ == "__main__":
     main()

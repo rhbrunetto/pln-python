@@ -6,5 +6,8 @@ class Chapter:
       self.content = content                    # Chapter text content
 
   def show(self):
-    print("> Number:", self.number)
+    print("> Chapter Title: ", self.number)
+
+  def toString(self):
+    return "\t-> Chapter Title:\t" + self.number
     # print("> Content:", self.content)

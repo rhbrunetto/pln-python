@@ -12,7 +12,6 @@ def p_article(p):
     'article : header content references'
     p[0] = Article(p[1], p[2], p[3])
     # print "Article rule"
-    p[0].show()
 
 def p_header_code(p):
     'header : code publication titleandauthor abstract keywords'
@@ -92,6 +91,11 @@ def p_ctext_text(p):
     'ctext : GENERAL ctext'
     # print "Chapter text text rule"
     p[0] = p[1] + p[2]
+    
+def p_ctext_index(p):
+    'ctext : INDEX ctext'
+    # print "Chapter text text rule"
+    p[0] = p[1] + p[2]
 
 def p_ctext_ieee(p):
     'ctext : IEEE ctext'
@@ -113,10 +117,6 @@ def p_reference_seq_B(p):
     # print "References B rule"
     p[0] = [p[1], p[2]]
 
-# def p_reference_seq_L(p):
-#     'reference_seq : REFERENCE_L reference_seq'
-    # print "References Link rule"
-#     p[0] = [p[1], p[2]]
 
 def p_reference_seq_general(p):
     'reference_seq : text reference_seq'
@@ -159,12 +159,3 @@ def p_error(p):
 
 # Build the parser
 parser = yacc.yacc()
-
-# while True:
-#   try:
-#       s = raw_input('calc > ')
-#   except EOFError:
-#       break
-#   if not s: continue
-#   result = parser.parse(s)
-#   print(result)

@@ -8,13 +8,10 @@ tokens = (
    'ABSTRACT',
    'INDEX',
    'TERMS',
-#    'CAPSTEXT',
    'CHAPTER_MARK',
    'YEAR',
    'MONTH',
-#    'INTRO',
    'REFERENCE_B',
-   'REFERENCE_L',
    'REFERENCES',
    'GENERAL'
 )
@@ -23,10 +20,6 @@ tokens = (
 def t_IEEE(t):
     r'IEEE'
     return t
-
-# def t_VIRGULA(t):
-#     r','
-#     return t
 
 def t_INDEX(t):
     r'Index'
@@ -39,12 +32,6 @@ def t_TERMS(t):
 def t_ABSTRACT(t):
     r'Abstract'
     return t
-
-# def t_INTRO(t):
-#     r'I.\sINTRODUCTION'
-#     return t
-
-# [I{1,3}?]\.\s([A-Z]+\s)+|II\.\s([A-Z]+\s)+|IV\.\s([A-Z]+\s)+|I\.\s([A-Z]+\s)+|V\.\s([A-Z]+\s)+
 
 def t_CHAPTER_MARK(t):
     r'\I{1,3}\.\s([A-Z]+\s)+|(\I{1,2})?V\.\s([A-Z]+\s)+'
@@ -59,10 +46,7 @@ def t_REFERENCE_L(t):
     return t
 
 t_REFERENCES    = 'REFERENCES'
-# t_VIRGULA       = r','
-# t_CAPSTEXT      = r'[A-Z]+|\\s+'
-# t_GENERAL = r'.+\S?(?=\,)'
-# \[\d+\](.*[,\d+{4}.]|.*\n+)
+
 def t_YEAR(t):
     r'\d{4}'
     t.value = int(t.value)    
@@ -85,30 +69,13 @@ def t_newline(t):
 
 # A string containing ignored characters (spaces and tabs)
 t_ignore  = ' \t'
-
-# t_GENERAL = r'.+\S?(?=\,)'
-# t_GENERAL = r'(.+?),|(.+?)    \S'
+# General text
 t_GENERAL = r'.*\S.*'
 
 # Error handling rule
 def t_error(t):
-    print("Illegal character '%s'" % t.value[0], t.lineno)
+    # print("Illegal character '%s'" % t.value[0], t.lineno)
     t.lexer.skip(1)
 
 # # Build the lexer
 lexer = lex.lex()
-
-# # Test it out
-# data = '''
-# 3 + 4 * 10
-#   + -20 *2
-# '''
-# # Give the lexer some input
-# lexer.input(data)
-
-# # Tokenize
-# while True:
-#     tok = lexer.token()
-#     if not tok: 
-#         break      # No more input
-#     print(tok)
