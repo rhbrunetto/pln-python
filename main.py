@@ -26,14 +26,14 @@ from cStringIO import StringIO
 def_stop_words = ['.', '...', ',', 'the' ]
 stop_words = list(stopwords.words('english'))
 stop_words.extend(def_stop_words)
-stop_words = [x.encode('ascii') for x in stop_words]
+stop_words = [x.encode('utf-8') for x in stop_words]
 
 def pdf_to_text(pdfname):
     """Converts a PDF file to text"""
     # PDFMiner boilerplate
     rsrcmgr = PDFResourceManager()
     sio = StringIO()
-    codec = 'ascii'
+    codec = 'utf-8'
     laparams = LAParams()
     device = TextConverter(rsrcmgr, sio, codec=codec, laparams=laparams)
     interpreter = PDFPageInterpreter(rsrcmgr, device)
@@ -76,44 +76,44 @@ def cont_words(file):
 
 def split_header(file):
     f = fileinput.FileInput(file, inplace=True )
+    found = False
     for lines in f:
-
-        if 'APRIL' in lines:
+        if ('APRIL' in lines) and (not found):
             print(lines.replace('APRIL', '\nAPRIL'), end="")
-
-        elif 'JANUARY' in lines:
+            found = True
+        elif ('JANUARY' in lines) and (not found):
             print(lines.replace('JANUARY', '\nJANUARY'), end='')
-
-        elif 'FEBRUARY' in lines:
+            found = True
+        elif ('FEBRUARY' in lines) and (not found):
             print(lines.replace('FEBRUARY', '\nFEBRUARY'), end='')
-
-        elif 'MARCH' in lines:
+            found = True
+        elif ('MARCH' in lines) and (not found):
             print(lines.replace('MARCH', '\nMARCH'), end='')
-                
-        elif 'MAY' in lines:
+            found = True
+        elif ('MAY' in lines) and (not found):
             print(lines.replace('MAY', '\nMAY'), end='')
-
-        elif 'JUNE' in lines:
+            found = True
+        elif ('JUNE') in lines and (not found):
             print(lines.replace('JUNE', '\nJUNE'), end='')
-
-        elif 'JULY' in lines:
+            found = True
+        elif ('JULY' in lines) and (not found):
             print(lines.replace('JULY', '\nJULY'), end='')
-               
-        elif 'AUGUST' in lines:
+            found = True
+        elif ('AUGUST') in lines and (not found):
             print(lines.replace('AUGUST', '\nAUGUST'), end='')
-
-        elif 'SEPTEMBER' in lines:
+            found = True
+        elif ('SEPTEMBER') in lines and (not found):
             print(lines.replace('SEPTEMBER', '\nSEPTEMBER'), end='')
-                
-        elif 'OCTOBER' in lines:
+            found = True
+        elif ('OCTOBER') in lines and (not found):
             print(lines.replace('OCTOBER', '\nOCTOBER'), end='')
-
-        elif 'NOVEMBER' in lines:
+            found = True
+        elif ('NOVEMBER') in lines and (not found):
             print(lines.replace('NOVEMBER', '\nNOVEMBER'), end='')
-
-        elif 'DECEMBER' in lines:
+            found = True
+        elif ('DECEMBER' in lines) and (not found):
             print(lines.replace('DECEMBER', '\nDECEMBER'), end='')
-                
+            found = True
         else:
             print(lines, end='')
 
@@ -128,7 +128,7 @@ def main():
     #os.system("rm .tmpfiles")
     #print(pdf_to_text("/home/ricardo/Downloads/analise-de-desempenho.pdf"))
     d = cont_words('files/118.pdf.txt') 
-    split_header('files/118.pdf.txt')
+    split_header('files/13.pdf.txt')
     
 if __name__ == "__main__":
     main()
