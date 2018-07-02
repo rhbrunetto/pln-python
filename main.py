@@ -26,14 +26,14 @@ from cStringIO import StringIO
 def_stop_words = ['.', '...', ',', 'the' ]
 stop_words = list(stopwords.words('english'))
 stop_words.extend(def_stop_words)
-stop_words = [x.encode('ascii') for x in stop_words]
+stop_words = [x.encode('utf-8') for x in stop_words]
 
 def pdf_to_text(pdfname):
     """Converts a PDF file to text"""
     # PDFMiner boilerplate
     rsrcmgr = PDFResourceManager()
     sio = StringIO()
-    codec = 'ascii'
+    codec = 'utf-8'
     laparams = LAParams()
     device = TextConverter(rsrcmgr, sio, codec=codec, laparams=laparams)
     interpreter = PDFPageInterpreter(rsrcmgr, device)
@@ -119,16 +119,24 @@ def split_header(file):
 
 def main():
             
-    directory = "allfiles/"
-    #os.system("ls " + directory + "*.pdf > .tmpfiles")
-    #with open(".tmpfiles", "r") as ins:
+    directory = "files/"
+    os.system("ls " + directory + "*.pdf > .tmpfiles")
+    with open(".tmpfiles", "r") as ins:
+       files = ins.readlines()
+       for arq in files:
+           process(arq.replace('\n', ''))
+        #    split_header(arq.replace('.pdf', '.pdf.txt'))
+    os.system("rm .tmpfiles")
+    # os.system("ls " + directory + "*.pdf.txt > .tmpfiles")
+    # with open(".tmpfiles", "r") as ins:
     #    files = ins.readlines()
     #    for arq in files:
-    #        process(arq.replace('\n', ''))
-    #os.system("rm .tmpfiles")
+    #        split_header(arq.replace('\n', ''))
+    #     #    split_header(arq.replace('.pdf', '.pdf.txt'))
+    # os.system("rm .tmpfiles")
     #print(pdf_to_text("/home/ricardo/Downloads/analise-de-desempenho.pdf"))
-    d = cont_words('files/118.pdf.txt') 
-    split_header('files/118.pdf.txt')
+    # d = cont_words('files/118.pdf.txt') 
+    # split_header('files/118.pdf.txt')
     
 if __name__ == "__main__":
     main()

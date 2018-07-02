@@ -1,0 +1,961 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Unused terminals:
+
+    REFERENCE_L
+
+Grammar
+
+Rule 0     S' -> article
+Rule 1     article -> header content references
+Rule 2     header -> code publication titleandauthor abstract keywords
+Rule 3     header -> publication code titleandauthor abstract keywords
+Rule 4     code -> YEAR
+Rule 5     code -> NUMBER
+Rule 6     publication -> IEEE text MONTH YEAR
+Rule 7     abstract -> ABSTRACT text INDEX
+Rule 8     keywords -> text TERMS text
+Rule 9     content -> chapter_seq REFERENCES
+Rule 10    chapter_seq -> chapter chapter_seq
+Rule 11    chapter_seq -> chapter
+Rule 12    chapter -> CHAPTER_MARK ctext
+Rule 13    ctext -> YEAR ctext
+Rule 14    ctext -> NUMBER ctext
+Rule 15    ctext -> REFERENCE_B ctext
+Rule 16    ctext -> GENERAL ctext
+Rule 17    ctext -> IEEE ctext
+Rule 18    ctext -> <empty>
+Rule 19    references -> reference_seq ctext
+Rule 20    reference_seq -> REFERENCE_B reference_seq
+Rule 21    reference_seq -> text reference_seq
+Rule 22    reference_seq -> <empty>
+Rule 23    titleandauthor -> text
+Rule 24    text -> GENERAL text
+Rule 25    text -> code text
+Rule 26    text -> GENERAL
+Rule 27    text -> <empty>
+
+Terminals, with rules where they appear
+
+ABSTRACT             : 7
+CHAPTER_MARK         : 12
+GENERAL              : 16 24 26
+IEEE                 : 6 17
+INDEX                : 7
+MONTH                : 6
+NUMBER               : 5 14
+REFERENCES           : 9
+REFERENCE_B          : 15 20
+REFERENCE_L          : 
+TERMS                : 8
+YEAR                 : 4 6 13
+error                : 
+
+Nonterminals, with rules where they appear
+
+abstract             : 2 3
+article              : 0
+chapter              : 10 11
+chapter_seq          : 9 10
+code                 : 2 3 25
+content              : 1
+ctext                : 12 13 14 15 16 17 19
+header               : 1
+keywords             : 2 3
+publication          : 2 3
+reference_seq        : 19 20 21
+references           : 1
+text                 : 6 7 8 8 21 23 24 25
+titleandauthor       : 2 3
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . article
+    (1) article -> . header content references
+    (2) header -> . code publication titleandauthor abstract keywords
+    (3) header -> . publication code titleandauthor abstract keywords
+    (4) code -> . YEAR
+    (5) code -> . NUMBER
+    (6) publication -> . IEEE text MONTH YEAR
+
+    YEAR            shift and go to state 5
+    NUMBER          shift and go to state 3
+    IEEE            shift and go to state 7
+
+    code                           shift and go to state 1
+    publication                    shift and go to state 2
+    header                         shift and go to state 4
+    article                        shift and go to state 6
+
+state 1
+
+    (2) header -> code . publication titleandauthor abstract keywords
+    (6) publication -> . IEEE text MONTH YEAR
+
+    IEEE            shift and go to state 7
+
+    publication                    shift and go to state 8
+
+state 2
+
+    (3) header -> publication . code titleandauthor abstract keywords
+    (4) code -> . YEAR
+    (5) code -> . NUMBER
+
+    YEAR            shift and go to state 5
+    NUMBER          shift and go to state 3
+
+    code                           shift and go to state 9
+
+state 3
+
+    (5) code -> NUMBER .
+
+    GENERAL         reduce using rule 5 (code -> NUMBER .)
+    YEAR            reduce using rule 5 (code -> NUMBER .)
+    NUMBER          reduce using rule 5 (code -> NUMBER .)
+    MONTH           reduce using rule 5 (code -> NUMBER .)
+    REFERENCE_B     reduce using rule 5 (code -> NUMBER .)
+    IEEE            reduce using rule 5 (code -> NUMBER .)
+    $end            reduce using rule 5 (code -> NUMBER .)
+    TERMS           reduce using rule 5 (code -> NUMBER .)
+    CHAPTER_MARK    reduce using rule 5 (code -> NUMBER .)
+    ABSTRACT        reduce using rule 5 (code -> NUMBER .)
+    INDEX           reduce using rule 5 (code -> NUMBER .)
+
+
+state 4
+
+    (1) article -> header . content references
+    (9) content -> . chapter_seq REFERENCES
+    (10) chapter_seq -> . chapter chapter_seq
+    (11) chapter_seq -> . chapter
+    (12) chapter -> . CHAPTER_MARK ctext
+
+    CHAPTER_MARK    shift and go to state 11
+
+    chapter                        shift and go to state 10
+    content                        shift and go to state 12
+    chapter_seq                    shift and go to state 13
+
+state 5
+
+    (4) code -> YEAR .
+
+    GENERAL         reduce using rule 4 (code -> YEAR .)
+    YEAR            reduce using rule 4 (code -> YEAR .)
+    NUMBER          reduce using rule 4 (code -> YEAR .)
+    MONTH           reduce using rule 4 (code -> YEAR .)
+    REFERENCE_B     reduce using rule 4 (code -> YEAR .)
+    IEEE            reduce using rule 4 (code -> YEAR .)
+    $end            reduce using rule 4 (code -> YEAR .)
+    TERMS           reduce using rule 4 (code -> YEAR .)
+    CHAPTER_MARK    reduce using rule 4 (code -> YEAR .)
+    ABSTRACT        reduce using rule 4 (code -> YEAR .)
+    INDEX           reduce using rule 4 (code -> YEAR .)
+
+
+state 6
+
+    (0) S' -> article .
+
+
+
+state 7
+
+    (6) publication -> IEEE . text MONTH YEAR
+    (24) text -> . GENERAL text
+    (25) text -> . code text
+    (26) text -> . GENERAL
+    (27) text -> .
+    (4) code -> . YEAR
+    (5) code -> . NUMBER
+
+    GENERAL         shift and go to state 16
+    MONTH           reduce using rule 27 (text -> .)
+    YEAR            shift and go to state 5
+    NUMBER          shift and go to state 3
+
+    text                           shift and go to state 15
+    code                           shift and go to state 14
+
+state 8
+
+    (2) header -> code publication . titleandauthor abstract keywords
+    (23) titleandauthor -> . text
+    (24) text -> . GENERAL text
+    (25) text -> . code text
+    (26) text -> . GENERAL
+    (27) text -> .
+    (4) code -> . YEAR
+    (5) code -> . NUMBER
+
+    GENERAL         shift and go to state 16
+    ABSTRACT        reduce using rule 27 (text -> .)
+    YEAR            shift and go to state 5
+    NUMBER          shift and go to state 3
+
+    code                           shift and go to state 14
+    text                           shift and go to state 17
+    titleandauthor                 shift and go to state 18
+
+state 9
+
+    (3) header -> publication code . titleandauthor abstract keywords
+    (23) titleandauthor -> . text
+    (24) text -> . GENERAL text
+    (25) text -> . code text
+    (26) text -> . GENERAL
+    (27) text -> .
+    (4) code -> . YEAR
+    (5) code -> . NUMBER
+
+    GENERAL         shift and go to state 16
+    ABSTRACT        reduce using rule 27 (text -> .)
+    YEAR            shift and go to state 5
+    NUMBER          shift and go to state 3
+
+    code                           shift and go to state 14
+    text                           shift and go to state 17
+    titleandauthor                 shift and go to state 19
+
+state 10
+
+    (10) chapter_seq -> chapter . chapter_seq
+    (11) chapter_seq -> chapter .
+    (10) chapter_seq -> . chapter chapter_seq
+    (11) chapter_seq -> . chapter
+    (12) chapter -> . CHAPTER_MARK ctext
+
+    REFERENCES      reduce using rule 11 (chapter_seq -> chapter .)
+    CHAPTER_MARK    shift and go to state 11
+
+    chapter                        shift and go to state 10
+    chapter_seq                    shift and go to state 20
+
+state 11
+
+    (12) chapter -> CHAPTER_MARK . ctext
+    (13) ctext -> . YEAR ctext
+    (14) ctext -> . NUMBER ctext
+    (15) ctext -> . REFERENCE_B ctext
+    (16) ctext -> . GENERAL ctext
+    (17) ctext -> . IEEE ctext
+    (18) ctext -> .
+
+    YEAR            shift and go to state 23
+    NUMBER          shift and go to state 21
+    REFERENCE_B     shift and go to state 26
+    GENERAL         shift and go to state 22
+    IEEE            shift and go to state 25
+    CHAPTER_MARK    reduce using rule 18 (ctext -> .)
+    REFERENCES      reduce using rule 18 (ctext -> .)
+
+    ctext                          shift and go to state 24
+
+state 12
+
+    (1) article -> header content . references
+    (19) references -> . reference_seq ctext
+    (20) reference_seq -> . REFERENCE_B reference_seq
+    (21) reference_seq -> . text reference_seq
+    (22) reference_seq -> .
+    (24) text -> . GENERAL text
+    (25) text -> . code text
+    (26) text -> . GENERAL
+    (27) text -> .
+    (4) code -> . YEAR
+    (5) code -> . NUMBER
+
+  ! shift/reduce conflict for REFERENCE_B resolved as shift
+  ! shift/reduce conflict for GENERAL resolved as shift
+  ! shift/reduce conflict for REFERENCE_B resolved as shift
+  ! shift/reduce conflict for GENERAL resolved as shift
+  ! reduce/reduce conflict for YEAR resolved using rule 22 (reference_seq -> .)
+  ! reduce/reduce conflict for NUMBER resolved using rule 22 (reference_seq -> .)
+  ! reduce/reduce conflict for IEEE resolved using rule 22 (reference_seq -> .)
+  ! reduce/reduce conflict for $end resolved using rule 22 (reference_seq -> .)
+  ! shift/reduce conflict for YEAR resolved as shift
+  ! shift/reduce conflict for NUMBER resolved as shift
+    REFERENCE_B     shift and go to state 30
+    IEEE            reduce using rule 22 (reference_seq -> .)
+    $end            reduce using rule 22 (reference_seq -> .)
+    GENERAL         shift and go to state 16
+    YEAR            shift and go to state 5
+    NUMBER          shift and go to state 3
+
+  ! YEAR            [ reduce using rule 22 (reference_seq -> .) ]
+  ! NUMBER          [ reduce using rule 22 (reference_seq -> .) ]
+  ! REFERENCE_B     [ reduce using rule 22 (reference_seq -> .) ]
+  ! GENERAL         [ reduce using rule 22 (reference_seq -> .) ]
+  ! REFERENCE_B     [ reduce using rule 27 (text -> .) ]
+  ! GENERAL         [ reduce using rule 27 (text -> .) ]
+  ! YEAR            [ reduce using rule 27 (text -> .) ]
+  ! NUMBER          [ reduce using rule 27 (text -> .) ]
+  ! IEEE            [ reduce using rule 27 (text -> .) ]
+  ! $end            [ reduce using rule 27 (text -> .) ]
+
+    reference_seq                  shift and go to state 27
+    code                           shift and go to state 14
+    text                           shift and go to state 28
+    references                     shift and go to state 29
+
+state 13
+
+    (9) content -> chapter_seq . REFERENCES
+
+    REFERENCES      shift and go to state 31
+
+
+state 14
+
+    (25) text -> code . text
+    (24) text -> . GENERAL text
+    (25) text -> . code text
+    (26) text -> . GENERAL
+    (27) text -> .
+    (4) code -> . YEAR
+    (5) code -> . NUMBER
+
+  ! shift/reduce conflict for GENERAL resolved as shift
+  ! shift/reduce conflict for YEAR resolved as shift
+  ! shift/reduce conflict for NUMBER resolved as shift
+    GENERAL         shift and go to state 16
+    MONTH           reduce using rule 27 (text -> .)
+    ABSTRACT        reduce using rule 27 (text -> .)
+    REFERENCE_B     reduce using rule 27 (text -> .)
+    IEEE            reduce using rule 27 (text -> .)
+    $end            reduce using rule 27 (text -> .)
+    INDEX           reduce using rule 27 (text -> .)
+    TERMS           reduce using rule 27 (text -> .)
+    CHAPTER_MARK    reduce using rule 27 (text -> .)
+    YEAR            shift and go to state 5
+    NUMBER          shift and go to state 3
+
+  ! GENERAL         [ reduce using rule 27 (text -> .) ]
+  ! YEAR            [ reduce using rule 27 (text -> .) ]
+  ! NUMBER          [ reduce using rule 27 (text -> .) ]
+
+    text                           shift and go to state 32
+    code                           shift and go to state 14
+
+state 15
+
+    (6) publication -> IEEE text . MONTH YEAR
+
+    MONTH           shift and go to state 33
+
+
+state 16
+
+    (24) text -> GENERAL . text
+    (26) text -> GENERAL .
+    (24) text -> . GENERAL text
+    (25) text -> . code text
+    (26) text -> . GENERAL
+    (27) text -> .
+    (4) code -> . YEAR
+    (5) code -> . NUMBER
+
+  ! shift/reduce conflict for GENERAL resolved as shift
+  ! reduce/reduce conflict for MONTH resolved using rule 26 (text -> GENERAL .)
+  ! reduce/reduce conflict for ABSTRACT resolved using rule 26 (text -> GENERAL .)
+  ! reduce/reduce conflict for REFERENCE_B resolved using rule 26 (text -> GENERAL .)
+  ! shift/reduce conflict for GENERAL resolved as shift
+  ! reduce/reduce conflict for YEAR resolved using rule 26 (text -> GENERAL .)
+  ! reduce/reduce conflict for NUMBER resolved using rule 26 (text -> GENERAL .)
+  ! reduce/reduce conflict for IEEE resolved using rule 26 (text -> GENERAL .)
+  ! reduce/reduce conflict for $end resolved using rule 26 (text -> GENERAL .)
+  ! reduce/reduce conflict for INDEX resolved using rule 26 (text -> GENERAL .)
+  ! reduce/reduce conflict for TERMS resolved using rule 26 (text -> GENERAL .)
+  ! reduce/reduce conflict for CHAPTER_MARK resolved using rule 26 (text -> GENERAL .)
+  ! shift/reduce conflict for YEAR resolved as shift
+  ! shift/reduce conflict for NUMBER resolved as shift
+    ABSTRACT        reduce using rule 26 (text -> GENERAL .)
+    REFERENCE_B     reduce using rule 26 (text -> GENERAL .)
+    IEEE            reduce using rule 26 (text -> GENERAL .)
+    $end            reduce using rule 26 (text -> GENERAL .)
+    MONTH           reduce using rule 26 (text -> GENERAL .)
+    INDEX           reduce using rule 26 (text -> GENERAL .)
+    TERMS           reduce using rule 26 (text -> GENERAL .)
+    CHAPTER_MARK    reduce using rule 26 (text -> GENERAL .)
+    GENERAL         shift and go to state 16
+    YEAR            shift and go to state 5
+    NUMBER          shift and go to state 3
+
+  ! GENERAL         [ reduce using rule 26 (text -> GENERAL .) ]
+  ! YEAR            [ reduce using rule 26 (text -> GENERAL .) ]
+  ! NUMBER          [ reduce using rule 26 (text -> GENERAL .) ]
+  ! MONTH           [ reduce using rule 27 (text -> .) ]
+  ! ABSTRACT        [ reduce using rule 27 (text -> .) ]
+  ! REFERENCE_B     [ reduce using rule 27 (text -> .) ]
+  ! GENERAL         [ reduce using rule 27 (text -> .) ]
+  ! YEAR            [ reduce using rule 27 (text -> .) ]
+  ! NUMBER          [ reduce using rule 27 (text -> .) ]
+  ! IEEE            [ reduce using rule 27 (text -> .) ]
+  ! $end            [ reduce using rule 27 (text -> .) ]
+  ! INDEX           [ reduce using rule 27 (text -> .) ]
+  ! TERMS           [ reduce using rule 27 (text -> .) ]
+  ! CHAPTER_MARK    [ reduce using rule 27 (text -> .) ]
+
+    text                           shift and go to state 34
+    code                           shift and go to state 14
+
+state 17
+
+    (23) titleandauthor -> text .
+
+    ABSTRACT        reduce using rule 23 (titleandauthor -> text .)
+
+
+state 18
+
+    (2) header -> code publication titleandauthor . abstract keywords
+    (7) abstract -> . ABSTRACT text INDEX
+
+    ABSTRACT        shift and go to state 35
+
+    abstract                       shift and go to state 36
+
+state 19
+
+    (3) header -> publication code titleandauthor . abstract keywords
+    (7) abstract -> . ABSTRACT text INDEX
+
+    ABSTRACT        shift and go to state 35
+
+    abstract                       shift and go to state 37
+
+state 20
+
+    (10) chapter_seq -> chapter chapter_seq .
+
+    REFERENCES      reduce using rule 10 (chapter_seq -> chapter chapter_seq .)
+
+
+state 21
+
+    (14) ctext -> NUMBER . ctext
+    (13) ctext -> . YEAR ctext
+    (14) ctext -> . NUMBER ctext
+    (15) ctext -> . REFERENCE_B ctext
+    (16) ctext -> . GENERAL ctext
+    (17) ctext -> . IEEE ctext
+    (18) ctext -> .
+
+    YEAR            shift and go to state 23
+    NUMBER          shift and go to state 21
+    REFERENCE_B     shift and go to state 26
+    GENERAL         shift and go to state 22
+    IEEE            shift and go to state 25
+    CHAPTER_MARK    reduce using rule 18 (ctext -> .)
+    REFERENCES      reduce using rule 18 (ctext -> .)
+    $end            reduce using rule 18 (ctext -> .)
+
+    ctext                          shift and go to state 38
+
+state 22
+
+    (16) ctext -> GENERAL . ctext
+    (13) ctext -> . YEAR ctext
+    (14) ctext -> . NUMBER ctext
+    (15) ctext -> . REFERENCE_B ctext
+    (16) ctext -> . GENERAL ctext
+    (17) ctext -> . IEEE ctext
+    (18) ctext -> .
+
+    YEAR            shift and go to state 23
+    NUMBER          shift and go to state 21
+    REFERENCE_B     shift and go to state 26
+    GENERAL         shift and go to state 22
+    IEEE            shift and go to state 25
+    CHAPTER_MARK    reduce using rule 18 (ctext -> .)
+    REFERENCES      reduce using rule 18 (ctext -> .)
+    $end            reduce using rule 18 (ctext -> .)
+
+    ctext                          shift and go to state 39
+
+state 23
+
+    (13) ctext -> YEAR . ctext
+    (13) ctext -> . YEAR ctext
+    (14) ctext -> . NUMBER ctext
+    (15) ctext -> . REFERENCE_B ctext
+    (16) ctext -> . GENERAL ctext
+    (17) ctext -> . IEEE ctext
+    (18) ctext -> .
+
+    YEAR            shift and go to state 23
+    NUMBER          shift and go to state 21
+    REFERENCE_B     shift and go to state 26
+    GENERAL         shift and go to state 22
+    IEEE            shift and go to state 25
+    CHAPTER_MARK    reduce using rule 18 (ctext -> .)
+    REFERENCES      reduce using rule 18 (ctext -> .)
+    $end            reduce using rule 18 (ctext -> .)
+
+    ctext                          shift and go to state 40
+
+state 24
+
+    (12) chapter -> CHAPTER_MARK ctext .
+
+    CHAPTER_MARK    reduce using rule 12 (chapter -> CHAPTER_MARK ctext .)
+    REFERENCES      reduce using rule 12 (chapter -> CHAPTER_MARK ctext .)
+
+
+state 25
+
+    (17) ctext -> IEEE . ctext
+    (13) ctext -> . YEAR ctext
+    (14) ctext -> . NUMBER ctext
+    (15) ctext -> . REFERENCE_B ctext
+    (16) ctext -> . GENERAL ctext
+    (17) ctext -> . IEEE ctext
+    (18) ctext -> .
+
+    YEAR            shift and go to state 23
+    NUMBER          shift and go to state 21
+    REFERENCE_B     shift and go to state 26
+    GENERAL         shift and go to state 22
+    IEEE            shift and go to state 25
+    CHAPTER_MARK    reduce using rule 18 (ctext -> .)
+    REFERENCES      reduce using rule 18 (ctext -> .)
+    $end            reduce using rule 18 (ctext -> .)
+
+    ctext                          shift and go to state 41
+
+state 26
+
+    (15) ctext -> REFERENCE_B . ctext
+    (13) ctext -> . YEAR ctext
+    (14) ctext -> . NUMBER ctext
+    (15) ctext -> . REFERENCE_B ctext
+    (16) ctext -> . GENERAL ctext
+    (17) ctext -> . IEEE ctext
+    (18) ctext -> .
+
+    YEAR            shift and go to state 23
+    NUMBER          shift and go to state 21
+    REFERENCE_B     shift and go to state 26
+    GENERAL         shift and go to state 22
+    IEEE            shift and go to state 25
+    CHAPTER_MARK    reduce using rule 18 (ctext -> .)
+    REFERENCES      reduce using rule 18 (ctext -> .)
+    $end            reduce using rule 18 (ctext -> .)
+
+    ctext                          shift and go to state 42
+
+state 27
+
+    (19) references -> reference_seq . ctext
+    (13) ctext -> . YEAR ctext
+    (14) ctext -> . NUMBER ctext
+    (15) ctext -> . REFERENCE_B ctext
+    (16) ctext -> . GENERAL ctext
+    (17) ctext -> . IEEE ctext
+    (18) ctext -> .
+
+    YEAR            shift and go to state 23
+    NUMBER          shift and go to state 21
+    REFERENCE_B     shift and go to state 26
+    GENERAL         shift and go to state 22
+    IEEE            shift and go to state 25
+    $end            reduce using rule 18 (ctext -> .)
+
+    ctext                          shift and go to state 43
+
+state 28
+
+    (21) reference_seq -> text . reference_seq
+    (20) reference_seq -> . REFERENCE_B reference_seq
+    (21) reference_seq -> . text reference_seq
+    (22) reference_seq -> .
+    (24) text -> . GENERAL text
+    (25) text -> . code text
+    (26) text -> . GENERAL
+    (27) text -> .
+    (4) code -> . YEAR
+    (5) code -> . NUMBER
+
+  ! shift/reduce conflict for REFERENCE_B resolved as shift
+  ! shift/reduce conflict for GENERAL resolved as shift
+  ! shift/reduce conflict for REFERENCE_B resolved as shift
+  ! shift/reduce conflict for GENERAL resolved as shift
+  ! reduce/reduce conflict for YEAR resolved using rule 22 (reference_seq -> .)
+  ! reduce/reduce conflict for NUMBER resolved using rule 22 (reference_seq -> .)
+  ! reduce/reduce conflict for IEEE resolved using rule 22 (reference_seq -> .)
+  ! reduce/reduce conflict for $end resolved using rule 22 (reference_seq -> .)
+  ! shift/reduce conflict for YEAR resolved as shift
+  ! shift/reduce conflict for NUMBER resolved as shift
+    REFERENCE_B     shift and go to state 30
+    IEEE            reduce using rule 22 (reference_seq -> .)
+    $end            reduce using rule 22 (reference_seq -> .)
+    GENERAL         shift and go to state 16
+    YEAR            shift and go to state 5
+    NUMBER          shift and go to state 3
+
+  ! YEAR            [ reduce using rule 22 (reference_seq -> .) ]
+  ! NUMBER          [ reduce using rule 22 (reference_seq -> .) ]
+  ! REFERENCE_B     [ reduce using rule 22 (reference_seq -> .) ]
+  ! GENERAL         [ reduce using rule 22 (reference_seq -> .) ]
+  ! REFERENCE_B     [ reduce using rule 27 (text -> .) ]
+  ! GENERAL         [ reduce using rule 27 (text -> .) ]
+  ! YEAR            [ reduce using rule 27 (text -> .) ]
+  ! NUMBER          [ reduce using rule 27 (text -> .) ]
+  ! IEEE            [ reduce using rule 27 (text -> .) ]
+  ! $end            [ reduce using rule 27 (text -> .) ]
+
+    text                           shift and go to state 28
+    reference_seq                  shift and go to state 44
+    code                           shift and go to state 14
+
+state 29
+
+    (1) article -> header content references .
+
+    $end            reduce using rule 1 (article -> header content references .)
+
+
+state 30
+
+    (20) reference_seq -> REFERENCE_B . reference_seq
+    (20) reference_seq -> . REFERENCE_B reference_seq
+    (21) reference_seq -> . text reference_seq
+    (22) reference_seq -> .
+    (24) text -> . GENERAL text
+    (25) text -> . code text
+    (26) text -> . GENERAL
+    (27) text -> .
+    (4) code -> . YEAR
+    (5) code -> . NUMBER
+
+  ! shift/reduce conflict for REFERENCE_B resolved as shift
+  ! shift/reduce conflict for GENERAL resolved as shift
+  ! shift/reduce conflict for REFERENCE_B resolved as shift
+  ! shift/reduce conflict for GENERAL resolved as shift
+  ! reduce/reduce conflict for YEAR resolved using rule 22 (reference_seq -> .)
+  ! reduce/reduce conflict for NUMBER resolved using rule 22 (reference_seq -> .)
+  ! reduce/reduce conflict for IEEE resolved using rule 22 (reference_seq -> .)
+  ! reduce/reduce conflict for $end resolved using rule 22 (reference_seq -> .)
+  ! shift/reduce conflict for YEAR resolved as shift
+  ! shift/reduce conflict for NUMBER resolved as shift
+    REFERENCE_B     shift and go to state 30
+    IEEE            reduce using rule 22 (reference_seq -> .)
+    $end            reduce using rule 22 (reference_seq -> .)
+    GENERAL         shift and go to state 16
+    YEAR            shift and go to state 5
+    NUMBER          shift and go to state 3
+
+  ! YEAR            [ reduce using rule 22 (reference_seq -> .) ]
+  ! NUMBER          [ reduce using rule 22 (reference_seq -> .) ]
+  ! REFERENCE_B     [ reduce using rule 22 (reference_seq -> .) ]
+  ! GENERAL         [ reduce using rule 22 (reference_seq -> .) ]
+  ! REFERENCE_B     [ reduce using rule 27 (text -> .) ]
+  ! GENERAL         [ reduce using rule 27 (text -> .) ]
+  ! YEAR            [ reduce using rule 27 (text -> .) ]
+  ! NUMBER          [ reduce using rule 27 (text -> .) ]
+  ! IEEE            [ reduce using rule 27 (text -> .) ]
+  ! $end            [ reduce using rule 27 (text -> .) ]
+
+    text                           shift and go to state 28
+    reference_seq                  shift and go to state 45
+    code                           shift and go to state 14
+
+state 31
+
+    (9) content -> chapter_seq REFERENCES .
+
+    REFERENCE_B     reduce using rule 9 (content -> chapter_seq REFERENCES .)
+    GENERAL         reduce using rule 9 (content -> chapter_seq REFERENCES .)
+    YEAR            reduce using rule 9 (content -> chapter_seq REFERENCES .)
+    NUMBER          reduce using rule 9 (content -> chapter_seq REFERENCES .)
+    IEEE            reduce using rule 9 (content -> chapter_seq REFERENCES .)
+    $end            reduce using rule 9 (content -> chapter_seq REFERENCES .)
+
+
+state 32
+
+    (25) text -> code text .
+
+    ABSTRACT        reduce using rule 25 (text -> code text .)
+    REFERENCE_B     reduce using rule 25 (text -> code text .)
+    GENERAL         reduce using rule 25 (text -> code text .)
+    YEAR            reduce using rule 25 (text -> code text .)
+    NUMBER          reduce using rule 25 (text -> code text .)
+    IEEE            reduce using rule 25 (text -> code text .)
+    $end            reduce using rule 25 (text -> code text .)
+    MONTH           reduce using rule 25 (text -> code text .)
+    INDEX           reduce using rule 25 (text -> code text .)
+    TERMS           reduce using rule 25 (text -> code text .)
+    CHAPTER_MARK    reduce using rule 25 (text -> code text .)
+
+
+state 33
+
+    (6) publication -> IEEE text MONTH . YEAR
+
+    YEAR            shift and go to state 46
+
+
+state 34
+
+    (24) text -> GENERAL text .
+
+    ABSTRACT        reduce using rule 24 (text -> GENERAL text .)
+    REFERENCE_B     reduce using rule 24 (text -> GENERAL text .)
+    GENERAL         reduce using rule 24 (text -> GENERAL text .)
+    YEAR            reduce using rule 24 (text -> GENERAL text .)
+    NUMBER          reduce using rule 24 (text -> GENERAL text .)
+    IEEE            reduce using rule 24 (text -> GENERAL text .)
+    $end            reduce using rule 24 (text -> GENERAL text .)
+    MONTH           reduce using rule 24 (text -> GENERAL text .)
+    INDEX           reduce using rule 24 (text -> GENERAL text .)
+    TERMS           reduce using rule 24 (text -> GENERAL text .)
+    CHAPTER_MARK    reduce using rule 24 (text -> GENERAL text .)
+
+
+state 35
+
+    (7) abstract -> ABSTRACT . text INDEX
+    (24) text -> . GENERAL text
+    (25) text -> . code text
+    (26) text -> . GENERAL
+    (27) text -> .
+    (4) code -> . YEAR
+    (5) code -> . NUMBER
+
+    GENERAL         shift and go to state 16
+    INDEX           reduce using rule 27 (text -> .)
+    YEAR            shift and go to state 5
+    NUMBER          shift and go to state 3
+
+    text                           shift and go to state 47
+    code                           shift and go to state 14
+
+state 36
+
+    (2) header -> code publication titleandauthor abstract . keywords
+    (8) keywords -> . text TERMS text
+    (24) text -> . GENERAL text
+    (25) text -> . code text
+    (26) text -> . GENERAL
+    (27) text -> .
+    (4) code -> . YEAR
+    (5) code -> . NUMBER
+
+    GENERAL         shift and go to state 16
+    TERMS           reduce using rule 27 (text -> .)
+    YEAR            shift and go to state 5
+    NUMBER          shift and go to state 3
+
+    code                           shift and go to state 14
+    text                           shift and go to state 48
+    keywords                       shift and go to state 49
+
+state 37
+
+    (3) header -> publication code titleandauthor abstract . keywords
+    (8) keywords -> . text TERMS text
+    (24) text -> . GENERAL text
+    (25) text -> . code text
+    (26) text -> . GENERAL
+    (27) text -> .
+    (4) code -> . YEAR
+    (5) code -> . NUMBER
+
+    GENERAL         shift and go to state 16
+    TERMS           reduce using rule 27 (text -> .)
+    YEAR            shift and go to state 5
+    NUMBER          shift and go to state 3
+
+    code                           shift and go to state 14
+    text                           shift and go to state 48
+    keywords                       shift and go to state 50
+
+state 38
+
+    (14) ctext -> NUMBER ctext .
+
+    CHAPTER_MARK    reduce using rule 14 (ctext -> NUMBER ctext .)
+    REFERENCES      reduce using rule 14 (ctext -> NUMBER ctext .)
+    $end            reduce using rule 14 (ctext -> NUMBER ctext .)
+
+
+state 39
+
+    (16) ctext -> GENERAL ctext .
+
+    CHAPTER_MARK    reduce using rule 16 (ctext -> GENERAL ctext .)
+    REFERENCES      reduce using rule 16 (ctext -> GENERAL ctext .)
+    $end            reduce using rule 16 (ctext -> GENERAL ctext .)
+
+
+state 40
+
+    (13) ctext -> YEAR ctext .
+
+    CHAPTER_MARK    reduce using rule 13 (ctext -> YEAR ctext .)
+    REFERENCES      reduce using rule 13 (ctext -> YEAR ctext .)
+    $end            reduce using rule 13 (ctext -> YEAR ctext .)
+
+
+state 41
+
+    (17) ctext -> IEEE ctext .
+
+    CHAPTER_MARK    reduce using rule 17 (ctext -> IEEE ctext .)
+    REFERENCES      reduce using rule 17 (ctext -> IEEE ctext .)
+    $end            reduce using rule 17 (ctext -> IEEE ctext .)
+
+
+state 42
+
+    (15) ctext -> REFERENCE_B ctext .
+
+    CHAPTER_MARK    reduce using rule 15 (ctext -> REFERENCE_B ctext .)
+    REFERENCES      reduce using rule 15 (ctext -> REFERENCE_B ctext .)
+    $end            reduce using rule 15 (ctext -> REFERENCE_B ctext .)
+
+
+state 43
+
+    (19) references -> reference_seq ctext .
+
+    $end            reduce using rule 19 (references -> reference_seq ctext .)
+
+
+state 44
+
+    (21) reference_seq -> text reference_seq .
+
+    YEAR            reduce using rule 21 (reference_seq -> text reference_seq .)
+    NUMBER          reduce using rule 21 (reference_seq -> text reference_seq .)
+    REFERENCE_B     reduce using rule 21 (reference_seq -> text reference_seq .)
+    GENERAL         reduce using rule 21 (reference_seq -> text reference_seq .)
+    IEEE            reduce using rule 21 (reference_seq -> text reference_seq .)
+    $end            reduce using rule 21 (reference_seq -> text reference_seq .)
+
+
+state 45
+
+    (20) reference_seq -> REFERENCE_B reference_seq .
+
+    YEAR            reduce using rule 20 (reference_seq -> REFERENCE_B reference_seq .)
+    NUMBER          reduce using rule 20 (reference_seq -> REFERENCE_B reference_seq .)
+    REFERENCE_B     reduce using rule 20 (reference_seq -> REFERENCE_B reference_seq .)
+    GENERAL         reduce using rule 20 (reference_seq -> REFERENCE_B reference_seq .)
+    IEEE            reduce using rule 20 (reference_seq -> REFERENCE_B reference_seq .)
+    $end            reduce using rule 20 (reference_seq -> REFERENCE_B reference_seq .)
+
+
+state 46
+
+    (6) publication -> IEEE text MONTH YEAR .
+
+    GENERAL         reduce using rule 6 (publication -> IEEE text MONTH YEAR .)
+    YEAR            reduce using rule 6 (publication -> IEEE text MONTH YEAR .)
+    NUMBER          reduce using rule 6 (publication -> IEEE text MONTH YEAR .)
+    ABSTRACT        reduce using rule 6 (publication -> IEEE text MONTH YEAR .)
+
+
+state 47
+
+    (7) abstract -> ABSTRACT text . INDEX
+
+    INDEX           shift and go to state 51
+
+
+state 48
+
+    (8) keywords -> text . TERMS text
+
+    TERMS           shift and go to state 52
+
+
+state 49
+
+    (2) header -> code publication titleandauthor abstract keywords .
+
+    CHAPTER_MARK    reduce using rule 2 (header -> code publication titleandauthor abstract keywords .)
+
+
+state 50
+
+    (3) header -> publication code titleandauthor abstract keywords .
+
+    CHAPTER_MARK    reduce using rule 3 (header -> publication code titleandauthor abstract keywords .)
+
+
+state 51
+
+    (7) abstract -> ABSTRACT text INDEX .
+
+    GENERAL         reduce using rule 7 (abstract -> ABSTRACT text INDEX .)
+    YEAR            reduce using rule 7 (abstract -> ABSTRACT text INDEX .)
+    NUMBER          reduce using rule 7 (abstract -> ABSTRACT text INDEX .)
+    TERMS           reduce using rule 7 (abstract -> ABSTRACT text INDEX .)
+
+
+state 52
+
+    (8) keywords -> text TERMS . text
+    (24) text -> . GENERAL text
+    (25) text -> . code text
+    (26) text -> . GENERAL
+    (27) text -> .
+    (4) code -> . YEAR
+    (5) code -> . NUMBER
+
+    GENERAL         shift and go to state 16
+    CHAPTER_MARK    reduce using rule 27 (text -> .)
+    YEAR            shift and go to state 5
+    NUMBER          shift and go to state 3
+
+    text                           shift and go to state 53
+    code                           shift and go to state 14
+
+state 53
+
+    (8) keywords -> text TERMS text .
+
+    CHAPTER_MARK    reduce using rule 8 (keywords -> text TERMS text .)
+
+WARNING: 
+WARNING: Conflicts:
+WARNING: 
+WARNING: shift/reduce conflict for REFERENCE_B in state 12 resolved as shift
+WARNING: shift/reduce conflict for GENERAL in state 12 resolved as shift
+WARNING: shift/reduce conflict for REFERENCE_B in state 12 resolved as shift
+WARNING: shift/reduce conflict for GENERAL in state 12 resolved as shift
+WARNING: shift/reduce conflict for YEAR in state 12 resolved as shift
+WARNING: shift/reduce conflict for NUMBER in state 12 resolved as shift
+WARNING: shift/reduce conflict for GENERAL in state 14 resolved as shift
+WARNING: shift/reduce conflict for YEAR in state 14 resolved as shift
+WARNING: shift/reduce conflict for NUMBER in state 14 resolved as shift
+WARNING: shift/reduce conflict for GENERAL in state 16 resolved as shift
+WARNING: shift/reduce conflict for GENERAL in state 16 resolved as shift
+WARNING: shift/reduce conflict for YEAR in state 16 resolved as shift
+WARNING: shift/reduce conflict for NUMBER in state 16 resolved as shift
+WARNING: shift/reduce conflict for REFERENCE_B in state 28 resolved as shift
+WARNING: shift/reduce conflict for GENERAL in state 28 resolved as shift
+WARNING: shift/reduce conflict for REFERENCE_B in state 28 resolved as shift
+WARNING: shift/reduce conflict for GENERAL in state 28 resolved as shift
+WARNING: shift/reduce conflict for YEAR in state 28 resolved as shift
+WARNING: shift/reduce conflict for NUMBER in state 28 resolved as shift
+WARNING: shift/reduce conflict for REFERENCE_B in state 30 resolved as shift
+WARNING: shift/reduce conflict for GENERAL in state 30 resolved as shift
+WARNING: shift/reduce conflict for REFERENCE_B in state 30 resolved as shift
+WARNING: shift/reduce conflict for GENERAL in state 30 resolved as shift
+WARNING: shift/reduce conflict for YEAR in state 30 resolved as shift
+WARNING: shift/reduce conflict for NUMBER in state 30 resolved as shift
+WARNING: reduce/reduce conflict in state 12 resolved using rule (reference_seq -> <empty>)
+WARNING: rejected rule (text -> <empty>) in state 12
+WARNING: reduce/reduce conflict in state 16 resolved using rule (text -> GENERAL)
+WARNING: rejected rule (text -> <empty>) in state 16
+WARNING: reduce/reduce conflict in state 28 resolved using rule (reference_seq -> <empty>)
+WARNING: rejected rule (text -> <empty>) in state 28
+WARNING: reduce/reduce conflict in state 30 resolved using rule (reference_seq -> <empty>)
+WARNING: rejected rule (text -> <empty>) in state 30

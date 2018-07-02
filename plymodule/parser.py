@@ -83,6 +83,11 @@ def p_ctext_number(p):
     # print "Chapter text number rule"
     p[0] = str(p[1]) + p[2]
 
+def p_ctext_reference(p):
+    'ctext : REFERENCE_B ctext'
+    # print "Chapter text number rule"
+    p[0] = p[1] + p[2]
+
 def p_ctext_text(p):
     'ctext : GENERAL ctext'
     # print "Chapter text text rule"
@@ -142,6 +147,11 @@ def p_text(p):
     'text : GENERAL'
     # print "Text rule"
     p[0] = p[1]
+
+def p_text_none(p):
+    'text : '
+    # print "Text rule"
+    p[0] = ''
 
 # Error rule for syntax errors
 def p_error(p):
