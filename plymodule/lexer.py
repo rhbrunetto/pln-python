@@ -46,7 +46,6 @@ def t_REFERENCE_L(t):
     return t
 
 t_REFERENCES    = 'REFERENCES'
-
 def t_YEAR(t):
     r'\d{4}'
     t.value = int(t.value)    
